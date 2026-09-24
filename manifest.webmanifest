@@ -1,0 +1,33 @@
+{
+  "name": "ASOGIC 29 — Conference Program",
+  "short_name": "ASOGIC 29",
+  "description": "Schedule for the 29th Ain Shams Obstetrics & Gynecology International Conference, 15–16 October 2026, Triumph Luxury Hotel, Cairo.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#072b2e",
+  "theme_color": "#0d3b3e",
+  "lang": "en",
+  "categories": ["medical", "education"],
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

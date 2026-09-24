@@ -1,0 +1,514 @@
+{
+  "meta": {
+    "name": "ASOGIC 29",
+    "fullName": "29th Ain Shams Obstetrics & Gynecology International Conference",
+    "dates": "15–16 October 2026",
+    "venue": "Triumph Luxury Hotel, New Cairo, Cairo, Egypt",
+    "theme": "From Research to Reality: Changing My Practice",
+    "website": "www.ASOGIC.com"
+  },
+  "days": [
+    {
+      "id": "day1",
+      "label": "Day 1",
+      "weekday": "Thursday",
+      "date": "2026-10-15",
+      "items": [
+        {
+          "type": "info",
+          "id": "d1-reg",
+          "start": "08:00",
+          "end": "09:00",
+          "title": "Registration"
+        },
+        {
+          "type": "plenary",
+          "id": "d1-p1",
+          "label": "Plenary 1",
+          "start": "09:00",
+          "end": "10:00",
+          "title": "AI Transforming Practice: What Every Clinician Should Know",
+          "chairpersons": [
+            "Sobhi Abouloz", "Mohamed Mehanna", "Ashraf Fawzy",
+            "Osama Elkady", "Khaled Diab", "Mohamed Ali Ibrahim", "Mahmoud Youssef"
+          ],
+          "talks": [
+            { "title": "AI products for medical students and graduates", "speaker": "Mahmoud Youssef (EGY)" },
+            { "title": "Integrating AI in Clinical Decision Making", "speaker": "Mohamed Elmandooh (EGY)" },
+            { "title": "Use of AI in Medical Literature", "speaker": "Hesham Al-Inany (EGY)" },
+            { "title": "Revolutionizing AI", "speaker": "Sherif El Mekkawi (EGY)" }
+          ]
+        },
+        {
+          "type": "plenary",
+          "id": "d1-p2",
+          "label": "Plenary 2",
+          "start": "10:00",
+          "end": "10:45",
+          "title": "Line by Line: Navigating the Management of Endometriosis",
+          "panel": {
+            "format": "Panel Discussion",
+            "panelists": [
+              "Amro Elhoussieny (EGY)",
+              "Mohamed Sayed Ali (EGY)",
+              "Ahmed Elnaggar (GBR)",
+              "Christoph Cirkel (DEU)",
+              "Wafaa Raafat (Radio)",
+              "Tarek Youssef (Surgery)"
+            ],
+            "moderators": ["Mohamed Sayed Ali", "Ahmed Selim"],
+            "topics": [
+              "Imaging",
+              "Medical treatment",
+              "Surgical intervention",
+              "DIE",
+              "Fertility preservation",
+              "Complications of surgery",
+              "Pain management"
+            ]
+          }
+        },
+        {
+          "type": "plenary",
+          "id": "d1-p3",
+          "label": "Plenary 3",
+          "start": "10:45",
+          "end": "11:45",
+          "title": "The Great Obstetric Debate: Is the Cesarean Epidemic Reversible?",
+          "panel": {
+            "format": "Panel Discussion",
+            "panelists": [
+              "Abla Al-Alfy",
+              "Maha Mowafi",
+              "Omaima Edris (EGY)",
+              "Abobakr Elnashar (EGY)",
+              "Mostafa Abbas (EGY)"
+            ],
+            "moderators": ["Nasser El-Kholy"],
+            "topics": [
+              "Pro: Reducing primary cesarean delivery is achievable without compromising maternal or fetal outcomes",
+              "Evidence-based labor management",
+              "ARRIVE trial implications (elective IOL at 39w)",
+              "Better labor support, induction strategies, and routine partogram/LCG",
+              "VBAC expansion",
+              "Con: Maternal age and obesity trends",
+              "Medicolegal climate",
+              "Patient preference",
+              "Increasing complexity of modern obstetrics"
+            ]
+          }
+        },
+        {
+          "type": "block",
+          "id": "d1-opening",
+          "start": "11:45",
+          "end": "13:30",
+          "title": "Diploma Graduation & Opening Ceremony",
+          "badge": "Sponsored",
+          "sub": [
+            { "title": "Opening Ceremony", "note": "University President – Dean – Vice Dean – Syndicate Head – (Minister of Health / Higher Education)" },
+            { "title": "Professors' Honoring", "note": "Ali Elian, Ahmed Ezzat, Ahmed Khairy" },
+            { "title": "Break" }
+          ]
+        },
+        {
+          "type": "plenary",
+          "id": "d1-p4",
+          "label": "Plenary 4",
+          "start": "13:30",
+          "end": "14:30",
+          "title": "Beyond the Scalpel: Legal Boundaries to Practice",
+          "panel": {
+            "format": "Panel Discussion",
+            "panelists": [
+              "Ehab Abdelfattah",
+              "Amr Nadim",
+              "Osama Abdelhai",
+              "Karam Bayoumy",
+              "Ahmed Shams",
+              "Ayman Abouelnour",
+              "Abdelhamid Attia"
+            ],
+            "moderators": ["Kamal Eldessouki", "Amr Nadim"],
+            "topics": ["EHC guidelines", "Medical Liability (Real Cases)", "Social media"]
+          }
+        },
+        {
+          "type": "plenary",
+          "id": "d1-p5",
+          "label": "Plenary 5",
+          "start": "14:30",
+          "end": "16:15",
+          "title": "Symposium: Frontiers in Fetal Health & Women's Health",
+          "badge": "Sponsored: Astellas Veozah",
+          "chairpersons": [
+            "Mourad Elsaied", "Salah Taha", "Alaa Elfeky", "Hassan Awwad",
+            "Ahmed Hashad", "Sherif Abdelhameed", "Abdelmageed Ismail",
+            "Magdy Hassan", "Mohamed Amer"
+          ],
+          "talks": [
+            { "title": "Core Physiologic Monitoring of the Fetus", "speaker": "Aimen Shaaban (USA)" },
+            { "title": "Digital Twins and the Future of Childbirth", "speaker": "Khaled Mostafa Kamel (CZE)" },
+            { "title": "Fem-tech advancing women's health: Are we bridging the gap towards equity in service delivery?", "speaker": "Anne-Beatrice Kihara (KEN)" },
+            { "title": "Special lecture", "speaker": "Werner-Achim Rody (DEU)" },
+            { "title": "Climacteric and Menopause: Mind, Mood, and Body", "speaker": "Panel Discussion", "note": "45 min — Moderator: Kamal Eldessouki (EGY) / Yomna Ayman" }
+          ],
+          "panel": {
+            "format": "Panel Discussion",
+            "panelists": [
+              "Mohamed Elmandooh (EGY)",
+              "Mohammad Hussain Mostafa (EGY)",
+              "Amr Elhelaly",
+              "Mona Reda (EGY)",
+              "Yasser Aboutalib (EGY)",
+              "Amr Aboelyazid",
+              "Ehab Abdelfattah",
+              "Alaa Elfeky",
+              "Rehab Abdelrahman (EGY)"
+            ],
+            "moderators": ["Kamal Eldessouki (EGY)", "Yomna Ayman"],
+            "topics": ["MHT updates", "Sexual dysfunction", "Rehabilitation"]
+          }
+        },
+        { "type": "break", "id": "d1-brk1", "start": "16:15", "end": "16:45", "title": "Break" },
+        {
+          "type": "concurrent",
+          "id": "d1-c1",
+          "label": "Concurrent 1",
+          "start": "16:45",
+          "end": "18:00",
+          "rooms": [
+            {
+              "id": "1A",
+              "title": "Obstetrics",
+              "subtitle": "Pearls and Pitfalls in Daily Practice · The Gray Zones in Everyday Obstetrics",
+              "talks": [
+                { "title": "Pearls and pitfalls of Obstetrics in today's tech world", "speaker": "Anne-Beatrice Kihara (KEN)" },
+                { "title": "Intrauterine infections: A unified approach", "speaker": "Salah Sanad (EGY)" },
+                { "title": "Thromboprophylaxis in Pregnancy", "speaker": "Rehab Abdelrahman (EGY)", "badge": "Sponsored: Sanofi" },
+                { "title": "HIV in Pregnancy", "speaker": "Panel Discussion (30 min)", "note": "Muhammad Shahid Jamil (WHO), Heba Abdella (EGY), Dr Miral (EGY), Abdellatif Elkholy (EGY), Tamer Refaei — Moderator: Walid Hitler (EGY) / Aya Attia" }
+              ],
+              "chairpersons": [
+                "Mohamed Taha", "Haitham Elsabba", "Mohamed Elsherbiny",
+                "Essam Ammar", "Fekreya Salama"
+              ]
+            },
+            {
+              "id": "1B",
+              "title": "Adolescent Gynecology",
+              "talks": [
+                { "title": "Adolescent PCO", "speaker": "Adel Shafik (EGY)" },
+                { "title": "Decoding the Hairy Dilemma", "speaker": "Mostafa Abbas (EGY)" },
+                { "title": "Intractable Dysmenorrhea in Adolescents", "speaker": "Radwa Mansour" },
+                { "title": "Underdeveloped Secondary Sexual Characters", "speaker": "Mahmoud Nabil (EGY)" },
+                { "title": "Special lecture", "speaker": "Ashraf Kortam (EGY)", "badge": "Sponsored: DevartLab" }
+              ],
+              "chairpersons": ["Adel Shafik", "Radwa Mansour"]
+            },
+            {
+              "id": "1C",
+              "title": "Urogynecology & Pelvic Floor Disorders",
+              "talks": [
+                { "title": "Management of Pelvic Organ Prolapse with Concomitant Short Total Vaginal Length", "speaker": "Khaled Mostafa Kamel (CZE)" },
+                { "title": "Laparoscopic Lateral Suspension", "speaker": "Ihab Serag (EGY)" },
+                { "title": "Cervical Elongation: Diagnosis and Management", "speaker": "Hazem El-Ashmawy (EGY)" },
+                { "title": "Talk to be announced", "speaker": "Tamer Borg (EGY)" },
+                { "title": "Talk to be announced", "speaker": "Mohammad AbdelHameed (EGY)" }
+              ],
+              "chairpersons": [
+                "Hazem Sammour", "Adel Elnazer", "Ihab Serag", "Wafaa Benjamin",
+                "Tamer Borg", "Hazem El-Ashmawy (Cairo)", "Amal Mohamed Elshahat"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concurrent",
+          "id": "d1-c2",
+          "label": "Concurrent 2",
+          "start": "18:15",
+          "end": "19:45",
+          "rooms": [
+            {
+              "id": "2A",
+              "title": "Nutrition and Obesity in Pregnancy",
+              "talks": [
+                { "title": "Nutrition in Normal Pregnancy" },
+                { "title": "Obesity" },
+                { "title": "Pregnancy after bariatric surgery" },
+                { "title": "Emerging dilemmas: GLP-1 receptor agonist exposure in early pregnancy" },
+                { "title": "Panel Discussion", "speaker": "Ayman Abouelnour, Hatem Elgamal, Noha Elsharnouby — Moderator: Ahmed Essam" }
+              ],
+              "chairpersons": []
+            },
+            {
+              "id": "2B",
+              "title": "MIS — Minimally Invasive Surgery",
+              "talks": [
+                { "title": "Green Surgery: Indocyanine Green (ICG) in Complex Gynaecological Surgery", "speaker": "Ahmed Elnaggar (GBR)" },
+                { "title": "Robotic Surgery or Conventional Laparoscopy? Selecting the Right Patient for the Right Approach", "speaker": "Ahmed Khalil (DEU)" },
+                { "title": "Is there a place for surgery in adenomyosis and infertility?", "speaker": "Jorg Keckstein (AUT)" },
+                { "title": "Beyond Cystectomy: A Stepwise Approach to Endometrioma Management — From Ethanol Sclerotherapy to Secondary Prevention", "speaker": "Christoph Cirkel (DEU)" },
+                { "title": "Virginity Guard: New invention for vaginoscopy in virgins", "speaker": "Mohsen Rabie (EGY)" }
+              ],
+              "chairpersons": [
+                "Hayam Fathy", "Sehrif Hanafy", "Mohamed Hamed",
+                "Mohamed Abdelfattah", "Mohamed Samy", "Basem Ali", "Mohamed El Safty"
+              ]
+            },
+            {
+              "id": "2C",
+              "title": "Tips and Tricks in Gynecological Practice",
+              "talks": [
+                { "title": "Audience-based interactive session", "speaker": "1 h 15 min" },
+                { "title": "Chronic vulvovaginitis", "speaker": "Mohamed Samir" },
+                { "title": "Prevention and diagnosis of visceral injuries in OB-GYN interventions", "speaker": "Mourad Alfaham" },
+                { "title": "Closure of Uterine Incision at CS" },
+                { "title": "Laparoscopy" },
+                { "title": "Safe Laparoscopic Entry", "speaker": "Kareem Labib (EGY)" },
+                { "title": "Management of DIE in the Uterosacral Ligament" }
+              ],
+              "chairpersons": [
+                "Mortada Elsayed", "Noha Abdelsattar", "Mohamed Elsokkary",
+                "Mohamed Elkady", "Ahmed Abdelkader", "Maii Nawara"
+              ]
+            }
+          ]
+        },
+        { "type": "info", "id": "d1-dinner", "start": "19:45", "title": "Dinner" }
+      ]
+    },
+    {
+      "id": "day2",
+      "label": "Day 2",
+      "weekday": "Friday",
+      "date": "2026-10-16",
+      "items": [
+        {
+          "type": "info",
+          "id": "d2-reg",
+          "start": "08:00",
+          "end": "09:00",
+          "title": "Registration — Professors' Promotion Committee"
+        },
+        {
+          "type": "plenary",
+          "id": "d2-p6",
+          "label": "Plenary 6",
+          "start": "09:00",
+          "end": "10:30",
+          "title": "GYNOlympics",
+          "chairpersons": ["Mohsen Nosseir"],
+          "moderators": ["Sherif El Mekkawi", "Yasser Elrefaey"],
+          "talks": [
+            { "title": "GYNOlympics Quiz" },
+            { "title": "Universities challenge", "note": "6–8 Universities: Ain Shams · Suez Canal · Azhar Boys · Azhar Girls · Benha · Zagazig · Cairo · Menoufeya · Mansoura · Tanta" }
+          ]
+        },
+        {
+          "type": "plenary",
+          "id": "d2-p7",
+          "label": "Plenary 7",
+          "start": "10:30",
+          "end": "11:30",
+          "title": "History of Medicine",
+          "talks": [
+            { "title": "History of Medicine", "speaker": "Osama Elshazly, Ahmed Hamdy" }
+          ]
+        },
+        {
+          "type": "plenary",
+          "id": "d2-p8",
+          "label": "Plenary 8",
+          "start": "11:30",
+          "end": "12:30",
+          "title": "From Diagnosis to Mastery: The Evolving Landscape of Gynecological Surgery",
+          "subtitle": "Seeing with Precision, Operating with Confidence: Advances in Gynecological Surgery",
+          "chairpersons": [
+            "Mounir Fawzy", "Gasser Elbishry", "Sherif Habib", "Ismail Ellamie",
+            "Mostafa Ibrahim", "Ahmed Elminawi", "Yousef Abouelwan"
+          ],
+          "talks": [
+            { "title": "From Imaging to Surgery and Artificial Intelligence: #Enzian — The Future Global Language of Endometriosis", "speaker": "Jorg Keckstein (AUT)" },
+            { "title": "Deescalation of surgery in gynecological cancer", "speaker": "Amr El Shalakany (EGY)" },
+            { "title": "Precise preservation of autonomic nerves in radical hysterectomy: From anatomical experience to precision navigation", "speaker": "Chengyan Luo (CHN)" },
+            { "title": "The Hysteroscopy Atlas: From normal to abnormal", "speaker": "Alka Kumar (IND)" }
+          ]
+        },
+        {
+          "type": "info",
+          "id": "d2-prayer",
+          "start": "12:40",
+          "end": "13:30",
+          "title": "Friday Prayer"
+        },
+        {
+          "type": "plenary",
+          "id": "d2-p9",
+          "label": "Plenary 9",
+          "start": "13:45",
+          "end": "14:30",
+          "title": "Religious Aspects",
+          "panel": {
+            "format": "Panel Discussion",
+            "panelists": [
+              "Dr Hamdy Elbarbary — Dean, Faculty of Islamic Studies",
+              "Anba Armia — Cultural Relations",
+              "Maher Omran",
+              "Sherif El-Ghetany",
+              "Ehab Hassanein"
+            ],
+            "moderators": ["Mohammad AbdelHameed"]
+          }
+        },
+        {
+          "type": "info",
+          "id": "d2-spons1",
+          "start": "14:30",
+          "end": "14:45",
+          "title": "Sponsored Lecture"
+        },
+        {
+          "type": "plenary",
+          "id": "d2-p10",
+          "label": "Plenary 10",
+          "start": "14:45",
+          "end": "15:30",
+          "title": "Comprehensive Infertility Management",
+          "panel": {
+            "format": "Panel Discussion",
+            "panelists": [
+              "Mohamed Yehia",
+              "Hossam Fahem",
+              "Mohamed Aboelghar",
+              "Abdelmageed Sarhan",
+              "Hassan Maghrabi",
+              "Khaled Saied",
+              "Salah Rasheed (Sohag)"
+            ],
+            "moderators": ["Hatem Elgamal (EGY)"]
+          }
+        },
+        {
+          "type": "plenary",
+          "id": "d2-p11",
+          "label": "Plenary 11",
+          "start": "15:30",
+          "end": "16:30",
+          "title": "Navigating Twin Pregnancy from Diagnosis to Intervention",
+          "panel": {
+            "format": "Interactive Session",
+            "panelists": [
+              "Liesbeth Lewi (BEL)",
+              "Aimen Shaaban (USA)",
+              "Mohamed Momtaz (EGY)",
+              "Dalia El Haieg (EGY)",
+              "Ahmed Ramy (EGY)"
+            ],
+            "moderators": ["Maya Abdelrazek (EGY)", "Rami Barakat (EGY)"]
+          }
+        },
+        { "type": "break", "id": "d2-brk1", "start": "16:30", "end": "17:00", "title": "Sponsored Lecture & Break" },
+        {
+          "type": "concurrent",
+          "id": "d2-c3",
+          "label": "Concurrent 3",
+          "start": "17:00",
+          "end": "18:45",
+          "rooms": [
+            {
+              "id": "3A",
+              "title": "The Obstetric Journey",
+              "badge": "Symposium",
+              "talks": [
+                { "title": "The Fetal Ultrasound Dilemma: A Case-Based Approach to the Most Encountered Anomalies", "speaker": "Alaa Elebrashy (EGY)" },
+                { "title": "Renal Disease in Pregnancy — When the Kidney Fails the Mother", "speaker": "Ahmed Abbas (EGY)" },
+                { "title": "Beyond Guidelines: Advancing Quality in Obstetrics", "speaker": "Abdelrahman Safwat (AUT)" },
+                { "title": "Postpartum Hemorrhage", "speaker": "Walid Basuony (EGY)" }
+              ],
+              "chairpersons": [
+                "Noha Rabie", "Nashwa Elsaied", "Jihan Elhawwary",
+                "Rasha Medhat", "Ebtihal Altayeb", "Walid Basuony"
+              ]
+            },
+            {
+              "id": "3B",
+              "title": "Contraception: Myths & Misconceptions",
+              "talks": [
+                { "title": "Panel introduction", "speaker": "Rehab Abdelrahman, Ayman Abouelnour" },
+                { "title": "Missed Contraception", "speaker": "Amr Nadim (EGY)" },
+                { "title": "Contraceptive dilemmas following oncological treatment", "speaker": "Nasser El Kholy (EGY)", "note": "30 min" }
+              ],
+              "chairpersons": []
+            },
+            {
+              "id": "3C",
+              "title": "Gynecologic Oncology: Beyond Excision",
+              "badge": "Symposium",
+              "talks": [
+                { "title": "Risk-reducing Surgery in Gynecological Malignancy", "speaker": "Helmy Motawe (EGY)" },
+                { "title": "Fertility Preservation in Endometrial and Cervical Cancer", "speaker": "Werner-Achim Rody (DEU)" },
+                { "title": "Challenges and Management of Radical Hysterectomy for Cervical Cancer", "speaker": "Chengyan Luo (CHN)" },
+                { "title": "The Keyhole Approach to Gynecologic Cancer: Where Laparoscopy Stands Today", "speaker": "Mohamed Sweed (EGY)" }
+              ],
+              "chairpersons": [
+                "Mohamed Laban", "Ahmed Ibrahim", "Helmy Motawe",
+                "Mohamed Sweed", "Mohamed Abd El-Hafeez", "Amgad Abo Gamra"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "concurrent",
+          "id": "d2-c4",
+          "label": "Concurrent 4",
+          "start": "18:45",
+          "end": "19:45",
+          "rooms": [
+            {
+              "id": "4A",
+              "title": "Cases that Kept Us Awake at Night",
+              "subtitle": "The Art of the Consult: When and How to Involve Other Specialists",
+              "talks": [
+                { "title": "Case Presentations + Moderated MDT Discussions", "speaker": "3–4 cases", "note": "ALs, Lects · ICU, cardiology, nephrology, neurology, hematology — Farida, Refaei (Thrombectomy), Rowan, Mariam" }
+              ],
+              "chairpersons": [
+                "Amr Elhelaly", "Khaled Swidan", "Amr Fathy", "Abdellatif Elkholy",
+                "Laila Farid", "Mohamed Abdelaleem", "Amr Riad"
+              ]
+            },
+            {
+              "id": "4B",
+              "title": "Reproductive Medicine Beyond IVF",
+              "talks": [
+                { "title": "Cracking the code of poor ovarian responders", "speaker": "Karim Wahba (EGY)" },
+                { "title": "Talk to be announced", "speaker": "Ahmed Elhusseiny (EGY)" },
+                { "title": "ESHRE 2026 \"Game-changers\": Top 20 practice-changing updates", "speaker": "Yasser Elshahawy (EGY)" },
+                { "title": "Use of Large Language Models for Optimizing Ovulation Trigger Timing in ICSI Cycles", "speaker": "Mohammed Faris (EGY)" }
+              ],
+              "chairpersons": [
+                "Tarek Tamara", "Khaled Ibrahim", "Moustafa Fouad", "Amr Helmy",
+                "Ahmed Awadalla", "Karim Wahba", "Sherif Ashoush", "Adel Shafik",
+                "Ahmed Elhusseiny"
+              ]
+            },
+            {
+              "id": "4C",
+              "title": "General and Benign Gynecology",
+              "talks": [
+                { "title": "Talk to be announced", "speaker": "Ahmed Koura (EGY)" },
+                { "title": "Fibroid care in current times: Patient-centered interventions", "speaker": "Ahmed Selim (EGY)" },
+                { "title": "Synbiotics: the hidden gem", "speaker": "Karim Wahba (EGY)" }
+              ],
+              "chairpersons": [
+                "Mohamed Elsokkary", "Alaa Sayed", "Radwa Mansour", "Dina Yehia",
+                "Sabry Elsayed", "Ahmed Elhusseiny", "Osama Eltohamy", "Ahmed Mamdouh"
+              ]
+            }
+          ]
+        },
+        { "type": "info", "id": "d2-dinner", "start": "19:45", "title": "Dinner" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0d3b3e">
+  <meta name="description" content="ASOGIC 29 — 29th Ain Shams Obstetrics & Gynecology International Conference schedule. 15–16 October 2026, Triumph Luxury Hotel, New Cairo, Cairo.">
+  <title>ASOGIC 29 — Program</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="apple-mobile-web-app-capable" content="yes">
+  <link rel="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-mobile-web-app-title" content="ASOGIC 29">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"><img src="icons/asogic-logo.png" alt=""></div>
+        <div class="brand-text">
+          <h1><span class="num">29th</span> Ain Shams Obstetrics &amp; Gynecology International Conference</h1>
+          <p class="theme">From Research to Reality: Changing My Practice</p>
+          <p>15–16 Oct 2026 · Triumph Luxury Hotel, New Cairo, Cairo, Egypt</p>
+        </div>
+      </div>
+    </div>
+    <div class="filter-row">
+      <label class="speaker-label" for="speakerSelect">Filter</label>
+      <select id="speakerSelect" class="speaker-select" aria-label="Filter by speaker, panelist, moderator, or chairperson">
+        <option value="">Full Program</option>
+      </select>
+      <button id="clearSpeaker" class="clear-speaker" type="button" hidden aria-label="Clear speaker filter">✕</button>
+    </div>
+    <nav class="day-tabs" role="tablist" aria-label="Conference days">
+      <button class="day-tab active" role="tab" aria-selected="true" data-day="day1">Day 1 · Thu 15 Oct</button>
+      <button class="day-tab" role="tab" aria-selected="false" data-day="day2">Day 2 · Fri 16 Oct</button>
+    </nav>
+    <div class="day-meta">
+      <span id="dayLabel" class="day-label">Thursday · 15 October 2026</span>
+      <div class="tab-search">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input type="search" id="searchInput" placeholder="Search selected day…" autocomplete="off" aria-label="Search selected day">
+      </div>
+    </div>
+  </header>
+
+  <main id="schedule" class="schedule" aria-live="polite"></main>
+
+  <button id="expandAllBtn" class="expand-fab" type="button" hidden>Expand ↓</button>
+
+  <p id="noResults" class="no-results" hidden>No matching sessions found.</p>
+
+  <footer class="app-footer">
+    <p class="muted">www.ASOGIC.com</p>
+  </footer>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
