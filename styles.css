@@ -59,6 +59,8 @@ body {
 
 .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
 
+.brand-text { min-width: 0; }
+
 .brand-mark {
   border-radius: 12px;
   background: linear-gradient(145deg, var(--gold-400), var(--gold-500));
@@ -85,6 +87,7 @@ body {
   letter-spacing: 0.02em;
   font-weight: 700;
   color: var(--gold-300);
+  overflow-wrap: break-word;
 }
 
 .brand-text h1 .num {
@@ -170,6 +173,8 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  min-width: 0;
+  flex: 1;
 }
 
 .tab-search {
@@ -277,9 +282,7 @@ body {
 
 .talk.speaker-hit {
   background: linear-gradient(90deg, rgba(232, 200, 120, 0.25), transparent);
-  border-left: 3px solid var(--gold-500);
-  padding-left: 8px;
-  margin-left: -8px;
+  box-shadow: inset 3px 0 0 var(--gold-500);
   border-radius: 0 6px 6px 0;
 }
 
@@ -339,7 +342,7 @@ body {
 .schedule {
   max-width: 720px;
   margin: 0 auto;
-  padding: 16px 14px calc(40px + var(--safe-bottom));
+  padding: 16px 14px calc(76px + var(--safe-bottom));
 }
 
 .timeline { position: relative; }
@@ -353,22 +356,11 @@ body {
   overflow: hidden;
 }
 
-.session.compact {
+.session.compact .compact-row {
   display: flex;
-  align-items: center;
   gap: 12px;
-  padding: 12px 14px;
+  align-items: stretch;
 }
-
-.session.compact .time {
-  font-variant-numeric: tabular-nums;
-  font-weight: 700;
-  color: var(--teal-800);
-  font-size: 13.5px;
-  white-space: nowrap;
-}
-
-.session.compact .title { font-weight: 600; font-size: 14.5px; }
 
 .session-head {
   width: 100%;
@@ -386,7 +378,8 @@ body {
 
 .time-col {
   flex: 0 0 74px;
-  padding: 14px 0 14px 14px;
+  padding: 14px 4px 14px 14px;
+  text-align: center;
   font-variant-numeric: tabular-nums;
   font-size: 13px;
   font-weight: 700;
@@ -469,22 +462,51 @@ body {
 @media (max-width: 480px) {
   .session-body { padding-left: 14px; }
   .time-col { flex-basis: 66px; font-size: 12.5px; }
+  .talk { margin-left: -14px; }
+  .talk-time-col { flex-basis: 66px; padding: 0 2px 0 12px; font-size: 10.5px; }
 }
 
 .talk {
+  display: flex;
+  align-items: flex-start;
   padding: 9px 0;
+  margin-left: -88px;
   border-bottom: 1px solid #f0ebe1;
 }
 
 .talk:last-child { border-bottom: none; }
 
-.talk-time {
+.talk-time-col {
+  flex: 0 0 74px;
+  padding: 0 4px 0 14px;
+  text-align: center;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.04em;
   color: var(--gold-500);
-  margin: 0 0 2px;
   font-variant-numeric: tabular-nums;
+  line-height: 1.45;
+}
+
+.talk-time-col .end { color: var(--ink-soft); font-weight: 500; }
+
+.flag {
+  display: inline-block;
+  vertical-align: -1px;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12);
+}
+
+.time-col .th, .talk-time-col .th {
+  display: inline-block;
+  width: 2ch;
+  text-align: right;
+}
+
+.talk-main {
+  flex: 1;
+  min-width: 0;
+  padding-left: 14px;
 }
 
 .talk-title { font-size: 14.5px; font-weight: 600; margin: 0; }
@@ -581,7 +603,7 @@ body {
 
 .app-footer {
   text-align: center;
-  padding: 22px 16px calc(30px + var(--safe-bottom));
+  padding: 22px 16px calc(76px + var(--safe-bottom));
   background: var(--teal-950);
   color: rgba(255,255,255,0.85);
   font-size: 13px;
@@ -590,6 +612,8 @@ body {
 .app-footer p { margin: 4px 0; }
 .app-footer strong { color: var(--gold-300); font-weight: 700; }
 .app-footer .muted { color: rgba(255,255,255,0.5); font-size: 12px; }
+.app-footer a { color: var(--gold-300); font-size: 15px; font-weight: 700; text-decoration: none; }
+.app-footer a:hover, .app-footer a:active { text-decoration: underline; }
 
 .session.hidden, .talk.hidden { display: none; }
 
@@ -611,6 +635,20 @@ html, body, .schedule, .timeline {
   padding: 12px 18px;
   cursor: pointer;
   box-shadow: 0 4px 14px rgba(13, 59, 62, 0.35);
+}
+
+@media (max-width: 640px) {
+  .expand-fab {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    border-radius: 0;
+    padding: 15px 16px calc(15px + var(--safe-bottom));
+    font-size: 15px;
+    text-align: center;
+    box-shadow: 0 -4px 16px rgba(7, 43, 46, 0.45);
+  }
 }
 
 .expand-fab:active { transform: scale(0.97); }

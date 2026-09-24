@@ -1,4 +1,4 @@
-const CACHE = 'asogic29-v42';
+const CACHE = 'asogic29-v57';
 const ASSETS = [
   './',
   './index.html',
@@ -9,7 +9,17 @@ const ASSETS = [
   './icons/icon-192.png',
   './icons/icon-512.png',
   './icons/icon-maskable-512.png',
-  './icons/asogic-logo.png'
+  './icons/asogic-logo.png',
+  './icons/flags/at.png',
+  './icons/flags/be.png',
+  './icons/flags/cn.png',
+  './icons/flags/cz.png',
+  './icons/flags/de.png',
+  './icons/flags/eg.png',
+  './icons/flags/gb.png',
+  './icons/flags/in.png',
+  './icons/flags/ke.png',
+  './icons/flags/us.png'
 ];
 
 self.addEventListener('install', e => {

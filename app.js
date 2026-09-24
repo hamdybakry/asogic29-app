@@ -17,6 +17,35 @@ function esc(s) {
   }[c]));
 }
 
+const CC3 = {
+  AFG:'AF', ALB:'AL', DZA:'DZ', AND:'AD', AGO:'AO', ARG:'AR', ARM:'AM', AUS:'AU', AUT:'AT', AZE:'AZ',
+  BHR:'BH', BGD:'BD', BLR:'BY', BEL:'BE', BLZ:'BZ', BEN:'BJ', BTN:'BT', BOL:'BO', BIH:'BA', BWA:'BW',
+  BRA:'BR', BRN:'BN', BGR:'BG', BFA:'BF', BDI:'BI', KHM:'KH', CMR:'CM', CAN:'CA', CAF:'CF', TCD:'TD',
+  CHL:'CL', CHN:'CN', COL:'CO', COG:'CG', COD:'CD', CRI:'CR', CIV:'CI', HRV:'HR', CUB:'CU', CYP:'CY',
+  CZE:'CZ', DNK:'DK', DJI:'DJ', DOM:'DO', ECU:'EC', EGY:'EG', SLV:'SV', GNQ:'GQ', ERI:'ER', EST:'EE',
+  ETH:'ET', FJI:'FJ', FIN:'FI', FRA:'FR', GAB:'GA', GMB:'GM', GEO:'GE', DEU:'DE', GHA:'GH', GRC:'GR',
+  GTM:'GT', GIN:'GN', GUY:'GY', HTI:'HT', HND:'HN', HUN:'HU', ISL:'IS', IND:'IN', IDN:'ID', IRN:'IR',
+  IRQ:'IQ', IRL:'IE', ISR:'IL', ITA:'IT', JAM:'JM', JPN:'JP', JOR:'JO', KAZ:'KZ', KEN:'KE', KOR:'KR',
+  KWT:'KW', KGZ:'KG', LAO:'LA', LVA:'LV', LBN:'LB', LSO:'LS', LBR:'LR', LBY:'LY', LTU:'LT', LUX:'LU',
+  MKD:'MK', MDG:'MG', MWI:'MW', MYS:'MY', MLT:'MT', MRT:'MR', MUS:'MU', MEX:'MX', MDA:'MD', MNG:'MN',
+  MNE:'ME', MAR:'MA', MOZ:'MZ', MMR:'MM', NAM:'NA', NPL:'NP', NLD:'NL', NZL:'NZ', NIC:'NI', NER:'NE',
+  NGA:'NG', PRK:'KP', NOR:'NO', OMN:'OM', PAK:'PK', PAN:'PA', PNG:'PG', PRY:'PY', PER:'PE', PHL:'PH',
+  POL:'PL', PRT:'PT', QAT:'QA', ROU:'RO', RUS:'RU', RWA:'RW', SAU:'SA', SEN:'SN', SRB:'RS', SLE:'SI',
+  SVK:'SK', SVN:'SI', SLB:'SB', SOM:'SO', ZAF:'ZA', SSD:'SS', ESP:'ES', LKA:'LK', SDN:'SD', SWE:'SE',
+  CHE:'CH', SYR:'SY', TWN:'TW', TJK:'TJ', TZA:'TZ', THA:'TH', TGO:'TG', TTO:'TT', TUN:'TN', TUR:'TR',
+  TKM:'TM', UGA:'UG', UKR:'UA', ARE:'AE', GBR:'GB', USA:'US', URY:'UY', UZB:'UZ', VEN:'VE', VNM:'VN',
+  YEM:'YE', ZMB:'ZM', ZWE:'ZW'
+};
+
+function withFlags(text) {
+  return String(text ?? '').replace(/\s*\(([A-Za-z]{3})\)/g, (m, cc) => {
+    const code = cc.toUpperCase();
+    const two = CC3[code];
+    if (!two) return m;
+    return ` <img class="flag" src="icons/flags/${two.toLowerCase()}.png" alt="${code}" width="16" height="12" loading="lazy">`;
+  });
+}
+
 function normName(s) {
   return String(s ?? '')
     .toLowerCase()
@@ -190,14 +219,17 @@ function itemHasSpeaker(item, name) {
   return normName(JSON.stringify(item)).includes(n);
 }
 
-function to12h(hhmm) {
+function timeHtml(hhmm) {
   const m = toMin(hhmm);
-  return m == null ? esc(hhmm) : esc(toHHMM(m));
+  if (m == null) return esc(hhmm);
+  const s = toHHMM(m);
+  const i = s.indexOf(':');
+  return `<span class="th">${s.slice(0, i)}</span>:${s.slice(i + 1)}`;
 }
 
 function timeRange(start, end) {
-  if (!end) return to12h(start);
-  return `${to12h(start)}<br><span class="end">${to12h(end)}</span>`;
+  if (!end) return timeHtml(start);
+  return `${timeHtml(start)}<br><span class="end">${timeHtml(end)}</span>`;
 }
 
 function toMin(hhmm) {
@@ -271,11 +303,13 @@ function talksHtml(talks, sessionStart) {
     const tr = ranges[i];
     return `
     <div class="talk${hit ? ' speaker-hit' : ''}${hide ? ' hidden' : ''}" data-search="${esc(hay.toLowerCase())}">
-      ${tr ? `<p class="talk-time">${esc(tr.start)} – ${esc(tr.end)}</p>` : ''}
-      <p class="talk-title">${esc(t.title)}${talkRoles.length ? ` <span class="inline-role">${talkRoles.map(esc).join(' · ')}</span>` : ''}</p>
-      ${t.speaker ? `<p class="talk-speaker">${esc(t.speaker)}</p>` : ''}
-      ${t.badge ? `<p class="talk-note"><span class="badge gold">${esc(t.badge)}</span></p>` : ''}
-      ${t.note ? `<p class="talk-note">${esc(t.note)}</p>` : ''}
+      <div class="talk-time-col">${tr ? `${timeHtml(tr.start)}<br><span class="end">${timeHtml(tr.end)}</span>` : ''}</div>
+      <div class="talk-main">
+        <p class="talk-title">${esc(t.title)}${talkRoles.length ? ` <span class="inline-role">${talkRoles.map(esc).join(' · ')}</span>` : ''}</p>
+        ${t.speaker ? `<p class="talk-speaker">${withFlags(esc(t.speaker))}</p>` : ''}
+        ${t.badge ? `<p class="talk-note"><span class="badge gold">${esc(t.badge)}</span></p>` : ''}
+        ${t.note ? `<p class="talk-note">${withFlags(esc(t.note))}</p>` : ''}
+      </div>
     </div>`;
   }).join('');
 }
@@ -283,7 +317,7 @@ function talksHtml(talks, sessionStart) {
 function personChip(text, role) {
   const hit = speakerFilter && nameIn(text, speakerFilter);
   const label = hit && role ? `${role}: ${text}` : text;
-  return `<span class="chip${hit ? ' speaker-hit' : ''}">${esc(label)}</span>`;
+  return `<span class="chip${hit ? ' speaker-hit' : ''}">${withFlags(esc(label))}</span>`;
 }
 
 function chairpersonsHtml(list) {
@@ -325,11 +359,12 @@ function sessionHtml(item) {
   if (item.end) search += ' ' + toHHMM(toMin(item.end));
 
   if (item.type === 'info' || item.type === 'break') {
-    const cls = item.type === 'break' ? 'compact' : 'compact';
     return `
-      <article class="session ${cls}" data-id="${esc(item.id)}" data-search="${esc(search)}">
-        <div class="time">${timeRange(item.start, item.end)}</div>
-        <div class="title">${esc(item.title)}</div>
+      <article class="session compact" data-id="${esc(item.id)}" data-search="${esc(search)}">
+        <div class="compact-row">
+          <div class="time-col">${timeRange(item.start, item.end)}</div>
+          <div class="head-main"><p class="session-title">${esc(item.title)}</p></div>
+        </div>
       </article>`;
   }
 
