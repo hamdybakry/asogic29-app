@@ -1,4 +1,4 @@
-const CACHE = 'asogic29-v57';
+const CACHE = 'asogic29-v61';
 const ASSETS = [
   './',
   './index.html',

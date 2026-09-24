@@ -57,9 +57,9 @@ body {
   margin: 0 auto;
 }
 
-.brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.brand { display: flex; align-items: center; gap: 12px; min-width: 0; overflow: hidden; }
 
-.brand-text { min-width: 0; }
+.brand-text { flex: 1 1 0; min-width: 0; overflow: hidden; }
 
 .brand-mark {
   border-radius: 12px;
@@ -102,6 +102,7 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 .brand-text p.theme {
@@ -335,8 +336,11 @@ body {
 
 @media (max-width: 560px) {
   .day-tab { font-size: 12.5px; padding-left: 2px; padding-right: 2px; }
-  .tab-search { flex: 0 1 120px; }
+  .tab-search { flex: 0 1 120px; min-width: 110px; }
   .day-label { font-size: 11.5px; }
+  .brand-mark { padding: 8px 10px; }
+  .brand-mark img { width: clamp(84px, 24vw, 120px); }
+  .brand-text p:not(.theme) { white-space: normal; }
 }
 
 .schedule {
@@ -639,15 +643,11 @@ html, body, .schedule, .timeline {
 
 @media (max-width: 640px) {
   .expand-fab {
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: auto;
-    border-radius: 0;
-    padding: 15px 16px calc(15px + var(--safe-bottom));
-    font-size: 15px;
-    text-align: center;
-    box-shadow: 0 -4px 16px rgba(7, 43, 46, 0.45);
+    right: 12px;
+    bottom: calc(14px + var(--safe-bottom));
+    padding: 13px 18px;
+    font-size: 14px;
+    box-shadow: 0 4px 16px rgba(7, 43, 46, 0.5);
   }
 }
 
