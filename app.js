@@ -37,13 +37,28 @@ const CC3 = {
   YEM:'YE', ZMB:'ZM', ZWE:'ZW'
 };
 
+const ORG_LOGOS = { WHO: 'who', UNFPA: 'unfpa' };
+
 function withFlags(text) {
-  return String(text ?? '').replace(/\s*\(([A-Za-z]{3})\)/g, (m, cc) => {
+  let out = String(text ?? '').replace(/\s*\(([A-Za-z]{3})\)\s*(?=\((WHO|UNFPA)\))/g, (m, cc) =>
+    (CC3[cc.toUpperCase()] ? '' : m));
+  out = out.replace(/\s*\(([A-Za-z]{3})\)/g, (m, cc) => {
     const code = cc.toUpperCase();
     const two = CC3[code];
     if (!two) return m;
     return ` <img class="flag" src="icons/flags/${two.toLowerCase()}.png" alt="${code}" width="16" height="12" loading="lazy">`;
   });
+  out = out.replace(/\s*\((WHO|UNFPA)\)/g, (m, org) =>
+    ` <img class="org-logo" src="icons/orgs/${ORG_LOGOS[org]}.png" alt="${org}" height="16" loading="lazy">`);
+  return out;
+}
+
+function stripCountry(s) {
+  return String(s ?? '').replace(/\s*\(([A-Za-z]{3})\)/g, (m, cc) => (CC3[cc.toUpperCase()] ? '' : m));
+}
+
+function stripModCountry(s) {
+  return String(s ?? '').replace(/(moderators?\s*:\s*)([\s\S]*)$/i, (m, head, body) => head + stripCountry(body));
 }
 
 function normName(s) {
@@ -125,18 +140,31 @@ function addRole(map, name, role) {
   entry.roles.add(role);
 }
 
+function personName(v) {
+  return typeof v === 'string' ? v : (v && v.name) || '';
+}
+
+function talkPanelPairs(t) {
+  const out = [];
+  (t?.panel?.panelists || []).forEach(n => out.push({ name: n, role: 'Panelist' }));
+  (t?.panel?.moderators || []).forEach(n => out.push({ name: n, role: 'Moderator' }));
+  return out;
+}
+
 function collectSpeakers(prog) {
   const byNorm = new Map();
   const addPairs = pairs => pairs.forEach(({ name, role }) => addRole(byNorm, name, role));
   const addNames = (arr, role) => (arr || []).forEach(v => {
-    if (typeof v !== 'string') return;
-    splitNames(v).forEach(n => addRole(byNorm, n, role));
+    const nm = personName(v);
+    if (!nm) return;
+    splitNames(nm).forEach(n => addRole(byNorm, n, role));
   });
   const addTalk = t => {
     if (!t) return;
     addPairs(rolesFromSpeakerField(t.speaker, t.title));
     addPairs(rolesFromNote(t.note, t.title));
     addPairs(rolesFromNote(t.speaker, t.title));
+    addPairs(talkPanelPairs(t));
   };
   const addSessionModerators = item => {
     addNames(item.moderators, 'Moderator');
@@ -180,6 +208,9 @@ function rolesInItem(item, name) {
       for (const p of rolesFromNote(t.note, t.title)) {
         if (hitName(p.name)) roles.add(p.role);
       }
+      for (const p of talkPanelPairs(t)) {
+        if (hitName(p.name)) roles.add(p.role);
+      }
       if (t.speaker && nameIn(t.speaker, name)) {
         const pairs = rolesFromSpeakerField(t.speaker, t.title);
         if (!pairs.some(p => hitName(p.name)) && !/moderators?\s*:/i.test(t.speaker)) {
@@ -190,13 +221,13 @@ function rolesInItem(item, name) {
   };
 
   scanTalks(item.talks);
-  for (const c of item.chairpersons || []) if (hitName(c)) roles.add('Chairperson');
+  for (const c of item.chairpersons || []) if (hitName(personName(c))) roles.add('Chairperson');
   for (const m of item.moderators || []) if (hitName(m)) roles.add('Moderator');
   for (const m of item.panel?.moderators || []) if (hitName(m)) roles.add('Moderator');
   for (const p of item.panel?.panelists || []) if (hitName(p)) roles.add('Panelist');
   for (const r of item.rooms || []) {
     scanTalks(r.talks);
-    for (const c of r.chairpersons || []) if (hitName(c)) roles.add('Chairperson');
+    for (const c of r.chairpersons || []) if (hitName(personName(c))) roles.add('Chairperson');
     for (const m of r.moderators || []) if (hitName(m)) roles.add('Moderator');
     for (const m of r.panel?.moderators || []) if (hitName(m)) roles.add('Moderator');
     for (const p of r.panel?.panelists || []) if (hitName(p)) roles.add('Panelist');
@@ -210,6 +241,11 @@ function roleBadgesHtml(item) {
   if (!speakerFilter) return '';
   const roles = rolesInItem(item, speakerFilter);
   return roles.map(r => `<span class="badge role-badge role-${r.toLowerCase()}">${esc(r)}</span>`).join('');
+}
+
+function formatBadgesHtml(item) {
+  const c = Array.isArray(item.content) ? item.content : item.content ? [item.content] : [];
+  return c.filter(v => v !== 'presentations').map(v => `<span class="badge format">${esc(v)}</span>`).join('');
 }
 
 function itemHasSpeaker(item, name) {
@@ -266,7 +302,7 @@ function talkTimeRanges(talks, sessionStart) {
     const isPureDuration = /^\d+\s*(?::\s*\d+\s*)?h(?:ours?)?(?:\s*\d+\s*min)?$/i.test(speaker)
       || /^\d+\s*min(?:utes?)?$/i.test(speaker);
     if (isPureDuration && /session/i.test(t.title || '')) return null;
-    const dur = parseDurationMins(t.note, t.speaker, t.title);
+    const dur = t.duration != null ? +t.duration : parseDurationMins(t.note, t.speaker, t.title);
     const range = { start: toHHMM(cur), end: toHHMM(cur + dur) };
     cur += dur;
     return range;
@@ -277,12 +313,13 @@ function talksHtml(talks, sessionStart) {
   if (!talks?.length) return '';
   const ranges = talkTimeRanges(talks, sessionStart);
   return talks.map((t, i) => {
-    const hay = `${t.title} ${t.speaker || ''} ${t.note || ''}`;
+    const hay = `${t.title} ${t.speaker || ''} ${t.note || ''} ${t.panel ? JSON.stringify(t.panel) : ''}`;
     const hit = speakerFilter && (
       nameIn(t.speaker, speakerFilter) ||
       nameIn(t.note, speakerFilter) ||
       rolesFromSpeakerField(t.speaker, t.title).some(p => samePerson(p.name, speakerFilter)) ||
-      rolesFromNote(t.note, t.title).some(p => samePerson(p.name, speakerFilter))
+      rolesFromNote(t.note, t.title).some(p => samePerson(p.name, speakerFilter)) ||
+      talkPanelPairs(t).some(p => samePerson(p.name, speakerFilter))
     );
     const hide = speakerFilter && !hit;
     const talkRoles = hit && speakerFilter
@@ -294,6 +331,9 @@ function talksHtml(talks, sessionStart) {
           for (const p of rolesFromNote(t.note, t.title)) {
             if (samePerson(p.name, speakerFilter)) set.add(p.role);
           }
+          for (const p of talkPanelPairs(t)) {
+            if (samePerson(p.name, speakerFilter)) set.add(p.role);
+          }
           if (!set.size && nameIn(t.speaker, speakerFilter) && !/moderators?\s*:/i.test(t.speaker || '')) {
             set.add(/panel discussion|interactive session/i.test(`${t.title || ''} ${t.speaker}`) ? 'Panelist' : 'Speaker');
           }
@@ -301,14 +341,16 @@ function talksHtml(talks, sessionStart) {
         })()
       : [];
     const tr = ranges[i];
+    const isPanelTalk = !!t.panel || /panel discussion|interactive session/i.test(`${t.title || ''} ${t.speaker || ''}`);
     return `
     <div class="talk${hit ? ' speaker-hit' : ''}${hide ? ' hidden' : ''}" data-search="${esc(hay.toLowerCase())}">
       <div class="talk-time-col">${tr ? `${timeHtml(tr.start)}<br><span class="end">${timeHtml(tr.end)}</span>` : ''}</div>
       <div class="talk-main">
-        <p class="talk-title">${esc(t.title)}${talkRoles.length ? ` <span class="inline-role">${talkRoles.map(esc).join(' · ')}</span>` : ''}</p>
+        <p class="talk-title">${esc(t.title)}${isPanelTalk ? ' <span class="badge format">panel discussion</span>' : ''}${talkRoles.length ? ` <span class="inline-role">${talkRoles.map(esc).join(' · ')}</span>` : ''}</p>
         ${t.speaker ? `<p class="talk-speaker">${withFlags(esc(t.speaker))}</p>` : ''}
         ${t.badge ? `<p class="talk-note"><span class="badge gold">${esc(t.badge)}</span></p>` : ''}
-        ${t.note ? `<p class="talk-note">${withFlags(esc(t.note))}</p>` : ''}
+        ${t.note ? `<p class="talk-note">${withFlags(esc(stripModCountry(t.note)))}</p>` : ''}
+        ${t.panel ? panelHtml(t.panel) : ''}
       </div>
     </div>`;
   }).join('');
@@ -320,37 +362,41 @@ function personChip(text, role) {
   return `<span class="chip${hit ? ' speaker-hit' : ''}">${withFlags(esc(label))}</span>`;
 }
 
-function chairpersonsHtml(list) {
+function chairpersonsHtml(list, affiliation) {
   if (!list?.length) return '';
   return `
     <p class="section-label">Chairpersons</p>
-    <div class="chip-row">${list.map(p => personChip(p, 'Chairperson')).join('')}</div>`;
+    <div class="chair-list">${list.map(c => `
+      <div class="chair-line">${personChip(stripCountry(personName(c)), 'Chairperson')}${c && c.aff ? `<span class="chair-aff">${esc(c.aff)}</span>` : ''}</div>`).join('')}</div>
+    ${affiliation ? `<p class="chair-affil">${esc(affiliation)}</p>` : ''}`;
 }
 
 function panelHtml(panel) {
   if (!panel) return '';
+  const modLabel = panel.moderators?.length === 1 ? 'Moderator' : 'Moderators';
   return `
-    <p class="section-label">${esc(panel.format)}</p>
-    ${panel.moderators?.length ? `
-      <div class="chip-row" style="margin-bottom:8px">
-        ${panel.moderators.map(m => personChip(m, 'Moderator')).join('')}
-      </div>` : ''}
     ${panel.panelists?.length ? `
-      <div class="chip-row">
-        ${panel.panelists.map(p => personChip(p, 'Panelist')).join('')}
-      </div>` : ''}
+    <p class="section-label">Panelists</p>
+    <div class="chip-row">
+      ${panel.panelists.map(p => personChip(p, 'Panelist')).join('')}
+    </div>` : ''}
+    ${panel.moderators?.length ? `
+    <p class="section-label">${modLabel}</p>
+    <div class="chip-row">
+      ${panel.moderators.map(m => personChip(stripCountry(m), 'Moderator')).join('')}
+    </div>` : ''}
     ${panel.topics?.length ? `
-      <p class="section-label">Topics</p>
-      <div class="chip-row">
-        ${panel.topics.map(t => `<span class="chip">${esc(t)}</span>`).join('')}
-      </div>` : ''}`;
+    <p class="section-label">Topics</p>
+    <div class="chip-row">
+      ${panel.topics.map(t => `<span class="chip">${esc(t)}</span>`).join('')}
+    </div>` : ''}`;
 }
 
 function sessionModeratorsHtml(list) {
   if (!list?.length) return '';
   return `
     <p class="section-label">Moderators</p>
-    <div class="chip-row">${list.map(m => personChip(m, 'Moderator')).join('')}</div>`;
+    <div class="chip-row">${list.map(m => personChip(stripCountry(m), 'Moderator')).join('')}</div>`;
 }
 
 function sessionHtml(item) {
@@ -402,7 +448,7 @@ function sessionHtml(item) {
         <button class="session-head" aria-expanded="false">
           <div class="time-col">${timeRange(item.start, item.end)}</div>
           <div class="head-main">
-            <div class="kicker"><span class="badge">${esc(item.label)}</span>${roleBadgesHtml(item)}</div>
+            <div class="kicker"><span class="badge">${esc(item.label)}</span>${formatBadgesHtml(item)}${roleBadgesHtml(item)}</div>
             <h2 class="session-title">Parallel Sessions</h2>
             <p class="session-sub">${rooms.map(r => `Room ${esc(r.id)}`).join(' · ')}</p>
           </div>
@@ -416,10 +462,10 @@ function sessionHtml(item) {
           </div>` : ''}
           ${rooms.map((r, i) => `
             <div class="room-panel ${i === 0 ? 'active' : ''}" data-room-panel="${esc(r.id)}">
-              <p class="room-title">${esc(r.id)} — ${esc(r.title)}</p>
+              <p class="room-title">${esc(r.id)} — ${esc(r.title)} ${formatBadgesHtml(r)}</p>
               ${r.subtitle ? `<p class="room-sub">${esc(r.subtitle)}</p>` : ''}
               ${r.badge ? `<p class="room-sub"><span class="badge soft">${esc(r.badge)}</span></p>` : ''}
-              ${chairpersonsHtml(r.chairpersons)}
+              ${chairpersonsHtml(r.chairpersons, r.chairAffiliation)}
               ${sessionModeratorsHtml(r.moderators)}
               ${panelHtml(r.panel)}
               ${talksHtml(r.talks, item.start)}
@@ -436,6 +482,7 @@ function sessionHtml(item) {
           <div class="head-main">
             <div class="kicker">
               <span class="badge">${esc(item.label)}</span>
+              ${formatBadgesHtml(item)}
               ${item.badge ? `<span class="badge gold">${esc(item.badge)}</span>` : ''}
               ${roleBadgesHtml(item)}
             </div>
@@ -445,7 +492,7 @@ function sessionHtml(item) {
         <span class="chevron" aria-hidden="true"></span>
       </button>
       <div class="session-body">
-        ${chairpersonsHtml(item.chairpersons)}
+        ${chairpersonsHtml(item.chairpersons, item.chairAffiliation)}
         ${sessionModeratorsHtml(item.moderators)}
         ${talksHtml(item.talks, item.start)}
         ${panelHtml(item.panel)}

@@ -1,4 +1,4 @@
-const CACHE = 'asogic29-v61';
+const CACHE = 'asogic29-v82';
 const ASSETS = [
   './',
   './index.html',
@@ -19,7 +19,9 @@ const ASSETS = [
   './icons/flags/gb.png',
   './icons/flags/in.png',
   './icons/flags/ke.png',
-  './icons/flags/us.png'
+  './icons/flags/us.png',
+  './icons/orgs/who.png',
+  './icons/orgs/unfpa.png'
 ];
 
 self.addEventListener('install', e => {
