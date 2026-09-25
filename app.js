@@ -443,14 +443,23 @@ function sessionHtml(item) {
       rooms = rooms.filter(r => itemHasSpeaker(r, speakerFilter));
     }
     if (!rooms.length) return '';
+    const hallNames = rooms.map(r => {
+      const m = /([A-Za-z])\s*$/.exec(String(r.id || ''));
+      return m ? `Hall ${m[1].toUpperCase()}` : String(r.id);
+    });
     return `
       <article class="session" data-id="${esc(item.id)}" data-search="${esc(search)}">
         <button class="session-head" aria-expanded="false">
           <div class="time-col">${timeRange(item.start, item.end)}</div>
           <div class="head-main">
             <div class="kicker"><span class="badge">${esc(item.label)}</span>${formatBadgesHtml(item)}${roleBadgesHtml(item)}</div>
-            <h2 class="session-title">Parallel Sessions</h2>
-            <p class="session-sub">${rooms.map(r => `Room ${esc(r.id)}`).join(' · ')}</p>
+            <div class="hall-row">
+              ${rooms.map((r, i) => `
+              <div class="hall-cell">
+                <p class="session-sub">${esc(hallNames[i])}</p>
+                <h3 class="session-title">${esc(r.title)}</h3>
+              </div>`).join('')}
+            </div>
           </div>
           <span class="chevron" aria-hidden="true"></span>
         </button>
