@@ -739,7 +739,19 @@ async function init() {
     scheduleEl.innerHTML = '<p class="no-results">Could not load the program. Please reopen the app.</p>';
   }
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js').catch(() => {});
+    const hadController = !!navigator.serviceWorker.controller;
+    let hadUpdate = hadController;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (!hadUpdate) { hadUpdate = true; return; }
+      location.reload();
+    });
+    navigator.serviceWorker.register('sw.js').then(reg => {
+      reg.update().catch(() => {});
+      document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) reg.update().catch(() => {});
+      });
+      setInterval(() => reg.update().catch(() => {}), 60000);
+    }).catch(() => {});
   }
 }
 
