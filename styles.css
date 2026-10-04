@@ -132,32 +132,46 @@ body {
   align-items: center;
   max-width: 720px;
   margin: 0 auto;
-  padding: 0 8px;
-  gap: 4px;
+  padding: 6px 14px;
+  gap: 10px;
 }
 
 .day-tab {
   flex: 1;
-  background: transparent;
-  border: none;
-  border-bottom: 3px solid transparent;
-  color: rgba(255,255,255,0.65);
-  font-size: 13.5px;
-  font-weight: 600;
-  padding: 10px 6px 6px;
+  background: rgba(255,255,255,0.1);
+  border: 1.5px solid rgba(255,255,255,0.35);
+  border-radius: 999px;
+  color: rgba(255,255,255,0.92);
+  font-size: 14.5px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  padding: 11px 12px;
   cursor: pointer;
   white-space: nowrap;
+  transition: background 0.15s, border-color 0.15s, color 0.15s, box-shadow 0.15s;
+}
+
+.day-tab:hover {
+  background: rgba(255,255,255,0.18);
+  border-color: rgba(255,255,255,0.55);
 }
 
 .day-tab.active {
-  color: var(--gold-300);
-  border-bottom-color: var(--gold-400);
+  background: linear-gradient(145deg, var(--gold-400), var(--gold-500));
+  border-color: var(--gold-300);
+  color: var(--teal-950);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+
+.day-tab:not(.active) {
+  text-shadow: 0 1px 2px rgba(0,0,0,0.35);
 }
 
 .day-meta {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 10px;
   max-width: 720px;
   margin: 0 auto;
@@ -178,6 +192,42 @@ body {
   flex: 1;
 }
 
+.search-group {
+  display: flex;
+  gap: 8px;
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+.search-all {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 7px 12px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--teal-700);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  user-select: none;
+  transition: border-color 0.15s;
+}
+
+.search-all:has(input:checked) { border-color: var(--gold-400); }
+
+.search-all input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  accent-color: var(--gold-500);
+  cursor: pointer;
+}
+
 .tab-search {
   display: flex;
   align-items: center;
@@ -187,8 +237,8 @@ body {
   border-radius: 999px;
   padding: 5px 12px;
   color: var(--teal-700);
-  flex: 0 1 240px;
-  min-width: 140px;
+  flex: 1 1 150px;
+  min-width: 0;
   box-shadow: var(--shadow);
 }
 
@@ -209,6 +259,7 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-wrap: wrap;
   max-width: 720px;
   margin: 0 auto;
   padding: 8px 14px 4px;
@@ -335,7 +386,8 @@ body {
 }
 
 @media (max-width: 560px) {
-  .day-tab { font-size: 12.5px; padding-left: 2px; padding-right: 2px; }
+  .day-tab { font-size: 13px; padding: 10px 6px; }
+  .search-all { font-size: 11.5px; padding: 6px 9px; }
   .tab-search { flex: 0 1 120px; min-width: 110px; }
   .day-label { font-size: 11.5px; }
   .brand-mark { padding: 8px 10px; }
@@ -407,6 +459,7 @@ body {
   align-items: center;
   gap: 6px;
   margin-bottom: 4px;
+  padding-right: 22px;
 }
 
 .badge {
@@ -451,6 +504,31 @@ body {
   font-size: 13px;
   color: var(--ink-soft);
   margin: 4px 0 0;
+}
+
+.coord-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(232, 200, 120, 0.16);
+  border: 1.5px solid var(--gold-400);
+  color: var(--teal-900);
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.hall-cell .coord-pill {
+  display: flex;
+  width: fit-content;
+  max-width: 100%;
+  white-space: normal;
+  margin-top: 4px;
 }
 
 .hall-row {

@@ -1,15 +1,20 @@
 const scheduleEl = document.getElementById('schedule');
 const noResults = document.getElementById('noResults');
 const searchInput = document.getElementById('searchInput');
+const searchAllChk = document.getElementById('searchAllChk');
 const dayLabel = document.getElementById('dayLabel');
 const expandAllBtn = document.getElementById('expandAllBtn');
 const speakerSelect = document.getElementById('speakerSelect');
 const clearSpeakerBtn = document.getElementById('clearSpeaker');
+const coordSelect = document.getElementById('coordSelect');
+const clearCoordBtn = document.getElementById('clearCoord');
 
 let program = null;
 let activeDay = 'day1';
 let query = '';
+let searchAll = false;
 let speakerFilter = '';
+let coordFilter = '';
 
 function esc(s) {
   return String(s ?? '').replace(/[&<>"']/g, c => ({
@@ -255,6 +260,29 @@ function itemHasSpeaker(item, name) {
   return normName(JSON.stringify(item)).includes(n);
 }
 
+function itemCoordinators(item) {
+  const out = [];
+  (item.coordinators || []).forEach(c => { if (!out.includes(c)) out.push(c); });
+  (item.rooms || []).forEach(r => (r.coordinators || []).forEach(c => { if (!out.includes(c)) out.push(c); }));
+  return out;
+}
+
+function itemHasCoord(item, coord) {
+  if (!coord) return true;
+  return itemCoordinators(item).includes(coord);
+}
+
+function coordPill(list) {
+  if (!list?.length) return '';
+  return `<span class="coord-pill">${list.map(esc).join(' + ')}</span>`;
+}
+
+function collectCoordinators(prog) {
+  const set = new Set();
+  prog.days.forEach(d => d.items.forEach(i => itemCoordinators(i).forEach(c => set.add(c))));
+  return [...set].sort((a, b) => a.localeCompare(b));
+}
+
 function timeHtml(hhmm) {
   const m = toMin(hhmm);
   if (m == null) return esc(hhmm);
@@ -303,8 +331,10 @@ function talkTimeRanges(talks, sessionStart) {
       || /^\d+\s*min(?:utes?)?$/i.test(speaker);
     if (isPureDuration && /session/i.test(t.title || '')) return null;
     const dur = t.duration != null ? +t.duration : parseDurationMins(t.note, t.speaker, t.title);
-    const range = { start: toHHMM(cur), end: toHHMM(cur + dur) };
-    cur += dur;
+    let st = cur;
+    if (t.start != null) { const m = toMin(t.start); if (m != null) st = m; }
+    const range = { start: toHHMM(st), end: toHHMM(st + dur) };
+    cur = st + dur;
     return range;
   });
 }
@@ -399,10 +429,15 @@ function sessionModeratorsHtml(list) {
     <div class="chip-row">${list.map(m => personChip(stripCountry(m), 'Moderator')).join('')}</div>`;
 }
 
+function searchText(item) {
+  let s = JSON.stringify(item).toLowerCase();
+  if (item.start) s += ' ' + toHHMM(toMin(item.start));
+  if (item.end) s += ' ' + toHHMM(toMin(item.end));
+  return s;
+}
+
 function sessionHtml(item) {
-  let search = JSON.stringify(item).toLowerCase();
-  if (item.start) search += ' ' + toHHMM(toMin(item.start));
-  if (item.end) search += ' ' + toHHMM(toMin(item.end));
+  const search = searchText(item);
 
   if (item.type === 'info' || item.type === 'break') {
     return `
@@ -442,6 +477,9 @@ function sessionHtml(item) {
     if (speakerFilter) {
       rooms = rooms.filter(r => itemHasSpeaker(r, speakerFilter));
     }
+    if (coordFilter && !item.coordinators?.includes(coordFilter)) {
+      rooms = rooms.filter(r => (r.coordinators || []).includes(coordFilter));
+    }
     if (!rooms.length) return '';
     const hallNames = rooms.map(r => {
       const m = /([A-Za-z])\s*$/.exec(String(r.id || ''));
@@ -458,6 +496,7 @@ function sessionHtml(item) {
               <div class="hall-cell">
                 <p class="session-sub">${esc(hallNames[i])}</p>
                 <h3 class="session-title">${esc(r.title)}</h3>
+                ${coordPill(r.coordinators)}
               </div>`).join('')}
             </div>
           </div>
@@ -476,8 +515,7 @@ function sessionHtml(item) {
               ${r.badge ? `<p class="room-sub"><span class="badge soft">${esc(r.badge)}</span></p>` : ''}
               ${chairpersonsHtml(r.chairpersons, r.chairAffiliation)}
               ${sessionModeratorsHtml(r.moderators)}
-              ${panelHtml(r.panel)}
-              ${talksHtml(r.talks, item.start)}
+              ${r.talksFirst ? talksHtml(r.talks, item.start) + panelHtml(r.panel) : panelHtml(r.panel) + talksHtml(r.talks, item.start)}
             </div>`).join('')}
         </div>
       </article>`;
@@ -494,6 +532,7 @@ function sessionHtml(item) {
               ${formatBadgesHtml(item)}
               ${item.badge ? `<span class="badge gold">${esc(item.badge)}</span>` : ''}
               ${roleBadgesHtml(item)}
+              ${coordPill(item.coordinators)}
             </div>
             <h2 class="session-title">${esc(item.title)}</h2>
             ${item.subtitle ? `<p class="session-sub">${esc(item.subtitle)}</p>` : ''}
@@ -503,8 +542,8 @@ function sessionHtml(item) {
       <div class="session-body">
         ${chairpersonsHtml(item.chairpersons, item.chairAffiliation)}
         ${sessionModeratorsHtml(item.moderators)}
-        ${talksHtml(item.talks, item.start)}
         ${panelHtml(item.panel)}
+        ${talksHtml(item.talks, item.start)}
       </div>
     </article>`;
 }
@@ -517,19 +556,27 @@ function formatDate(day) {
 function render() {
   if (!program) return;
 
-  if (speakerFilter) {
-    const person = collectSpeakers(program).find(p => samePerson(p.name, speakerFilter));
-    const roleTxt = person?.roles?.length ? ` (${person.roles.join(' · ')})` : '';
-    dayLabel.textContent = `${speakerFilter}${roleTxt}`;
+  const qAll = searchAll ? query.trim().toLowerCase() : '';
+  if (speakerFilter || coordFilter || qAll) {
+    const person = speakerFilter ? collectSpeakers(program).find(p => samePerson(p.name, speakerFilter)) : null;
+    const roleTxt = speakerFilter && person?.roles?.length ? ` (${person.roles.join(' · ')})` : '';
     let html = '';
     let count = 0;
     for (const day of program.days) {
-      const items = day.items.filter(it => itemHasSpeaker(it, speakerFilter));
+      const items = day.items.filter(it =>
+        (!speakerFilter || itemHasSpeaker(it, speakerFilter)) &&
+        itemHasCoord(it, coordFilter) &&
+        (!qAll || searchText(it).includes(qAll)));
       if (!items.length) continue;
       count += items.length;
       html += `<div class="filter-day">${esc(day.weekday)} · ${esc(formatDate(day))}</div>`;
       html += `<div class="timeline">${items.map(sessionHtml).join('')}</div>`;
     }
+    const parts = [];
+    if (speakerFilter) parts.push(`${speakerFilter}${roleTxt}`);
+    if (coordFilter) parts.push(`Coordinated by ${coordFilter}`);
+    if (qAll) parts.push(count ? `Whole program · ${count}` : 'Whole program');
+    dayLabel.textContent = parts.join(' · ');
     scheduleEl.innerHTML = html;
     noResults.hidden = count > 0;
     bindSessionEvents();
@@ -695,7 +742,17 @@ document.querySelectorAll('.day-tab').forEach(tab => {
 
 searchInput.addEventListener('input', () => {
   query = searchInput.value;
+  if (searchAll) {
+    render();
+    return;
+  }
   applyFilter();
+});
+
+searchAllChk.addEventListener('change', () => {
+  searchAll = searchAllChk.checked;
+  searchInput.placeholder = searchAll ? 'whole program' : 'this day';
+  render();
 });
 
 function populateSpeakers() {
@@ -710,6 +767,17 @@ function populateSpeakers() {
     frag.appendChild(opt);
   }
   speakerSelect.appendChild(frag);
+}
+
+function populateCoordinators() {
+  const frag = document.createDocumentFragment();
+  for (const coord of collectCoordinators(program)) {
+    const opt = document.createElement('option');
+    opt.value = coord;
+    opt.textContent = coord;
+    frag.appendChild(opt);
+  }
+  coordSelect.appendChild(frag);
 }
 
 speakerSelect.addEventListener('change', () => {
@@ -729,11 +797,29 @@ clearSpeakerBtn.addEventListener('click', () => {
   render();
 });
 
+coordSelect.addEventListener('change', () => {
+  coordFilter = coordSelect.value;
+  coordSelect.classList.toggle('active', !!coordFilter);
+  clearCoordBtn.hidden = !coordFilter;
+  query = '';
+  searchInput.value = '';
+  render();
+});
+
+clearCoordBtn.addEventListener('click', () => {
+  coordFilter = '';
+  coordSelect.value = '';
+  coordSelect.classList.remove('active');
+  clearCoordBtn.hidden = true;
+  render();
+});
+
 async function init() {
   try {
     const res = await fetch('data/program.json');
     program = await res.json();
     populateSpeakers();
+    populateCoordinators();
     render();
   } catch (err) {
     scheduleEl.innerHTML = '<p class="no-results">Could not load the program. Please reopen the app.</p>';
