@@ -8,6 +8,7 @@ const speakerSelect = document.getElementById('speakerSelect');
 const clearSpeakerBtn = document.getElementById('clearSpeaker');
 const coordSelect = document.getElementById('coordSelect');
 const clearCoordBtn = document.getElementById('clearCoord');
+const hideCoordChk = document.getElementById('hideCoordChk');
 
 let program = null;
 let activeDay = 'day1';
@@ -103,7 +104,7 @@ function rolesFromSpeakerField(str, talkTitle) {
   const out = [];
   const s = String(str ?? '');
   if (!s.trim()) return out;
-  const isPanel = /panel discussion|interactive session/i.test(`${talkTitle || ''} ${s}`);
+  const isPanel = /panel discussion/i.test(`${talkTitle || ''} ${s}`);
   const defaultRole = isPanel ? 'Panelist' : 'Speaker';
   const modMatch = s.match(/moderators?\s*:\s*(.+)$/i);
   const modNames = modMatch ? splitNames(modMatch[1]) : [];
@@ -121,7 +122,7 @@ function rolesFromNote(str, talkTitle) {
   const out = [];
   const s = String(str ?? '');
   if (!s.trim()) return out;
-  const isPanel = /panel discussion|interactive session/i.test(`${talkTitle || ''} ${s}`);
+  const isPanel = /panel discussion/i.test(`${talkTitle || ''} ${s}`);
   const modMatch = s.match(/moderators?\s*:\s*(.+)$/i);
   const modNames = modMatch ? splitNames(modMatch[1]) : [];
   modNames.forEach(n => out.push({ name: n, role: 'Moderator' }));
@@ -153,6 +154,7 @@ function talkPanelPairs(t) {
   const out = [];
   (t?.panel?.panelists || []).forEach(n => out.push({ name: n, role: 'Panelist' }));
   (t?.panel?.moderators || []).forEach(n => out.push({ name: n, role: 'Moderator' }));
+  (t?.chairpersons || []).forEach(n => out.push({ name: personName(n), role: 'Chairperson' }));
   return out;
 }
 
@@ -219,7 +221,7 @@ function rolesInItem(item, name) {
       if (t.speaker && nameIn(t.speaker, name)) {
         const pairs = rolesFromSpeakerField(t.speaker, t.title);
         if (!pairs.some(p => hitName(p.name)) && !/moderators?\s*:/i.test(t.speaker)) {
-          roles.add(/panel discussion|interactive session/i.test(`${t.title || ''} ${t.speaker}`) ? 'Panelist' : 'Speaker');
+          roles.add(/panel discussion/i.test(`${t.title || ''} ${t.speaker}`) ? 'Panelist' : 'Speaker');
         }
       }
     }
@@ -277,6 +279,18 @@ function coordPill(list) {
   return `<span class="coord-pill">${list.map(esc).join(' + ')}</span>`;
 }
 
+function applyHideCoords(on) {
+  document.documentElement.classList.toggle('hide-coords', !!on);
+  try { localStorage.setItem('asogic29.hideCoords', on ? '1' : '0'); } catch (e) {}
+}
+
+function initHideCoords() {
+  let on = false;
+  try { on = localStorage.getItem('asogic29.hideCoords') === '1'; } catch (e) {}
+  hideCoordChk.checked = on;
+  document.documentElement.classList.toggle('hide-coords', on);
+}
+
 function collectCoordinators(prog) {
   const set = new Set();
   prog.days.forEach(d => d.items.forEach(i => itemCoordinators(i).forEach(c => set.add(c))));
@@ -326,6 +340,7 @@ function talkTimeRanges(talks, sessionStart) {
   if (s == null || !talks?.length) return [];
   let cur = s;
   return talks.map(t => {
+    if (t.section) return null;
     const speaker = String(t.speaker || '').trim();
     const isPureDuration = /^\d+\s*(?::\s*\d+\s*)?h(?:ours?)?(?:\s*\d+\s*min)?$/i.test(speaker)
       || /^\d+\s*min(?:utes?)?$/i.test(speaker);
@@ -352,6 +367,13 @@ function talksHtml(talks, sessionStart) {
       talkPanelPairs(t).some(p => samePerson(p.name, speakerFilter))
     );
     const hide = speakerFilter && !hit;
+    if (t.section) {
+      return `
+      <div class="talk talk-section${hide ? ' hidden' : ''}" data-search="${esc(hay.toLowerCase())}">
+        <div class="talk-time-col">${t.start && t.end ? `${timeHtml(t.start)}<br><span class="end">${timeHtml(t.end)}</span>` : ''}</div>
+        <div class="talk-main"><p class="talk-section-title">${esc(t.title)}</p>${chairpersonsHtml(t.chairpersons)}</div>
+      </div>`;
+    }
     const talkRoles = hit && speakerFilter
       ? (() => {
           const set = new Set();
@@ -365,13 +387,13 @@ function talksHtml(talks, sessionStart) {
             if (samePerson(p.name, speakerFilter)) set.add(p.role);
           }
           if (!set.size && nameIn(t.speaker, speakerFilter) && !/moderators?\s*:/i.test(t.speaker || '')) {
-            set.add(/panel discussion|interactive session/i.test(`${t.title || ''} ${t.speaker}`) ? 'Panelist' : 'Speaker');
+            set.add(/panel discussion/i.test(`${t.title || ''} ${t.speaker}`) ? 'Panelist' : 'Speaker');
           }
           return [...set];
         })()
       : [];
     const tr = ranges[i];
-    const isPanelTalk = !!t.panel || /panel discussion|interactive session/i.test(`${t.title || ''} ${t.speaker || ''}`);
+    const isPanelTalk = !!t.panel || /panel discussion/i.test(`${t.title || ''} ${t.speaker || ''}`);
     return `
     <div class="talk${hit ? ' speaker-hit' : ''}${hide ? ' hidden' : ''}" data-search="${esc(hay.toLowerCase())}">
       <div class="talk-time-col">${tr ? `${timeHtml(tr.start)}<br><span class="end">${timeHtml(tr.end)}</span>` : ''}</div>
@@ -395,7 +417,7 @@ function personChip(text, role) {
 function chairpersonsHtml(list, affiliation) {
   if (!list?.length) return '';
   return `
-    <p class="section-label">Chairpersons</p>
+    <p class="section-label">Chairpersons <span class="label-note">(arranged alphabetically)</span></p>
     <div class="chair-list">${list.map(c => `
       <div class="chair-line">${personChip(stripCountry(personName(c)), 'Chairperson')}${c && c.aff ? `<span class="chair-aff">${esc(c.aff)}</span>` : ''}</div>`).join('')}</div>
     ${affiliation ? `<p class="chair-affil">${esc(affiliation)}</p>` : ''}`;
@@ -406,7 +428,7 @@ function panelHtml(panel) {
   const modLabel = panel.moderators?.length === 1 ? 'Moderator' : 'Moderators';
   return `
     ${panel.panelists?.length ? `
-    <p class="section-label">Panelists</p>
+    <p class="section-label">Panelists <span class="label-note">(arranged alphabetically)</span></p>
     <div class="chip-row">
       ${panel.panelists.map(p => personChip(p, 'Panelist')).join('')}
     </div>` : ''}
@@ -508,15 +530,18 @@ function sessionHtml(item) {
             ${rooms.map((r, i) => `
               <button class="room-tab ${i === 0 ? 'active' : ''}" data-room="${esc(r.id)}" role="tab">${esc(r.id)}</button>`).join('')}
           </div>` : ''}
-          ${rooms.map((r, i) => `
+          ${rooms.map((r, i) => {
+            const titleLine = `<p class="room-title">${esc(r.id)} — ${esc(r.title)} ${formatBadgesHtml(r)}</p>`;
+            return `
             <div class="room-panel ${i === 0 ? 'active' : ''}" data-room-panel="${esc(r.id)}">
-              <p class="room-title">${esc(r.id)} — ${esc(r.title)} ${formatBadgesHtml(r)}</p>
+              ${r.talksFirst ? '' : titleLine}
               ${r.subtitle ? `<p class="room-sub">${esc(r.subtitle)}</p>` : ''}
               ${r.badge ? `<p class="room-sub"><span class="badge soft">${esc(r.badge)}</span></p>` : ''}
               ${chairpersonsHtml(r.chairpersons, r.chairAffiliation)}
               ${sessionModeratorsHtml(r.moderators)}
-              ${r.talksFirst ? talksHtml(r.talks, item.start) + panelHtml(r.panel) : panelHtml(r.panel) + talksHtml(r.talks, item.start)}
-            </div>`).join('')}
+              ${r.talksFirst ? talksHtml(r.talks, item.start) + titleLine + panelHtml(r.panel) : panelHtml(r.panel) + talksHtml(r.talks, item.start)}
+            </div>`;
+          }).join('')}
         </div>
       </article>`;
   }
@@ -814,7 +839,10 @@ clearCoordBtn.addEventListener('click', () => {
   render();
 });
 
+hideCoordChk.addEventListener('change', () => applyHideCoords(hideCoordChk.checked));
+
 async function init() {
+  initHideCoords();
   try {
     const res = await fetch('data/program.json');
     program = await res.json();
