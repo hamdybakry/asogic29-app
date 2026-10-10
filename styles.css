@@ -534,7 +534,8 @@ body {
   margin-top: 4px;
 }
 
-.hide-coords .coord-pill { visibility: hidden; }
+.coord-pill { visibility: hidden; }
+html.show-coords .coord-pill { visibility: visible; }
 
 .hall-row {
   display: flex;
@@ -702,9 +703,40 @@ body {
 }
 
 .chair-aff {
+  flex: 0 1 auto;
+  min-width: 0;
+  height: 16px;
+  line-height: 16px;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.talk-aff {
+  display: inline-block;
+  max-width: 100%;
+  margin-left: 8px;
+  height: 16px;
+  line-height: 16px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  vertical-align: middle;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.topic-list {
+  margin: 6px 0 0;
+  padding-left: 20px;
   font-size: 12.5px;
   color: var(--ink-soft);
 }
+
+.topic-list li { margin: 2px 0; }
 
 .chair-affil {
   font-size: 12.5px;

@@ -1,4 +1,4 @@
-const CACHE = 'asogic29-v130';
+const CACHE = 'asogic29-v144';
 
 const PRECACHE = [
   'index.html',
@@ -40,7 +40,7 @@ self.addEventListener('fetch', (event) => {
 
 async function cacheThenNetwork(req) {
   const cache = await caches.open(CACHE);
-  const cached = await cache.match(req);
+  const cached = await cache.match(req, { ignoreSearch: true }) || await caches.match(req, { ignoreSearch: true });
   const network = fetch(req)
     .then(async (res) => {
       if (res && res.ok && res.type === 'basic') {
