@@ -444,7 +444,7 @@ body {
   font-size: 13px;
   font-weight: 700;
   color: var(--teal-800);
-  line-height: 1.35;
+  line-height: 1.2;
 }
 
 .time-col .end { color: var(--ink-soft); font-weight: 500; }
@@ -636,6 +636,10 @@ html.show-coords .coord-pill { visibility: visible; }
   padding-top: 12px;
 }
 
+.talk.talk-notime .talk-time-col { display: none; }
+.talk.talk-notime { padding-left: 14px; }
+.talk.talk-notime .talk-title { font-size: 13.5px; }
+
 .talk-section-title {
   border: 1.5px solid var(--line);
   background: #fff;
@@ -656,7 +660,7 @@ html.show-coords .coord-pill { visibility: visible; }
   letter-spacing: 0.04em;
   color: var(--gold-500);
   font-variant-numeric: tabular-nums;
-  line-height: 1.45;
+  line-height: 1.2;
 }
 
 .talk-time-col .end { color: var(--ink-soft); font-weight: 500; }

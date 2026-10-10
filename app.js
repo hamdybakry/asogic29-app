@@ -344,7 +344,7 @@ function talkTimeRanges(talks, sessionStart) {
   if (s == null || !talks?.length) return [];
   let cur = s;
   return talks.map(t => {
-    if (t.section) return null;
+    if (t.section || t.noTime) return null;
     const speaker = String(t.speaker || '').trim();
     const isPureDuration = /^\d+\s*(?::\s*\d+\s*)?h(?:ours?)?(?:\s*\d+\s*min)?$/i.test(speaker)
       || /^\d+\s*min(?:utes?)?$/i.test(speaker);
@@ -399,7 +399,7 @@ function talksHtml(talks, sessionStart) {
     const tr = ranges[i];
     const isPanelTalk = !!t.panel || /panel discussion/i.test(`${t.title || ''} ${t.speaker || ''}`);
     return `
-    <div class="talk${hit ? ' speaker-hit' : ''}${hide ? ' hidden' : ''}" data-search="${esc(hay.toLowerCase())}">
+    <div class="talk${hit ? ' speaker-hit' : ''}${hide ? ' hidden' : ''}${t.noTime ? ' talk-notime' : ''}" data-search="${esc(hay.toLowerCase())}">
       <div class="talk-time-col">${tr ? `${timeHtml(tr.start)}<br><span class="end">${timeHtml(tr.end)}</span>` : ''}</div>
       <div class="talk-main">
         <p class="talk-title">${esc(t.title)}${isPanelTalk ? ' <span class="badge format">panel discussion</span>' : ''}${talkRoles.length ? ` <span class="inline-role">${talkRoles.map(esc).join(' · ')}</span>` : ''}</p>

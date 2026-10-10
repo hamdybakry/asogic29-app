@@ -1461,21 +1461,25 @@
                         "aff": "Lecturer in Interventional Radiology, Ain Shams University, Egypt"
                       }
                     ]
-                  }
+                  },
+                  "duration": 60
                 },
                 {
                   "title": "Two Hearts, One Team: A Cardio-Obstetric MDT",
                   "speaker": "Farida Shaalan",
+                  "start": "7:15",
                   "duration": 20
                 },
                 {
                   "title": "When Every Minute Matters: Acute MCA Stroke at 36 Weeks (A Multidisciplinary Team Rescue)",
                   "speaker": "Mohamed Refaie",
+                  "start": "7:35",
                   "duration": 20
                 },
                 {
                   "title": "Beyond the Uterus: The Metastatic Journey of Choriocarcinoma",
                   "speaker": "Rowan Sakr",
+                  "start": "7:55",
                   "duration": 20
                 }
               ],
@@ -1516,8 +1520,14 @@
                 },
                 {
                   "title": "Myths and Misconceptions in Contraception",
-                  "duration": 60,
+                  "duration": 30,
                   "speaker": "Nasser El Kholy (EGY)"
+                },
+                {
+                  "title": "Bleeding Patterns with Contraception",
+                  "duration": 30,
+                  "speaker": "Mohammad AbdelHameed (EGY)",
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 }
               ],
               "chairpersons": [
