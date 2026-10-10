@@ -35,61 +35,65 @@
             },
             {
               "name": "Ashraf Nabhan",
-              "aff": ""
+              "aff": "Prof. of O&G, Ain Shams University, Egypt"
             },
             {
               "name": "Hesham Harb",
-              "aff": ""
+              "aff": "Prof. of O&G, Ain Shams University, Egypt"
             },
             {
               "name": "Khaled Diab",
-              "aff": ""
+              "aff": "Prof. of O&G, Ain Shams University, Egypt"
             },
             {
               "name": "Mahmoud Elshorbagy",
-              "aff": ""
+              "aff": "Prof. of O&G, Ain Shams University, Egypt"
             },
             {
               "name": "Mahmoud Youssef",
-              "aff": ""
+              "aff": "Prof. of O&G, Ain Shams University, Egypt"
             },
             {
               "name": "Mohamed Ali Ibrahim",
-              "aff": ""
+              "aff": "Prof. of O&G, Ain Shams University, Egypt"
             },
             {
               "name": "Mohamed Mehanna",
-              "aff": ""
+              "aff": "Prof. of O&G, Ain Shams University, Egypt"
             },
             {
               "name": "Osama Elkady",
-              "aff": ""
+              "aff": "Prof. of O&G, Ain Shams University, Egypt"
             },
             {
-              "name": "Osama Warda (mansoura)",
-              "aff": ""
+              "name": "Osama Warda",
+              "aff": "Prof. of O&G, Mansoura University, Egypt"
             },
             {
               "name": "Sobhi Abouloz",
-              "aff": ""
+              "aff": "Prof. of O&G, Ain Shams University, Egypt"
             }
           ],
           "talks": [
             {
               "title": "AI Products for Medical Students and Graduates",
-              "speaker": "Mahmoud Youssef (EGY)"
+              "speaker": "Mahmoud Youssef (EGY)",
+              "aff": "Prof. of O&G, Ain Shams University, Egypt"
             },
             {
               "title": "Integrating AI in Clinical Decision Making",
-              "speaker": "Mohamed Elmandooh (EGY)"
+              "speaker": "Mohamed Elmandooh (EGY)",
+              "aff": "Prof. of O&G, Ain Shams University, Egypt"
             },
             {
               "title": "Reproductive Medicine in the Era of Artificial Intelligence and Automation: Myth or Reality?",
-              "speaker": "Ayman Nady (EGY) Minia"
+              "speaker": "Ayman Nady (EGY) Minia",
+              "aff": "Prof. of O&G, Minia University, Egypt"
             },
             {
               "title": "AI and Fertility: Both Sides of the Coin",
-              "speaker": "Sherif El Mekkawi (EGY) – Raouf Roshdy (EGY)"
+              "speaker": "Sherif El Mekkawi (EGY) – Raouf Roshdy (EGY)",
+              "aff": "Prof. of O&G, Ain Shams University, Egypt"
             }
           ],
           "content": [
@@ -113,7 +117,10 @@
               "Ahmed Elnaggar (GBR)",
               "Amro Elhoussieny (EGY)",
               "Christoph Cirkel (DEU)",
-              "Jorg Keckstein",
+              {
+                "name": "Jorg Keckstein (AUT)",
+                "aff": ""
+              },
               "Tarek Youssef (Surgery) (EGY)",
               "Wafaa Raafat (Radio) (EGY)"
             ],
@@ -244,39 +251,39 @@
           "chairpersons": [
             {
               "name": "Ahmed Hashad",
-              "aff": ""
+              "aff": "Prof. of O&G, Ain Shams University, Egypt"
             },
             {
               "name": "Ahmed Tawfik (tanta)",
-              "aff": ""
+              "aff": "Prof. of O&G, Tanta University, Egypt"
             },
             {
               "name": "Magdy Hassan",
-              "aff": ""
+              "aff": "Prof. of O&G, Ain Shams University, Egypt"
             },
             {
               "name": "Mohsen Nosseir",
-              "aff": ""
+              "aff": "Prof. of O&G, Benha University, Egypt"
             },
             {
               "name": "Nahla Waer (aswan)",
-              "aff": ""
+              "aff": "Prof. of O&G, Aswan University, Egypt"
             },
             {
               "name": "Osama Elkilany (menofeya)",
-              "aff": ""
+              "aff": "Prof. of O&G, Menofia University, Egypt"
             },
             {
               "name": "Salah T. Fayed",
-              "aff": ""
+              "aff": "Prof. of O&G, Ain Shams University, Egypt"
             },
             {
               "name": "Sherif Abdelhameed",
-              "aff": ""
+              "aff": "Prof. of O&G, Ain Shams University, Egypt"
             },
             {
               "name": "Yasser Galal",
-              "aff": ""
+              "aff": "Prof. of O&G, Ain Shams University, Egypt"
             }
           ],
           "talks": [
@@ -290,12 +297,14 @@
             },
             {
               "title": "?",
-              "speaker": "Ayman Aboelnour (EGY)"
+              "speaker": "Ayman Aboelnour (EGY)",
+              "aff": "Prof. of O&G, Ain Shams University, Egypt"
             },
             {
               "title": "Nausea and Vomiting during Pregnancy",
               "speaker": "Ashraf Kortam (EGY)",
-              "badge": "Sponsored: HSO/Marcyrl"
+              "badge": "Sponsored: HSO/Marcyrl",
+              "aff": "Prof. of O&G, Ain Shams University, Egypt"
             }
           ],
           "content": [
@@ -318,7 +327,8 @@
               "start": "16:00",
               "title": "Cooling the Internal Flame: Targeting Hot Flashes with Fezolinetant",
               "speaker": "Mohammad AbdelHameed (EGY)",
-              "badge": "Sponsored: Astellas"
+              "badge": "Sponsored: Astellas",
+              "aff": "Prof. of O&G, Ain Shams University, Egypt"
             }
           ],
           "panel": {
@@ -371,7 +381,8 @@
               "talks": [
                 {
                   "title": "?",
-                  "speaker": "Ebtihal Altayeb (EGY)"
+                  "speaker": "Ebtihal Altayeb (EGY)",
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "title": "Intrauterine infections: A unified approach",
@@ -380,7 +391,8 @@
                 {
                   "title": "Thromboprophylaxis in Pregnancy",
                   "speaker": "Rehab Abdelrahman (EGY)",
-                  "badge": "Sponsored: Sanofi"
+                  "badge": "Sponsored: Sanofi",
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "title": "HIV in Pregnancy",
@@ -391,8 +403,14 @@
                       "Muhammad Shahid Jamil (WHO)"
                     ],
                     "moderators": [
-                      "Walid Hitler",
-                      "Aya Attia"
+                      {
+                        "name": "Walid Hitler",
+                        "aff": "Prof. of O&G, Ain Shams University, Egypt"
+                      },
+                      {
+                        "name": "Aya Attia",
+                        "aff": "Lecturer in O&G, Ain Shams University, Egypt"
+                      }
                     ]
                   },
                   "duration": 30
@@ -401,23 +419,23 @@
               "chairpersons": [
                 {
                   "name": "Essam Ammar",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "name": "Fekreya Salama",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "name": "Haitham Elsabba",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "name": "Mohamed Elsherbiny",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "name": "Mohamed Taha",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "name": "Sayed Elkabbary",
@@ -438,30 +456,35 @@
               "talks": [
                 {
                   "title": "Adolescent PMOS: Recent Updates",
-                  "speaker": "Adel Shafik (EGY)"
+                  "speaker": "Adel Shafik (EGY)",
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "title": "Endometriosis with Dienogest: A Case Study",
                   "speaker": "Alaa Elfeky (EGY)",
-                  "badge": "Sponsored: Bayer"
+                  "badge": "Sponsored: Bayer",
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "title": "Refractory Dysmenorrhea in Adolescence",
-                  "speaker": "Radwa Mansour (EGY)"
+                  "speaker": "Radwa Mansour (EGY)",
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "title": "Decoding the Hairy Dilemma",
-                  "speaker": "Mostafa Abbas (EGY)"
+                  "speaker": "Mostafa Abbas (EGY)",
+                  "aff": "Lecturer in O&G, Ain Shams University, Egypt"
                 },
                 {
                   "title": "Underdeveloped Secondary Sexual Characters",
-                  "speaker": "Mahmoud Nabil (EGY)"
+                  "speaker": "Mahmoud Nabil (EGY)",
+                  "aff": "Lecturer in O&G, Ain Shams University, Egypt"
                 }
               ],
               "chairpersons": [
                 {
                   "name": "Adel Shafik",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "name": "Azza Abdelgawad (Peds)",
@@ -477,7 +500,7 @@
                 },
                 {
                   "name": "Mohamed Sayed Ali",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "name": "Osama Deif",
@@ -485,7 +508,7 @@
                 },
                 {
                   "name": "Radwa Mansour",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 }
               ],
               "content": [
@@ -509,29 +532,32 @@
                 },
                 {
                   "title": "Laparoscopic Lateral Suspension",
-                  "speaker": "Ihab Serag (EGY)"
+                  "speaker": "Ihab Serag (EGY)",
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "title": "Beyond the Controversial Mesh Era, What is the Future of Stress Urinary Incontinence Surgery",
-                  "speaker": "Tamer Borg (EGY)"
+                  "speaker": "Tamer Borg (EGY)",
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "title": "Laparoscopic Pectopexy",
-                  "speaker": "Ahmed Koura (EGY)"
+                  "speaker": "Ahmed Koura (EGY)",
+                  "aff": "Lecturer in O&G, Ain Shams University, Egypt"
                 }
               ],
               "chairpersons": [
                 {
                   "name": "Adel Elnazer",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "name": "Ahmed Ellithy (Cairo)",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Cairo University, Egypt"
                 },
                 {
                   "name": "Ashraf Hamdy (Azhar)",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Azhar University, Egypt"
                 },
                 {
                   "name": "Hazem El-Ashmawy (Cairo)",
@@ -539,15 +565,15 @@
                 },
                 {
                   "name": "Hazem Sammour",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "name": "Ihab Serag",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "name": "Tamer Borg",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 }
               ],
               "content": [
@@ -579,7 +605,8 @@
                 {
                   "title": "Chelated Iron Supplements: A Modern Strategy against IDA",
                   "speaker": "Ashraf Kortam (EGY)",
-                  "badge": "Sponsored: DevartLab"
+                  "badge": "Sponsored: DevartLab",
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "title": "Nutritional Dilemmas: Pregnancy in the Obesity Era",
@@ -587,14 +614,26 @@
                   "panel": {
                     "format": "Panel Discussion",
                     "panelists": [
-                      "Ayman Abouelnour",
-                      "Hatem Elgamal",
+                      {
+                        "name": "Ayman Abouelnour",
+                        "aff": "Prof. of O&G, Ain Shams University, Egypt"
+                      },
+                      {
+                        "name": "Hatem Elgamal",
+                        "aff": "Prof. of O&G, Ain Shams University, Egypt"
+                      },
                       "Mohamed Abdallah (Galaa)",
-                      "Noha Elsharnouby",
-                      "Salwa Seddiq / Maram Maher (Endocrine)"
+                      {
+                        "name": "Noha Elsharnouby",
+                        "aff": "Prof. of Anesthesiology & Critical Care, Ain Shams University, Egypt"
+                      },
+                      "Enas Sabry (Endocrine)"
                     ],
                     "moderators": [
-                      "Ahmed Essam"
+                      {
+                        "name": "Ahmed Essam",
+                        "aff": "Assoc. Prof. of O&G, Ain Shams University, Egypt"
+                      }
                     ],
                     "topics": [
                       "Nutrition in Normal Pregnancy",
@@ -620,7 +659,8 @@
                 },
                 {
                   "title": "Is there a place for surgery in adenomyosis and infertility?",
-                  "speaker": "Jorg Keckstein (AUT)"
+                  "speaker": "Jorg Keckstein (AUT)",
+                  "aff": ""
                 },
                 {
                   "title": "Green Surgery: Indocyanine Green (ICG) in Complex Benign Gynaecological Surgery",
@@ -628,7 +668,8 @@
                 },
                 {
                   "title": "Difficult TLH: Let Me Show the Way",
-                  "speaker": "Osama Ismail"
+                  "speaker": "Osama Ismail (EGY)",
+                  "aff": "Assoc. Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "title": "Beyond Cystectomy: A Stepwise Approach to Endometrioma Management — From Ethanol Sclerotherapy to Secondary Prevention",
@@ -642,23 +683,23 @@
               "chairpersons": [
                 {
                   "name": "Hayam Fathy",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "name": "Mohamed Abdelfattah",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "name": "Mohamed Elsafty",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "name": "Mohamed Hamed",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
-                  "name": "Osama Ismail",
-                  "aff": ""
+                  "name": "Osama Ismail (EGY)",
+                  "aff": "Assoc. Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "name": "Osama Omar (Military)",
@@ -666,7 +707,7 @@
                 },
                 {
                   "name": "Sherif Hanafy",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 }
               ],
               "content": [
@@ -686,25 +727,29 @@
                 },
                 {
                   "title": "Chronic vulvovaginitis",
-                  "speaker": "Mohamed Samir (EGY)"
+                  "speaker": "Mohamed Samir (EGY)",
+                  "aff": "Lecturer in O&G, Ain Shams University, Egypt"
                 },
                 {
                   "title": "Prevention and diagnosis of visceral injuries in OB-GYN interventions",
-                  "speaker": "Mourad Alfaham (EGY)"
+                  "speaker": "Mourad Alfaham (EGY)",
+                  "aff": "Lecturer in O&G, Ain Shams University, Egypt"
                 },
                 {
                   "title": "Closure of Uterine Incision at CS",
-                  "speaker": "Ahmed Hesham (EGY)"
+                  "speaker": "Ahmed Hesham (EGY)",
+                  "aff": "Lecturer in O&G, Ain Shams University, Egypt"
                 },
                 {
                   "title": "Endometrioma Before IVF: Operate or Observe? — Balancing Implantation, Ovarian Reserve & Surgical Risks",
-                  "speaker": "Ahmed Gamal (EGY)"
+                  "speaker": "Ahmed Gamal (EGY)",
+                  "aff": "Lecturer in O&G, Ain Shams University, Egypt"
                 }
               ],
               "chairpersons": [
                 {
                   "name": "Ahmed Hussein",
-                  "aff": ""
+                  "aff": "Assoc. Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "name": "Amr Essam",
@@ -724,7 +769,7 @@
                 },
                 {
                   "name": "Maii Nawara",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "name": "Mohamed Samy",
@@ -732,7 +777,7 @@
                 },
                 {
                   "name": "Mortada Elsayed",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 }
               ],
               "content": [
@@ -779,7 +824,8 @@
           "talks": [
             {
               "title": "History of Medicine",
-              "speaker": "Osama Elshazly, Ahmed Hamdy"
+              "speaker": "Osama Elshazly, Ahmed Hamdy",
+              "aff": "Prof. of Orthopedic Surgery, Ain Shams University, Egypt"
             }
           ],
           "content": [
@@ -796,31 +842,31 @@
           "chairpersons": [
             {
               "name": "Abeer Bahaa (SC)",
-              "aff": ""
+              "aff": "Prof. of O&G, Suez Canal University, Egypt"
             },
             {
               "name": "Ahmed Youssef (Benha)",
-              "aff": ""
+              "aff": "Prof. of O&G, Benha University, Egypt"
             },
             {
               "name": "Ahmed Zakaria Elsheikha",
-              "aff": ""
+              "aff": "Prof. of O&G, Cairo University, Egypt"
             },
             {
               "name": "Amal Elanwar (zag)",
-              "aff": ""
+              "aff": "Prof. of O&G, Zagazig University, Egypt"
             },
             {
               "name": "Hossam Fahem (AzB)",
-              "aff": ""
+              "aff": "Prof. of O&G, Al-Azhar University, Egypt"
             },
             {
               "name": "Karam Bayoumy",
-              "aff": ""
+              "aff": "Prof. of O&G, Ain Shams University, Egypt"
             },
             {
               "name": "Tayseer Maarouf (AzG)",
-              "aff": ""
+              "aff": "Prof. of O&G, Al-Azhar University, Egypt"
             }
           ],
           "moderators": [
@@ -857,53 +903,55 @@
           "chairpersons": [
             {
               "name": "Ahmed Elminawi",
-              "aff": ""
+              "aff": "Prof. of O&G, Cairo University, Egypt"
             },
             {
               "name": "Amr El Shalakany",
-              "aff": ""
+              "aff": "Prof. of O&G, Ain Shams University, Egypt"
             },
             {
               "name": "Gasser Elbishry",
-              "aff": ""
+              "aff": "Prof. of O&G, Ain Shams University, Egypt"
             },
             {
               "name": "Haitham Badran (fayoum)",
-              "aff": ""
+              "aff": "Prof. of O&G, Fayoum University, Egypt"
             },
             {
               "name": "Maged AboSeeda",
-              "aff": ""
+              "aff": "Prof. of O&G, Ain Shams University, Egypt"
             },
             {
               "name": "Mohamed Amer",
-              "aff": ""
+              "aff": "Prof. of O&G, Ain Shams University, Egypt"
             },
             {
               "name": "Mostafa Ibrahim",
-              "aff": ""
+              "aff": "Prof. of O&G, Ain Shams University, Egypt"
             },
             {
               "name": "Mounir Fawzy",
-              "aff": ""
+              "aff": "Prof. of O&G, Ain Shams University, Egypt"
             },
             {
               "name": "Sherif Habib",
-              "aff": ""
+              "aff": "Prof. of O&G, Ain Shams University, Egypt"
             },
             {
               "name": "Yousef Abouelwan",
-              "aff": ""
+              "aff": "Prof. of O&G, Zagazig University, Egypt"
             }
           ],
           "talks": [
             {
               "title": "From Imaging to Surgery and Artificial Intelligence: #Enzian — The Future Global Language of Endometriosis",
-              "speaker": "Jorg Keckstein (AUT)"
+              "speaker": "Jorg Keckstein (AUT)",
+              "aff": ""
             },
             {
               "title": "Deescalation of Surgery in Gynecological Cancer",
-              "speaker": "Amr El Shalakany (EGY)"
+              "speaker": "Amr El Shalakany (EGY)",
+              "aff": "Prof. of O&G, Ain Shams University, Egypt"
             },
             {
               "title": "Precise preservation of autonomic nerves in radical hysterectomy: From anatomical experience to precision navigation",
@@ -1044,7 +1092,8 @@
                 },
                 {
                   "title": "Postpartum Hemorrhage: It’s Never Too Late to Save Lives",
-                  "speaker": "Walid Basuony (EGY)"
+                  "speaker": "Walid Basuony (EGY)",
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "title": "Beyond Guidelines: Advancing Quality in Obstetrics",
@@ -1053,21 +1102,22 @@
                 {
                   "title": "Prevention of UTI during Pregnancy",
                   "speaker": "Mohammad AbdelHameed (EGY)",
-                  "badge": "Sponsored: Bionorica"
+                  "badge": "Sponsored: Bionorica",
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 }
               ],
               "chairpersons": [
                 {
                   "name": "Ebtihal Altayeb",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "name": "Haitham Fathy",
-                  "aff": ""
+                  "aff": "Assoc. Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "name": "Jihan Elhawwary",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "name": "Mohamed Kandil (Men, Head of AFMC)",
@@ -1075,15 +1125,15 @@
                 },
                 {
                   "name": "Nashwa Elsaied",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "name": "Rasha Medhat",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "name": "Walid Basuony",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 }
               ],
               "content": [
@@ -1100,61 +1150,66 @@
               "talks": [
                 {
                   "title": "Cracking the code of poor ovarian responders",
-                  "speaker": "Karim Wahba (EGY)"
+                  "speaker": "Karim Wahba (EGY)",
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "title": "AI in Infertility",
-                  "speaker": "Mohammed Hussain Mostafa (EGY)"
+                  "speaker": "Mohammed Hussain Mostafa (EGY)",
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "title": "ESHRE 2026 “Game-changers”: Top 20 practice-changing updates",
-                  "speaker": "Yasser Elshahawy (EGY)"
+                  "speaker": "Yasser Elshahawy (EGY)",
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "title": "Use of Large Language Models for Optimizing Ovulation Trigger Timing in ICSI Cycles",
-                  "speaker": "Mohammed Faris (EGY)"
+                  "speaker": "Mohammed Faris (EGY)",
+                  "aff": "Lecturer in O&G, Ain Shams University, Egypt"
                 },
                 {
                   "title": "The Role of Pre-IVF Hormonal Priming: Evidence, Indications, and Controversies",
-                  "speaker": "Ahmed Abbas (EGY)"
+                  "speaker": "Ahmed Abbas (EGY)",
+                  "aff": "Assoc. Prof. of O&G, Ain Shams University, Egypt"
                 }
               ],
               "chairpersons": [
                 {
                   "name": "Adel Shafik",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "name": "Ahmed Elhusseiny",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "name": "Amr Helmy",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "name": "Ismail Abouelfotouh (Cairo)",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Cairo University, Egypt"
                 },
                 {
                   "name": "Karim Wahba",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "name": "Khaled Ibrahim",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "name": "Moustafa Fouad",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "name": "Sherif Ashoush",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "name": "Tarek Tamara",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 }
               ],
               "content": [
@@ -1171,7 +1226,8 @@
               "talks": [
                 {
                   "title": "Risk-reducing Surgery in Gynecological Malignancy",
-                  "speaker": "Helmy Motawe (EGY)"
+                  "speaker": "Helmy Motawe (EGY)",
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "title": "Fertility Preservation in Endometrial and Cervical Cancer",
@@ -1183,17 +1239,19 @@
                 },
                 {
                   "title": "The Keyhole Approach to Gynecologic Cancer: Where Laparoscopy Stands Today",
-                  "speaker": "Mohamed Sweed (EGY)"
+                  "speaker": "Mohamed Sweed (EGY)",
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "title": "Role of Lymphadenectomy in Ovarian Cancer",
-                  "speaker": "Mahmoud Ghaleb (EGY)"
+                  "speaker": "Mahmoud Ghaleb (EGY)",
+                  "aff": "Assoc. Prof. of O&G, Ain Shams University, Egypt"
                 }
               ],
               "chairpersons": [
                 {
                   "name": "Ahmed Ibrahim",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "name": "Ahmed Sekotory",
@@ -1201,15 +1259,15 @@
                 },
                 {
                   "name": "Helmy Motawe",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "name": "Mohamed Laban",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "name": "Mohamed Sweed",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 }
               ],
               "content": [
@@ -1239,7 +1297,8 @@
                 {
                   "title": "Updates on Anemia Management",
                   "speaker": "Rehab Abdelrahman (EGY)",
-                  "badge": "Sponsored: Pharaoh"
+                  "badge": "Sponsored: Pharaoh",
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "title": "Case Presentations + MDT Discussions",
@@ -1250,23 +1309,23 @@
               "chairpersons": [
                 {
                   "name": "Abdellatif Elkholy",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "name": "Amr Elhelaly",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "name": "Amr Fathy",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "name": "Khaled Swidan",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "name": "Mohamed Abdelaleem",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 }
               ],
               "content": [
@@ -1288,10 +1347,16 @@
                     "panelists": [
                       "Hossam Abdelmegeed (EGY)",
                       "Walid Tawfik (EGY)",
-                      "Mohamed Nabil (EGY)"
+                      {
+                        "name": "Mohamed Nabil (EGY)",
+                        "aff": "Lecturer in O&G, Ain Shams University, Egypt"
+                      }
                     ],
                     "moderators": [
-                      "Kareem Labib"
+                      {
+                        "name": "Kareem Labib",
+                        "aff": "Prof. of O&G, Ain Shams University, Egypt"
+                      }
                     ]
                   }
                 },
@@ -1318,7 +1383,8 @@
                 {
                   "title": "Hormonal Contraceptives: Off-label Use",
                   "duration": 15,
-                  "speaker": "Amr Nadim (EGY)"
+                  "speaker": "Amr Nadim (EGY)",
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "title": "Myths and Misconceptions in Contraception",
@@ -1340,7 +1406,8 @@
               "talks": [
                 {
                   "title": "Synbiotics the hidden gem",
-                  "speaker": "Karim Wahba (EGY)"
+                  "speaker": "Karim Wahba (EGY)",
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "title": "The use of Saline Infusion Sonography in Infertility",
@@ -1352,7 +1419,8 @@
                 },
                 {
                   "title": "Fibroid Care in Current Times: From Keyhole to VR",
-                  "speaker": "Ahmed Selim (EGY)"
+                  "speaker": "Ahmed Selim (EGY)",
+                  "aff": "Lecturer in O&G, Ain Shams University, Egypt"
                 },
                 {
                   "title": "The Minimal Access Management of Endometriosis",
@@ -1362,19 +1430,19 @@
               "chairpersons": [
                 {
                   "name": "Ahmed Mamdouh",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "name": "Amr Riad",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "name": "Dina Yehia",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
                   "name": "Sabry Elsayed",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 }
               ],
               "content": [

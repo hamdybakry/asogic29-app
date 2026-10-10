@@ -8,7 +8,7 @@ const speakerSelect = document.getElementById('speakerSelect');
 const clearSpeakerBtn = document.getElementById('clearSpeaker');
 const coordSelect = document.getElementById('coordSelect');
 const clearCoordBtn = document.getElementById('clearCoord');
-const hideCoordChk = document.getElementById('hideCoordChk');
+const showCoordChk = document.getElementById('showCoordChk');
 
 let program = null;
 let activeDay = 'day1';
@@ -152,8 +152,8 @@ function personName(v) {
 
 function talkPanelPairs(t) {
   const out = [];
-  (t?.panel?.panelists || []).forEach(n => out.push({ name: n, role: 'Panelist' }));
-  (t?.panel?.moderators || []).forEach(n => out.push({ name: n, role: 'Moderator' }));
+  (t?.panel?.panelists || []).forEach(n => out.push({ name: personName(n), role: 'Panelist' }));
+  (t?.panel?.moderators || []).forEach(n => out.push({ name: personName(n), role: 'Moderator' }));
   (t?.chairpersons || []).forEach(n => out.push({ name: personName(n), role: 'Chairperson' }));
   return out;
 }
@@ -205,7 +205,7 @@ function collectSpeakers(prog) {
 
 function rolesInItem(item, name) {
   const roles = new Set();
-  const hitName = n => samePerson(n, name);
+  const hitName = n => samePerson(personName(n), name);
 
   const scanTalks = talks => {
     for (const t of talks || []) {
@@ -279,16 +279,20 @@ function coordPill(list) {
   return `<span class="coord-pill">${list.map(esc).join(' + ')}</span>`;
 }
 
-function applyHideCoords(on) {
-  document.documentElement.classList.toggle('hide-coords', !!on);
-  try { localStorage.setItem('asogic29.hideCoords', on ? '1' : '0'); } catch (e) {}
+function applyShowCoords(on) {
+  document.documentElement.classList.toggle('show-coords', !!on || !!coordFilter);
+  try { localStorage.setItem('asogic29.showCoords', on ? '1' : '0'); } catch (e) {}
 }
 
-function initHideCoords() {
+function initShowCoords() {
   let on = false;
-  try { on = localStorage.getItem('asogic29.hideCoords') === '1'; } catch (e) {}
-  hideCoordChk.checked = on;
-  document.documentElement.classList.toggle('hide-coords', on);
+  try {
+    on = localStorage.getItem('asogic29.showCoords') === '1';
+    if (localStorage.getItem('asogic29.showCoords') === null &&
+        localStorage.getItem('asogic29.hideCoords') === '0') on = true;
+  } catch (e) {}
+  showCoordChk.checked = on;
+  document.documentElement.classList.toggle('show-coords', on);
 }
 
 function collectCoordinators(prog) {
@@ -399,7 +403,7 @@ function talksHtml(talks, sessionStart) {
       <div class="talk-time-col">${tr ? `${timeHtml(tr.start)}<br><span class="end">${timeHtml(tr.end)}</span>` : ''}</div>
       <div class="talk-main">
         <p class="talk-title">${esc(t.title)}${isPanelTalk ? ' <span class="badge format">panel discussion</span>' : ''}${talkRoles.length ? ` <span class="inline-role">${talkRoles.map(esc).join(' · ')}</span>` : ''}</p>
-        ${t.speaker ? `<p class="talk-speaker">${withFlags(esc(t.speaker))}</p>` : ''}
+        ${t.speaker ? `<p class="talk-speaker">${withFlags(esc(t.speaker))}<span class="talk-aff">${esc(t.aff || '')}</span></p>` : ''}
         ${t.badge ? `<p class="talk-note"><span class="badge gold">${esc(t.badge)}</span></p>` : ''}
         ${t.note ? `<p class="talk-note">${withFlags(esc(stripModCountry(t.note)))}</p>` : ''}
         ${t.panel ? panelHtml(t.panel) : ''}
@@ -419,36 +423,33 @@ function chairpersonsHtml(list, affiliation) {
   return `
     <p class="section-label">Chairpersons <span class="label-note">(arranged alphabetically)</span></p>
     <div class="chair-list">${list.map(c => `
-      <div class="chair-line">${personChip(stripCountry(personName(c)), 'Chairperson')}${c && c.aff ? `<span class="chair-aff">${esc(c.aff)}</span>` : ''}</div>`).join('')}</div>
+      <div class="chair-line">${personChip(personName(c), 'Chairperson')}<span class="chair-aff">${esc((c && c.aff) || '')}</span></div>`).join('')}</div>
     ${affiliation ? `<p class="chair-affil">${esc(affiliation)}</p>` : ''}`;
 }
 
 function panelHtml(panel) {
   if (!panel) return '';
   const modLabel = panel.moderators?.length === 1 ? 'Moderator' : 'Moderators';
+  const personLine = (p, role) => `<div class="chair-line">${personChip(personName(p), role)}<span class="chair-aff">${esc((p && p.aff) || '')}</span></div>`;
   return `
     ${panel.panelists?.length ? `
     <p class="section-label">Panelists <span class="label-note">(arranged alphabetically)</span></p>
-    <div class="chip-row">
-      ${panel.panelists.map(p => personChip(p, 'Panelist')).join('')}
-    </div>` : ''}
+    <div class="chair-list">${panel.panelists.map(p => personLine(p, 'Panelist')).join('')}</div>` : ''}
     ${panel.moderators?.length ? `
     <p class="section-label">${modLabel}</p>
-    <div class="chip-row">
-      ${panel.moderators.map(m => personChip(stripCountry(m), 'Moderator')).join('')}
-    </div>` : ''}
+    <div class="chair-list">${panel.moderators.map(m => personLine(m, 'Moderator')).join('')}</div>` : ''}
     ${panel.topics?.length ? `
     <p class="section-label">Topics</p>
-    <div class="chip-row">
-      ${panel.topics.map(t => `<span class="chip">${esc(t)}</span>`).join('')}
-    </div>` : ''}`;
+    <ul class="topic-list">
+      ${panel.topics.map(t => `<li>${esc(t)}</li>`).join('')}
+    </ul>` : ''}`;
 }
 
 function sessionModeratorsHtml(list) {
   if (!list?.length) return '';
   return `
     <p class="section-label">Moderators</p>
-    <div class="chip-row">${list.map(m => personChip(stripCountry(m), 'Moderator')).join('')}</div>`;
+    <div class="chair-list">${list.map(m => `<div class="chair-line">${personChip(stripCountry(personName(m)), 'Moderator')}<span class="chair-aff">${esc((m && m.aff) || '')}</span></div>`).join('')}</div>`;
 }
 
 function searchText(item) {
@@ -826,6 +827,7 @@ coordSelect.addEventListener('change', () => {
   coordFilter = coordSelect.value;
   coordSelect.classList.toggle('active', !!coordFilter);
   clearCoordBtn.hidden = !coordFilter;
+  applyShowCoords(showCoordChk.checked);
   query = '';
   searchInput.value = '';
   render();
@@ -836,21 +838,41 @@ clearCoordBtn.addEventListener('click', () => {
   coordSelect.value = '';
   coordSelect.classList.remove('active');
   clearCoordBtn.hidden = true;
+  applyShowCoords(showCoordChk.checked);
   render();
 });
 
-hideCoordChk.addEventListener('change', () => applyHideCoords(hideCoordChk.checked));
+showCoordChk.addEventListener('change', () => applyShowCoords(showCoordChk.checked));
 
 async function init() {
-  initHideCoords();
+  initShowCoords();
   try {
-    const res = await fetch('data/program.json');
-    program = await res.json();
+    program = await loadProgram();
     populateSpeakers();
     populateCoordinators();
     render();
   } catch (err) {
-    scheduleEl.innerHTML = '<p class="no-results">Could not load the program. Please reopen the app.</p>';
+    const detail = (err && err.message) ? String(err.message) : 'unknown error';
+    console.error('program load failed:', err);
+    if (!sessionStorage.getItem('asogic29.retried')) {
+      sessionStorage.setItem('asogic29.retried', '1');
+      scheduleEl.innerHTML = '<p class="no-results">Repairing app cache…</p>';
+      (async () => {
+        try {
+          if (navigator.serviceWorker) {
+            const regs = await navigator.serviceWorker.getRegistrations();
+            await Promise.all(regs.map(r => r.unregister()));
+          }
+          if (caches) {
+            const keys = await caches.keys();
+            await Promise.all(keys.map(k => caches.delete(k)));
+          }
+        } catch (e) {}
+        location.reload();
+      })();
+      return;
+    }
+    scheduleEl.innerHTML = '<p class="no-results">Could not load the program (' + detail + '). Please reopen the app.</p>';
   }
   if ('serviceWorker' in navigator) {
     const hadController = !!navigator.serviceWorker.controller;
@@ -867,6 +889,21 @@ async function init() {
       setInterval(() => reg.update().catch(() => {}), 60000);
     }).catch(() => {});
   }
+}
+
+async function loadProgram() {
+  let lastErr;
+  for (let i = 0; i < 4; i++) {
+    try {
+      const res = await fetch('data/program.json');
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return await res.json();
+    } catch (err) {
+      lastErr = err;
+      await new Promise(r => setTimeout(r, 350 * (i + 1)));
+    }
+  }
+  throw lastErr;
 }
 
 init();
