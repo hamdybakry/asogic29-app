@@ -115,18 +115,33 @@
             "format": "Panel Discussion",
             "panelists": [
               "Ahmed Elnaggar (GBR)",
-              "Amro Elhoussieny (EGY)",
+              {
+                "name": "Amro Elhoussieny (EGY)",
+                "aff": "Prof. of O&G, Ain Shams University, Egypt"
+              },
               "Christoph Cirkel (DEU)",
               {
                 "name": "Jorg Keckstein (AUT)",
                 "aff": ""
               },
-              "Tarek Youssef (Surgery) (EGY)",
-              "Wafaa Raafat (Radio) (EGY)"
+              {
+                "name": "Tarek Youssef (Surgery) (EGY)",
+                "aff": "Prof. of General Surgery, Ain Shams University, Egypt"
+              },
+              {
+                "name": "Wafaa Raafat (Radio) (EGY)",
+                "aff": "Prof. of Radiology, Ain Shams University, Egypt"
+              }
             ],
             "moderators": [
-              "Mohamed Sayed Ali",
-              "Ahmed Selim"
+              {
+                "name": "Mohamed Sayed Ali",
+                "aff": "Prof. of O&G, Ain Shams University, Egypt"
+              },
+              {
+                "name": "Ahmed Selim",
+                "aff": "Lecturer in O&G, Ain Shams University, Egypt"
+              }
             ],
             "topics": [
               "Imaging",
@@ -157,8 +172,14 @@
               "Abla Al-Alfy (EGY)",
               "Hesham Zaki (EGY)",
               "Mohamed Eissa (WHO)",
-              "Mostafa Abbas (EGY)",
-              "Omaima Edris (EGY)"
+              {
+                "name": "Mostafa Abbas (EGY)",
+                "aff": "Lecturer in O&G, Ain Shams University, Egypt"
+              },
+              {
+                "name": "Omaima Edris (EGY)",
+                "aff": "Prof. of O&G, Cairo University, Egypt"
+              }
             ],
             "moderators": [
               "Nasser El Kholy"
@@ -215,16 +236,34 @@
             "format": "Panel Discussion",
             "panelists": [
               "Abdelhamid Attia",
-              "Ahmed Rashed",
+              {
+                "name": "Ahmed Rashed",
+                "aff": "Prof. of O&G, Ain Shams University, Egypt"
+              },
               "Ahmed Shams",
-              "Amr Nadim",
-              "Ayman Abouelnour",
-              "Ehab Abdelfattah",
-              "Karam Bayoumy",
+              {
+                "name": "Amr Nadim",
+                "aff": "Prof. of O&G, Ain Shams University, Egypt"
+              },
+              {
+                "name": "Ayman Abouelnour",
+                "aff": "Prof. of O&G, Ain Shams University, Egypt"
+              },
+              {
+                "name": "Ehab Abdelfattah",
+                "aff": "Prof. of O&G, Ain Shams University, Egypt"
+              },
+              {
+                "name": "Karam Bayoumy",
+                "aff": "Prof. of O&G, Ain Shams University, Egypt"
+              },
               "Osama Abdelhai"
             ],
             "moderators": [
-              "Sherif El Mekkawi",
+              {
+                "name": "Sherif El Mekkawi",
+                "aff": "Prof. of O&G, Ain Shams University, Egypt"
+              },
               "Kamal Eldessouki"
             ],
             "topics": [
@@ -334,18 +373,39 @@
           "panel": {
             "format": "Panel Discussion",
             "panelists": [
-              "Alaa Elfeky (EGY)",
+              {
+                "name": "Alaa Elfeky (EGY)",
+                "aff": "Prof. of O&G, Ain Shams University, Egypt"
+              },
               "Amr Aboelyazid (EGY) Police",
-              "Amr Elhelaly (EGY)",
-              "Mohamed Elmandooh (EGY)",
-              "Mona Reda (EGY) Psych",
-              "Muhammad Hassan",
+              {
+                "name": "Amr Elhelaly (EGY)",
+                "aff": "Prof. of O&G, Ain Shams University, Egypt"
+              },
+              {
+                "name": "Mohamed Elmandooh (EGY)",
+                "aff": "Prof. of O&G, Ain Shams University, Egypt"
+              },
+              {
+                "name": "Mona Reda (EGY) Psych",
+                "aff": "Prof. of Psychiatry, Ain Shams University, Egypt"
+              },
+              {
+                "name": "Muhammad Hassan",
+                "aff": "Prof. of O&G, Ain Shams University, Egypt"
+              },
               "Taher Elbarbary",
-              "Yasser Aboutalib (EGY)"
+              {
+                "name": "Yasser Aboutalib (EGY)",
+                "aff": "Prof. of O&G, Ain Shams University, Egypt"
+              }
             ],
             "moderators": [
               "Kamal Eldessouki",
-              "Yomna Ayman"
+              {
+                "name": "Yomna Ayman",
+                "aff": "Asst Lect. in O&G, Ain Shams University, Egypt"
+              }
             ],
             "topics": [
               "Management of menopause",
@@ -386,7 +446,8 @@
                 },
                 {
                   "title": "Intrauterine infections: A unified approach",
-                  "speaker": "Salah Sanad (EGY)"
+                  "speaker": "Salah Sanad (EGY)",
+                  "aff": "Prof. of O&G, Cairo University, Egypt"
                 },
                 {
                   "title": "Thromboprophylaxis in Pregnancy",
@@ -492,7 +553,7 @@
                 },
                 {
                   "name": "Khattab Omar (Azhar)",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Al-Azhar University, Egypt"
                 },
                 {
                   "name": "Mahmoud Elsehemy السحيمي (Azhar)",
@@ -838,7 +899,7 @@
           "label": "Plenary 8",
           "start": "10:30",
           "end": "12:30",
-          "title": "GYNOlympics: A Journey of Excellence with Minds, Knowledge, and Skills",
+          "title": "GYNOlympics: Excellence of Minds, Knowledge, and Skills",
           "chairpersons": [
             {
               "name": "Abeer Bahaa (SC)",
@@ -983,12 +1044,24 @@
               "Dr Hamdy Elbarbary عميد كلية أصول الدين",
               "Ehab Hassanein",
               "Fr Ermia Makram المركز الثقافي القبطي",
-              "Hassan Tawfik",
-              "Maher Omran",
-              "Sherif El-Ghetany"
+              {
+                "name": "Hassan Tawfik",
+                "aff": "Prof. of O&G, Ain Shams University, Egypt"
+              },
+              {
+                "name": "Maher Omran",
+                "aff": "Prof. of O&G, Ain Shams University, Egypt"
+              },
+              {
+                "name": "Sherif El-Ghetany",
+                "aff": "Prof. of O&G, Ain Shams University, Egypt"
+              }
             ],
             "moderators": [
-              "Mohammad AbdelHameed"
+              {
+                "name": "Mohammad AbdelHameed",
+                "aff": "Prof. of O&G, Ain Shams University, Egypt"
+              }
             ]
           },
           "content": [
@@ -1017,13 +1090,28 @@
             "panelists": [
               "Abdelmageed Sarhan",
               "Hassan Maghrabi",
-              "Hossam Fahem",
-              "Khaled Saied",
-              "Mohamed Yehia",
-              "Salah Rasheed (Sohag)"
+              {
+                "name": "Hossam Fahem",
+                "aff": "Prof. of O&G, Al-Azhar University, Egypt"
+              },
+              {
+                "name": "Khaled Saied",
+                "aff": "Prof. of O&G, Ain Shams University, Egypt"
+              },
+              {
+                "name": "Mohamed Yehia",
+                "aff": "Prof. of O&G, Ain Shams University, Egypt"
+              },
+              {
+                "name": "Salah Rasheed (Sohag)",
+                "aff": "Prof. of O&G, Sohag University, Egypt"
+              }
             ],
             "moderators": [
-              "Hatem Elgamal"
+              {
+                "name": "Hatem Elgamal",
+                "aff": "Prof. of O&G, Ain Shams University, Egypt"
+              }
             ]
           },
           "content": [
@@ -1047,13 +1135,22 @@
             "panelists": [
               "Ahmed Ramy (EGY)",
               "Aimen Shaaban (USA)",
-              "Dalia El Haieg (EGY)",
+              {
+                "name": "Dalia El Haieg (EGY)",
+                "aff": "Prof. of O&G, Zagazig University, Egypt"
+              },
               "Liesbeth Lewi (BEL)",
               "Mohamed Momtaz (EGY)",
-              "Sherif Akl"
+              {
+                "name": "Sherif Akl",
+                "aff": "Prof. of O&G, Ain Shams University, Egypt"
+              }
             ],
             "moderators": [
-              "Maya Abdelrazek",
+              {
+                "name": "Maya Abdelrazek",
+                "aff": "Assoc. Prof. of O&G, Ain Shams University, Egypt"
+              },
               "Rami Barakat"
             ]
           },
@@ -1303,16 +1400,13 @@
                 {
                   "title": "Case Presentations + MDT Discussions",
                   "speaker": "3–4 cases",
-                  "note": "Nireen Okasha (Cardio), Amr Saeed (Neuro), Rania Magdy (ICU), Ramy Mahrous (AN), Nagy Samy (ONCO), Asaad Gamal (IR) · Moderator: Walid Hitler · Cases: Farida (cardio, post-arrest), Refaei (thrombectomy), Rowan (CC/surgery)"
+                  "note": "Nireen Okasha (Cardio), Amr Saeed (Neuro), Rania Magdy (ICU), Ramy Mahrous (AN), Nagy Samy (ONCO), Asaad Gamal (IR) · Moderator: Walid Hitler · Cases: Farida (cardio, post-arrest), Refaei (thrombectomy), Rowan (CC/surgery)",
+                  "duration": 60
                 }
               ],
               "chairpersons": [
                 {
                   "name": "Abdellatif Elkholy",
-                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
-                },
-                {
-                  "name": "Amr Elhelaly",
                   "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
@@ -1337,49 +1431,8 @@
             },
             {
               "id": "4B",
-              "title": "Challenging Dilemmas in Gynecology",
+              "title": "Contraception: Myths and Misconceptions",
               "talks": [
-                {
-                  "title": "TLH in Large Uterus",
-                  "duration": 30,
-                  "panel": {
-                    "format": "Panel Discussion",
-                    "panelists": [
-                      "Hossam Abdelmegeed (EGY)",
-                      "Walid Tawfik (EGY)",
-                      {
-                        "name": "Mohamed Nabil (EGY)",
-                        "aff": "Lecturer in O&G, Ain Shams University, Egypt"
-                      }
-                    ],
-                    "moderators": [
-                      {
-                        "name": "Kareem Labib",
-                        "aff": "Prof. of O&G, Ain Shams University, Egypt"
-                      }
-                    ]
-                  }
-                },
-                {
-                  "section": true,
-                  "title": "Contraception: Myths and Misconceptions",
-                  "start": "19:30",
-                  "end": "20:15",
-                  "chairpersons": [
-                    {
-                      "name": "Amr Nadim",
-                      "aff": ""
-                    },
-                    {
-                      "name": "Nasser Elkholy",
-                      "aff": ""
-                    },
-                    {
-                      "name": "Nermeen Elgharib",
-                      "aff": ""
-                    }
-                  ]
-                },
                 {
                   "title": "Hormonal Contraceptives: Off-label Use",
                   "duration": 15,
@@ -1388,11 +1441,21 @@
                 },
                 {
                   "title": "Myths and Misconceptions in Contraception",
-                  "duration": 30,
+                  "duration": 60,
                   "speaker": "Nasser El Kholy (EGY)"
                 }
               ],
-              "chairpersons": [],
+              "chairpersons": [
+                "Nasser Elkholy",
+                {
+                  "name": "Amr Nadim",
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
+                },
+                {
+                  "name": "Nermeen Elgharib",
+                  "aff": "Assoc. Prof. of O&G, Ain Shams University, Egypt"
+                }
+              ],
               "content": [
                 "presentations"
               ],
@@ -1411,20 +1474,24 @@
                 },
                 {
                   "title": "The use of Saline Infusion Sonography in Infertility",
-                  "speaker": "Sanaa Farghal (EGY)"
+                  "speaker": "Sanaa Farghal (EGY)",
+                  "duration": 15
                 },
                 {
                   "title": "Uterine Anomalies and their Management",
-                  "speaker": "Richard Keedwell (GBR)"
+                  "speaker": "Richard Keedwell (GBR)",
+                  "duration": 15
                 },
                 {
                   "title": "Fibroid Care in Current Times: From Keyhole to VR",
                   "speaker": "Ahmed Selim (EGY)",
-                  "aff": "Lecturer in O&G, Ain Shams University, Egypt"
+                  "aff": "Lecturer in O&G, Ain Shams University, Egypt",
+                  "duration": 15
                 },
                 {
                   "title": "The Minimal Access Management of Endometriosis",
-                  "speaker": "Hassan Zeinah (GBR)"
+                  "speaker": "Hassan Zeinah (GBR)",
+                  "duration": 15
                 }
               ],
               "chairpersons": [
@@ -1443,7 +1510,9 @@
                 {
                   "name": "Sabry Elsayed",
                   "aff": "Prof. of O&G, Ain Shams University, Egypt"
-                }
+                },
+                "Tarek Shaaban",
+                "Ali Farid"
               ],
               "content": [
                 "presentations"

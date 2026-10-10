@@ -509,32 +509,26 @@ function sessionHtml(item) {
       return m ? `Hall ${m[1].toUpperCase()}` : String(r.id);
     });
     return `
-      <article class="session" data-id="${esc(item.id)}" data-search="${esc(search)}">
-        <button class="session-head" aria-expanded="false">
+      <article class="session concurrent" data-id="${esc(item.id)}" data-search="${esc(search)}">
+        <div class="session-head concurrent-head">
           <div class="time-col">${timeRange(item.start, item.end)}</div>
           <div class="head-main">
             <div class="kicker"><span class="badge">${esc(item.label)}</span>${formatBadgesHtml(item)}${roleBadgesHtml(item)}</div>
             <div class="hall-row">
               ${rooms.map((r, i) => `
-              <div class="hall-cell">
-                <p class="session-sub">${esc(hallNames[i])}</p>
-                <h3 class="session-title">${esc(r.title)}</h3>
+              <button type="button" class="hall-cell" data-room="${esc(r.id)}">
+                <span class="session-sub">${esc(hallNames[i])}</span>
+                <span class="session-title">${esc(r.title)}</span>
                 ${coordPill(r.coordinators)}
-              </div>`).join('')}
+              </button>`).join('')}
             </div>
           </div>
-          <span class="chevron" aria-hidden="true"></span>
-        </button>
+        </div>
         <div class="session-body" style="padding-top:4px">
-          ${rooms.length > 1 ? `
-          <div class="room-tabs" role="tablist">
-            ${rooms.map((r, i) => `
-              <button class="room-tab ${i === 0 ? 'active' : ''}" data-room="${esc(r.id)}" role="tab">${esc(r.id)}</button>`).join('')}
-          </div>` : ''}
           ${rooms.map((r, i) => {
             const titleLine = `<p class="room-title">${esc(r.id)} — ${esc(r.title)} ${formatBadgesHtml(r)}</p>`;
             return `
-            <div class="room-panel ${i === 0 ? 'active' : ''}" data-room-panel="${esc(r.id)}">
+            <div class="room-panel" data-room-panel="${esc(r.id)}">
               ${r.talksFirst ? '' : titleLine}
               ${r.subtitle ? `<p class="room-sub">${esc(r.subtitle)}</p>` : ''}
               ${r.badge ? `<p class="room-sub"><span class="badge soft">${esc(r.badge)}</span></p>` : ''}
@@ -636,8 +630,30 @@ function highlightSpeakerChips() {
 
 function setCardOpen(card, open) {
   card.classList.toggle('open', open);
-  const head = card.querySelector('.session-head');
+  const head = card.querySelector('button.session-head');
   if (head) head.setAttribute('aria-expanded', String(open));
+  if (open) ensureHallActive(card);
+  else clearHalls(card);
+}
+
+function activateHall(cell) {
+  const card = cell.closest('.session');
+  const roomId = cell.dataset.room;
+  card.querySelectorAll('.hall-cell').forEach(c => c.classList.toggle('active', c === cell));
+  card.querySelectorAll('.room-panel').forEach(p =>
+    p.classList.toggle('active', p.dataset.roomPanel === roomId));
+}
+
+function ensureHallActive(card) {
+  const cells = [...card.querySelectorAll('.hall-cell')];
+  if (!cells.length || cells.some(c => c.classList.contains('active'))) return;
+  activateHall(cells[0]);
+}
+
+function clearHalls(card) {
+  if (!card.querySelector('.hall-cell')) return;
+  card.querySelectorAll('.hall-cell').forEach(c => c.classList.remove('active'));
+  card.querySelectorAll('.room-panel').forEach(p => p.classList.remove('active'));
 }
 
 function expandableCards() {
@@ -705,7 +721,7 @@ expandAllBtn.addEventListener('click', () => {
 });
 
 function bindSessionEvents() {
-  scheduleEl.querySelectorAll('.session-head').forEach(btn => {
+  scheduleEl.querySelectorAll('button.session-head').forEach(btn => {
     btn.addEventListener('click', () => {
       const card = btn.closest('.session');
       setCardOpen(card, !card.classList.contains('open'));
@@ -713,15 +729,21 @@ function bindSessionEvents() {
     });
   });
 
-  scheduleEl.querySelectorAll('.room-tabs').forEach(tabs => {
-    tabs.addEventListener('click', e => {
-      const tab = e.target.closest('.room-tab');
-      if (!tab) return;
-      const card = tab.closest('.session');
-      const roomId = tab.dataset.room;
-      card.querySelectorAll('.room-tab').forEach(t => t.classList.toggle('active', t === tab));
-      card.querySelectorAll('.room-panel').forEach(p =>
-        p.classList.toggle('active', p.dataset.roomPanel === roomId));
+  scheduleEl.querySelectorAll('.hall-cell').forEach(cell => {
+    cell.addEventListener('click', () => {
+      activateHall(cell);
+      setCardOpen(cell.closest('.session'), true);
+      updateExpandBtn();
+    });
+  });
+
+  scheduleEl.querySelectorAll('.concurrent-head').forEach(head => {
+    head.addEventListener('click', e => {
+      if (e.target.closest('.hall-cell')) return;
+      const card = head.closest('.session');
+      if (!card.classList.contains('open')) return;
+      setCardOpen(card, false);
+      updateExpandBtn();
     });
   });
 }
@@ -747,7 +769,7 @@ function applyFilter() {
     card.style.display = match ? '' : 'none';
     if (match) {
       visible++;
-      if (talkHit) card.classList.add('open');
+      if (talkHit) setCardOpen(card, true);
     }
   });
   noResults.hidden = visible > 0;
