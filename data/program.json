@@ -87,7 +87,7 @@
             },
             {
               "title": "Reproductive Medicine in the Era of Artificial Intelligence and Automation: Myth or Reality?",
-              "speaker": "Ayman Nady (EGY) Minia",
+              "speaker": "Ayman Nady (EGY)",
               "aff": "Prof. of O&G, Minia University, Egypt"
             },
             {
@@ -125,11 +125,11 @@
                 "aff": ""
               },
               {
-                "name": "Tarek Youssef (Surgery) (EGY)",
+                "name": "Tarek Youssef (EGY)",
                 "aff": "Prof. of General Surgery, Ain Shams University, Egypt"
               },
               {
-                "name": "Wafaa Raafat (Radio) (EGY)",
+                "name": "Wafaa Raafat (EGY)",
                 "aff": "Prof. of Radiology, Ain Shams University, Egypt"
               }
             ],
@@ -197,25 +197,40 @@
         },
         {
           "type": "block",
-          "id": "d1-opening",
+          "id": "d1-diploma",
           "start": "11:30",
-          "end": "13:00",
-          "title": "Diploma Graduation & Opening Ceremony",
+          "end": "12:00",
+          "title": "Diploma Graduation: Laparoscopy, IVF",
           "sub": [
             {
               "title": "Diploma Graduation: Laparoscopy, IVF"
-            },
+            }
+          ]
+        },
+        {
+          "type": "block",
+          "id": "d1-opening",
+          "start": "12:00",
+          "end": "12:30",
+          "title": "Opening Ceremony",
+          "sub": [
             {
               "title": "Opening Ceremony",
               "note": "University President – Dean – Vice Dean – Syndicate Head – (Minister of Health / Higher Education)"
-            },
+            }
+          ]
+        },
+        {
+          "type": "block",
+          "id": "d1-honoring",
+          "start": "12:30",
+          "end": "13:00",
+          "title": "Professors' Honoring",
+          "sub": [
             {
               "title": "Professors' Honoring",
               "note": "Ali Elian, Ahmed Ezzat, Ahmed Khairy"
             }
-          ],
-          "content": [
-            "presentations"
           ]
         },
         {
@@ -246,7 +261,7 @@
                 "aff": "Prof. of O&G, Ain Shams University, Egypt"
               },
               {
-                "name": "Ayman Abouelnour",
+                "name": "Ayman Aboulnour",
                 "aff": "Prof. of O&G, Ain Shams University, Egypt"
               },
               {
@@ -264,7 +279,10 @@
                 "name": "Sherif El Mekkawi",
                 "aff": "Prof. of O&G, Ain Shams University, Egypt"
               },
-              "Kamal Eldessouki"
+              {
+                "name": "Kamal Eldessouki",
+                "aff": "Lecturer in O&G, Ain Shams University, Egypt"
+              }
             ],
             "topics": [
               "Egyptian Health Council (EHC) Guidelines",
@@ -286,7 +304,7 @@
           "label": "Plenary 5",
           "start": "14:15",
           "end": "15:15",
-          "title": "The Next Frontier: Where Technology Meets Clinical Care",
+          "title": "Frontiers in Obstetric Care: Predict, Prevent, Manage",
           "chairpersons": [
             {
               "name": "Ahmed Hashad",
@@ -305,11 +323,11 @@
               "aff": "Prof. of O&G, Benha University, Egypt"
             },
             {
-              "name": "Nahla Waer (aswan)",
+              "name": "Nahla Waer",
               "aff": "Prof. of O&G, Aswan University, Egypt"
             },
             {
-              "name": "Osama Elkilany (menofeya)",
+              "name": "Osama Elkilany",
               "aff": "Prof. of O&G, Menofia University, Egypt"
             },
             {
@@ -336,7 +354,7 @@
             },
             {
               "title": "?",
-              "speaker": "Ayman Aboelnour (EGY)",
+              "speaker": "Ayman Aboulnour (EGY)",
               "aff": "Prof. of O&G, Ain Shams University, Egypt"
             },
             {
@@ -387,21 +405,24 @@
                 "aff": "Prof. of O&G, Ain Shams University, Egypt"
               },
               {
-                "name": "Mona Reda (EGY) Psych",
+                "name": "Mona Reda (EGY)",
                 "aff": "Prof. of Psychiatry, Ain Shams University, Egypt"
               },
               {
-                "name": "Muhammad Hassan",
+                "name": "Mohamed Hassan (EGY)",
                 "aff": "Prof. of O&G, Ain Shams University, Egypt"
               },
-              "Taher Elbarbary",
+              "Taher Elbarbary (EGY)",
               {
                 "name": "Yasser Aboutalib (EGY)",
                 "aff": "Prof. of O&G, Ain Shams University, Egypt"
               }
             ],
             "moderators": [
-              "Kamal Eldessouki",
+              {
+                "name": "Kamal Eldessouki",
+                "aff": "Lecturer in O&G, Ain Shams University, Egypt"
+              },
               {
                 "name": "Yomna Ayman",
                 "aff": "Asst Lect. in O&G, Ain Shams University, Egypt"
@@ -440,8 +461,8 @@
               "title": "Obstetrics: Challenges in Our Daily Practice",
               "talks": [
                 {
-                  "title": "?",
-                  "speaker": "Ebtihal Altayeb (EGY)",
+                  "title": "When to Deliver a Borderline Fetus?",
+                  "speaker": "Ebtihal Eltayeb (EGY)",
                   "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
@@ -459,8 +480,11 @@
                   "title": "HIV in Pregnancy",
                   "panel": {
                     "panelists": [
-                      "Dr Miral (EGY)",
-                      "Heba Abdella (EGY) Tropical",
+                      "Miral Adel (EGY)",
+                      {
+                        "name": "Heba Abdella (EGY) Tropical",
+                        "aff": "Prof. of Tropical Medicine & Infectious Diseases, Ain Shams University, Egypt"
+                      },
                       "Muhammad Shahid Jamil (WHO)"
                     ],
                     "moderators": [
@@ -589,7 +613,8 @@
                 },
                 {
                   "title": "Cervical Elongation: Diagnosis and Management",
-                  "speaker": "Hazem El-Ashmawy (EGY)"
+                  "speaker": "Hazem El-Ashmawy (EGY)",
+                  "aff": "Prof. of O&G, Cairo University, Egypt"
                 },
                 {
                   "title": "Laparoscopic Lateral Suspension",
@@ -622,7 +647,7 @@
                 },
                 {
                   "name": "Hazem El-Ashmawy (Cairo)",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Cairo University, Egypt"
                 },
                 {
                   "name": "Hazem Sammour",
@@ -676,7 +701,7 @@
                     "format": "Panel Discussion",
                     "panelists": [
                       {
-                        "name": "Ayman Abouelnour",
+                        "name": "Ayman Aboulnour",
                         "aff": "Prof. of O&G, Ain Shams University, Egypt"
                       },
                       {
@@ -688,7 +713,10 @@
                         "name": "Noha Elsharnouby",
                         "aff": "Prof. of Anesthesiology & Critical Care, Ain Shams University, Egypt"
                       },
-                      "Enas Sabry (Endocrine)"
+                      {
+                        "name": "Enas Sabry",
+                        "aff": "Prof. of Endocrinology, Ain Shams University, Egypt"
+                      }
                     ],
                     "moderators": [
                       {
@@ -776,7 +804,7 @@
               ],
               "coordinators": [
                 "Aya Sameh",
-                "Refaei"
+                "Refaie"
               ]
             },
             {
@@ -945,6 +973,9 @@
           ],
           "content": [
             "presentations"
+          ],
+          "coordinators": [
+            "Mariam"
           ]
         },
         {
@@ -1084,7 +1115,7 @@
           "label": "Plenary 11",
           "start": "15:45",
           "end": "16:30",
-          "title": "Comprehensive Strategy of Infertility Management",
+          "title": "Comprehensive Infertility Management",
           "panel": {
             "format": "Panel Discussion",
             "panelists": [
@@ -1133,7 +1164,10 @@
           "panel": {
             "format": "Interactive Session",
             "panelists": [
-              "Ahmed Ramy (EGY)",
+              {
+                "name": "Ahmed Ramy (EGY)",
+                "aff": "Prof. of O&G, Ain Shams University, Egypt"
+              },
               "Aimen Shaaban (USA)",
               {
                 "name": "Dalia El Haieg (EGY)",
@@ -1205,7 +1239,7 @@
               ],
               "chairpersons": [
                 {
-                  "name": "Ebtihal Altayeb",
+                  "name": "Ebtihal Eltayeb",
                   "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
@@ -1398,10 +1432,51 @@
                   "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
-                  "title": "Case Presentations + MDT Discussions",
-                  "speaker": "3–4 cases",
-                  "note": "Nireen Okasha (Cardio), Amr Saeed (Neuro), Rania Magdy (ICU), Ramy Mahrous (AN), Nagy Samy (ONCO), Asaad Gamal (IR) · Moderator: Walid Hitler · Cases: Farida (cardio, post-arrest), Refaei (thrombectomy), Rowan (CC/surgery)",
-                  "duration": 60
+                  "title": "MDT Discussion",
+                  "panel": {
+                    "format": "MDT Discussion",
+                    "panelists": [
+                      {
+                        "name": "Nireen Okasha (Cardio)",
+                        "aff": "Prof. of Cardiology, Ain Shams University, Egypt"
+                      },
+                      {
+                        "name": "Amr Saeed (Neuro)",
+                        "aff": ""
+                      },
+                      {
+                        "name": "Rania Magdy (ICU)",
+                        "aff": ""
+                      },
+                      {
+                        "name": "Ramy Mahrous (AN)",
+                        "aff": ""
+                      },
+                      {
+                        "name": "Nagy Samy (ONCO)",
+                        "aff": "Assoc. Prof. of Oncology, Ain Shams University, Egypt"
+                      },
+                      {
+                        "name": "Asaad Gamal (IR)",
+                        "aff": "Lecturer in Interventional Radiology, Ain Shams University, Egypt"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "title": "Two Hearts, One Team: A Cardio-Obstetric MDT",
+                  "speaker": "Farida Shaalan",
+                  "duration": 20
+                },
+                {
+                  "title": "When Every Minute Matters: Acute MCA Stroke at 36 Weeks (A Multidisciplinary Team Rescue)",
+                  "speaker": "Mohamed Refaie",
+                  "duration": 20
+                },
+                {
+                  "title": "Beyond the Uterus: The Metastatic Journey of Choriocarcinoma",
+                  "speaker": "Rowan Sakr",
+                  "duration": 20
                 }
               ],
               "chairpersons": [
@@ -1426,7 +1501,7 @@
                 "presentations"
               ],
               "coordinators": [
-                "Refaei"
+                "Refaie"
               ]
             },
             {
@@ -1512,7 +1587,10 @@
                   "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 "Tarek Shaaban",
-                "Ali Farid"
+                {
+                  "name": "Ali Farid",
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
+                }
               ],
               "content": [
                 "presentations"
