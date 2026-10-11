@@ -716,6 +716,14 @@ html.show-coords .coord-pill { visibility: visible; }
   margin: 14px 0 6px;
 }
 
+.talk-role-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold-500);
+}
+
 .label-note {
   text-transform: none;
   font-weight: 600;

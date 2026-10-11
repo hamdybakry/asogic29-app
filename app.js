@@ -172,6 +172,7 @@ function collectSpeakers(prog) {
     addPairs(rolesFromNote(t.note, t.title));
     addPairs(rolesFromNote(t.speaker, t.title));
     addPairs(talkPanelPairs(t));
+    (t.speakers || []).forEach(s => { const nm = personName(s); if (nm) splitNames(nm).forEach(n => addRole(byNorm, n, s.role || 'Speaker')); });
   };
   const addSessionModerators = item => {
     addNames(item.moderators, 'Moderator');
@@ -217,6 +218,9 @@ function rolesInItem(item, name) {
       }
       for (const p of talkPanelPairs(t)) {
         if (hitName(p.name)) roles.add(p.role);
+      }
+      for (const p of t.speakers || []) {
+        if (p && hitName(p.name)) roles.add(p.role || 'Speaker');
       }
       if (t.speaker && nameIn(t.speaker, name)) {
         const pairs = rolesFromSpeakerField(t.speaker, t.title);
@@ -362,9 +366,10 @@ function talksHtml(talks, sessionStart) {
   if (!talks?.length) return '';
   const ranges = talkTimeRanges(talks, sessionStart);
   return talks.map((t, i) => {
-    const hay = `${t.title} ${t.speaker || ''} ${t.note || ''} ${t.panel ? JSON.stringify(t.panel) : ''}`;
+    const hay = `${t.title} ${t.speaker || ''} ${t.speakers ? t.speakers.map(s => s.name).join(' ') : ''} ${t.note || ''} ${t.panel ? JSON.stringify(t.panel) : ''}`;
     const hit = speakerFilter && (
       nameIn(t.speaker, speakerFilter) ||
+      (t.speakers || []).some(s => nameIn(s.name, speakerFilter)) ||
       nameIn(t.note, speakerFilter) ||
       rolesFromSpeakerField(t.speaker, t.title).some(p => samePerson(p.name, speakerFilter)) ||
       rolesFromNote(t.note, t.title).some(p => samePerson(p.name, speakerFilter)) ||
@@ -390,6 +395,9 @@ function talksHtml(talks, sessionStart) {
           for (const p of talkPanelPairs(t)) {
             if (samePerson(p.name, speakerFilter)) set.add(p.role);
           }
+          for (const p of t.speakers || []) {
+            if (p && samePerson(p.name, speakerFilter)) set.add(p.role || 'Speaker');
+          }
           if (!set.size && nameIn(t.speaker, speakerFilter) && !/moderators?\s*:/i.test(t.speaker || '')) {
             set.add(/panel discussion/i.test(`${t.title || ''} ${t.speaker}`) ? 'Panelist' : 'Speaker');
           }
@@ -403,7 +411,9 @@ function talksHtml(talks, sessionStart) {
       <div class="talk-time-col">${tr ? `${timeHtml(tr.start)}<br><span class="end">${timeHtml(tr.end)}</span>` : ''}</div>
       <div class="talk-main">
         <p class="talk-title">${esc(t.title)}${isPanelTalk ? ' <span class="badge format">panel discussion</span>' : ''}${talkRoles.length ? ` <span class="inline-role">${talkRoles.map(esc).join(' · ')}</span>` : ''}</p>
-        ${t.speaker ? `<p class="talk-speaker">${withFlags(esc(t.speaker))}<span class="talk-aff">${esc(t.aff || '')}</span></p>` : ''}
+        ${t.speakers?.length
+          ? t.speakers.map(s => `<p class="talk-speaker">${s.role ? `<span class="talk-role-label">${esc(s.role)}:</span> ` : ''}${withFlags(esc(s.name))}<span class="talk-aff">${esc(s.aff || '')}</span></p>`).join('')
+          : t.speaker ? `<p class="talk-speaker">${withFlags(esc(t.speaker))}<span class="talk-aff">${esc(t.aff || '')}</span></p>` : ''}
         ${t.badge ? `<p class="talk-note"><span class="badge gold">${esc(t.badge)}</span></p>` : ''}
         ${t.note ? `<p class="talk-note">${withFlags(esc(stripModCountry(t.note)))}</p>` : ''}
         ${t.panel ? panelHtml(t.panel) : ''}
