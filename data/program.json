@@ -3,7 +3,7 @@
     "name": "ASOGIC 29",
     "fullName": "29th Ain Shams Obstetrics & Gynecology International Conference",
     "dates": "15–16 October 2026",
-    "venue": "Triumph Luxury Hotel, New Cairo, Cairo, Egypt",
+    "venue": "Triumph Luxury Hotel, New Cairo, Egypt",
     "theme": "From Research to Reality: Changing My Practice",
     "website": "www.ASOGIC.com"
   },
@@ -31,7 +31,7 @@
           "chairpersons": [
             {
               "name": "Amgad Mounir",
-              "aff": ""
+              "aff": "Consultant in O&G, Military Hospitals, Egypt"
             },
             {
               "name": "Ashraf Nabhan",
@@ -110,19 +110,25 @@
           "label": "Plenary 2",
           "start": "10:00",
           "end": "10:45",
-          "title": "Decoding Endometriosis: Pathways from Diagnosis to Advanced Surgery",
+          "title": "Exploring Endometriosis: Pathways from Diagnosis to Advanced Surgery",
           "panel": {
             "format": "Panel Discussion",
             "panelists": [
-              "Ahmed Elnaggar (GBR)",
+              {
+                "name": "Ahmed Elnaggar (GBR)",
+                "aff": "Consultant Gynaecologist, University Hospitals of Derby & Burton Endoemtriosis Centre Lead, UK"
+              },
               {
                 "name": "Amro Elhoussieny (EGY)",
                 "aff": "Prof. of O&G, Ain Shams University, Egypt"
               },
-              "Christoph Cirkel (DEU)",
+              {
+                "name": "Christoph Cirkel (DEU)",
+                "aff": "Head of Endometriosis Center, Lubeck University, Germany"
+              },
               {
                 "name": "Jorg Keckstein (AUT)",
-                "aff": ""
+                "aff": "Prof. of O&G, University of Ulm, Germany; Specialist in Endometriosis & Minimally Invasive Gynecological Surgery"
               },
               {
                 "name": "Tarek Youssef (EGY)",
@@ -169,9 +175,18 @@
           "panel": {
             "format": "Panel Discussion",
             "panelists": [
-              "Abla Al-Alfy (EGY)",
-              "Hesham Zaki (EGY)",
-              "Mohamed Eissa (WHO)",
+              {
+                "name": "Abla Al-Alfy (EGY)",
+                "aff": "Deputy Minister of Health and Population for Population and Family Development Affairs, Egypt"
+              },
+              {
+                "name": "Hesham Zaki (EGY)",
+                "aff": "Head of the Central Administration for Non-Governmental Treatment Institutions and Licensing at the Ministry of Health and Population, Egypt"
+              },
+              {
+                "name": "Mohamed Eissa (WHO)",
+                "aff": "Public Health Officer, Healthier Populations, WHO Egypt"
+              },
               {
                 "name": "Mostafa Abbas (EGY)",
                 "aff": "Lecturer in O&G, Ain Shams University, Egypt"
@@ -182,7 +197,10 @@
               }
             ],
             "moderators": [
-              "Nasser El Kholy"
+              {
+                "name": "Nasser El Kholy",
+                "aff": "Consultant in O&G; WHO Expert; Member of the FIGO Committee on Contraception; UNFPA Maternal Health Adviser"
+              }
             ],
             "topics": [
               "Reducing primary cesarean delivery is achievable without compromising maternal or fetal outcomes"
@@ -196,42 +214,25 @@
           ]
         },
         {
-          "type": "block",
+          "type": "info",
           "id": "d1-diploma",
           "start": "11:30",
           "end": "12:00",
-          "title": "Diploma Graduation: Laparoscopy, IVF",
-          "sub": [
-            {
-              "title": "Diploma Graduation: Laparoscopy, IVF"
-            }
-          ]
+          "title": "Laparoscopy Diploma Graduation"
         },
         {
-          "type": "block",
+          "type": "info",
           "id": "d1-opening",
           "start": "12:00",
           "end": "12:30",
-          "title": "Opening Ceremony",
-          "sub": [
-            {
-              "title": "Opening Ceremony",
-              "note": "University President – Dean – Vice Dean – Syndicate Head – (Minister of Health / Higher Education)"
-            }
-          ]
+          "title": "Opening Ceremony"
         },
         {
-          "type": "block",
+          "type": "info",
           "id": "d1-honoring",
           "start": "12:30",
           "end": "13:00",
-          "title": "Professors' Honoring",
-          "sub": [
-            {
-              "title": "Professors' Honoring",
-              "note": "Ali Elian, Ahmed Ezzat, Ahmed Khairy"
-            }
-          ]
+          "title": "Professors' Honoring"
         },
         {
           "type": "break",
@@ -250,12 +251,18 @@
           "panel": {
             "format": "Panel Discussion",
             "panelists": [
-              "Abdelhamid Attia",
+              {
+                "name": "Abdelhamid Attia",
+                "aff": "Prof. of O&G, Cairo University, Egypt"
+              },
               {
                 "name": "Ahmed Rashed",
                 "aff": "Prof. of O&G, Ain Shams University, Egypt"
               },
-              "Ahmed Shams",
+              {
+                "name": "Ahmed Shams",
+                "aff": "Lawyer specializing in Medical Liability cases"
+              },
               {
                 "name": "Amr Nadim",
                 "aff": "Prof. of O&G, Ain Shams University, Egypt"
@@ -272,7 +279,10 @@
                 "name": "Karam Bayoumy",
                 "aff": "Prof. of O&G, Ain Shams University, Egypt"
               },
-              "Osama Abdelhai"
+              {
+                "name": "Osama Abdelhai",
+                "aff": "Prof. of Anesthesiology & Critical Care, Ain Shams University, Egypt"
+              }
             ],
             "moderators": [
               {
@@ -346,11 +356,13 @@
           "talks": [
             {
               "title": "Core Physiologic Monitoring of the Fetus",
-              "speaker": "Aimen Shaaban (USA)"
+              "speaker": "Aimen Shaaban (USA)",
+              "aff": "Prof. of Pediatric Surgery, Northwestern University Feinberg School of Medicine, USA; Director, Chicago Institute for Fetal Health; Pediatric Surgery and Fetal Therapy Specialist"
             },
             {
               "title": "Digital Twins and the Future of Childbirth",
-              "speaker": "Khaled Mostafa Kamel (CZE)"
+              "speaker": "Khaled Mostafa Kamel (CZE)",
+              "aff": "Prof. of O&G, Charles University, Czech"
             },
             {
               "title": "?",
@@ -395,7 +407,10 @@
                 "name": "Alaa Elfeky (EGY)",
                 "aff": "Prof. of O&G, Ain Shams University, Egypt"
               },
-              "Amr Aboelyazid (EGY) Police",
+              {
+                "name": "Amr Aboelyazid (EGY)",
+                "aff": "Consultant in O&G, Police Hospitals, Egypt"
+              },
               {
                 "name": "Amr Elhelaly (EGY)",
                 "aff": "Prof. of O&G, Ain Shams University, Egypt"
@@ -412,7 +427,10 @@
                 "name": "Mohamed Hassan (EGY)",
                 "aff": "Prof. of O&G, Ain Shams University, Egypt"
               },
-              "Taher Elbarbary (EGY)",
+              {
+                "name": "Taher Elbarbary (EGY)",
+                "aff": "Prof. of O&G, Al-Azhar University, Egypt"
+              },
               {
                 "name": "Yasser Aboutalib (EGY)",
                 "aff": "Prof. of O&G, Ain Shams University, Egypt"
@@ -480,12 +498,18 @@
                   "title": "HIV in Pregnancy",
                   "panel": {
                     "panelists": [
-                      "Miral Adel (EGY)",
                       {
-                        "name": "Heba Abdella (EGY) Tropical",
+                        "name": "Miral Adel (EGY)",
+                        "aff": "Consultant in Neonatology, Ain Shams Maternity Hospital, Egypt"
+                      },
+                      {
+                        "name": "Heba Abdella (EGY)",
                         "aff": "Prof. of Tropical Medicine & Infectious Diseases, Ain Shams University, Egypt"
                       },
-                      "Muhammad Shahid Jamil (WHO)"
+                      {
+                        "name": "Muhammad Shahid Jamil (WHO)",
+                        "aff": "Technical Officer for HIV, Hepatitis and STIs, WHO EMRO "
+                      }
                     ],
                     "moderators": [
                       {
@@ -524,7 +548,7 @@
                 },
                 {
                   "name": "Sayed Elkabbary",
-                  "aff": ""
+                  "aff": "Consultant in O&G, Military Hospitals, Egypt"
                 }
               ],
               "content": [
@@ -576,12 +600,16 @@
                   "aff": ""
                 },
                 {
+                  "name": "Hazem Elzeneiny",
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
+                },
+                {
                   "name": "Khattab Omar (Azhar)",
                   "aff": "Prof. of O&G, Al-Azhar University, Egypt"
                 },
                 {
-                  "name": "Mahmoud Elsehemy السحيمي (Azhar)",
-                  "aff": ""
+                  "name": "Mahmoud Elsehemy",
+                  "aff": "Prof. of O&G, Al-Azhar University, Egypt"
                 },
                 {
                   "name": "Mohamed Sayed Ali",
@@ -589,7 +617,7 @@
                 },
                 {
                   "name": "Osama Deif",
-                  "aff": ""
+                  "aff": "Prof. of O&G, Al-Azhar University, Egypt"
                 },
                 {
                   "name": "Radwa Mansour",
@@ -609,7 +637,8 @@
               "talks": [
                 {
                   "title": "Management of Pelvic Organ Prolapse with Concomitant Short Total Vaginal Length",
-                  "speaker": "Khaled Mostafa Kamel (CZE)"
+                  "speaker": "Khaled Mostafa Kamel (CZE)",
+                  "aff": "Prof. of O&G, Charles University, Czech"
                 },
                 {
                   "title": "Cervical Elongation: Diagnosis and Management",
@@ -643,7 +672,7 @@
                 },
                 {
                   "name": "Ashraf Hamdy (Azhar)",
-                  "aff": "Prof. of O&G, Azhar University, Egypt"
+                  "aff": "Prof. of O&G, Al-Azhar University, Egypt"
                 },
                 {
                   "name": "Hazem El-Ashmawy (Cairo)",
@@ -655,6 +684,10 @@
                 },
                 {
                   "name": "Ihab Serag",
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
+                },
+                {
+                  "name": "Khalid Kamal",
                   "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
@@ -708,7 +741,10 @@
                         "name": "Hatem Elgamal",
                         "aff": "Prof. of O&G, Ain Shams University, Egypt"
                       },
-                      "Mohamed Abdallah (Galaa)",
+                      {
+                        "name": "Mohamed Abdallah",
+                        "aff": "Consultant in O&G, Galaa Hospital"
+                      },
                       {
                         "name": "Noha Elsharnouby",
                         "aff": "Prof. of Anesthesiology & Critical Care, Ain Shams University, Egypt"
@@ -744,16 +780,18 @@
               "talks": [
                 {
                   "title": "Virginity Guard: New invention for vaginoscopy in virgins",
-                  "speaker": "Mohsen Rabie (EGY)"
+                  "speaker": "Mohsen Rabie (EGY)",
+                  "aff": "Consultant in Obstetrics & Gynecology"
                 },
                 {
                   "title": "Is there a place for surgery in adenomyosis and infertility?",
                   "speaker": "Jorg Keckstein (AUT)",
-                  "aff": ""
+                  "aff": "Prof. of O&G, University of Ulm, Germany; Specialist in Endometriosis & Minimally Invasive Gynecological Surgery"
                 },
                 {
                   "title": "Green Surgery: Indocyanine Green (ICG) in Complex Benign Gynaecological Surgery",
-                  "speaker": "Ahmed Elnaggar (GBR)"
+                  "speaker": "Ahmed Elnaggar (GBR)",
+                  "aff": "Consultant Gynaecologist, University Hospitals of Derby & Burton Endoemtriosis Centre Lead, UK"
                 },
                 {
                   "title": "Difficult TLH: Let Me Show the Way",
@@ -762,11 +800,13 @@
                 },
                 {
                   "title": "Beyond Cystectomy: A Stepwise Approach to Endometrioma Management — From Ethanol Sclerotherapy to Secondary Prevention",
-                  "speaker": "Christoph Cirkel (DEU)"
+                  "speaker": "Christoph Cirkel (DEU)",
+                  "aff": "Head of Endometriosis Center, Lubeck University, Germany"
                 },
                 {
                   "title": "Robotic Surgery or Conventional Laparoscopy? Selecting the Right Patient for the Right Approach",
-                  "speaker": "Ahmed Khalil (DEU)"
+                  "speaker": "Ahmed Khalil (DEU)",
+                  "aff": "Specialist in Endometriosis, University of Lubeck, Germany"
                 }
               ],
               "chairpersons": [
@@ -787,12 +827,12 @@
                   "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
-                  "name": "Osama Ismail (EGY)",
+                  "name": "Osama Ismail",
                   "aff": "Assoc. Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
-                  "name": "Osama Omar (Military)",
-                  "aff": ""
+                  "name": "Osama Omar",
+                  "aff": "Consultant in O&G, Military Hospitals, Egypt"
                 },
                 {
                   "name": "Sherif Hanafy",
@@ -842,27 +882,19 @@
                 },
                 {
                   "name": "Amr Essam",
-                  "aff": ""
+                  "aff": "Consultant in Obstetrics & Gynecology"
                 },
                 {
-                  "name": "Elsayed Elsherbiny (Police)",
-                  "aff": ""
-                },
-                {
-                  "name": "Heba Abdelbaset",
-                  "aff": ""
+                  "name": "Elsayed Elsherbiny",
+                  "aff": "Consultant in O&G, Police Hospitals, Egypt"
                 },
                 {
                   "name": "Khaled Amin",
-                  "aff": ""
+                  "aff": "Consultant OBGYN; Assistant General Secretary of the Egyptian Medical Syndicate"
                 },
                 {
                   "name": "Maii Nawara",
                   "aff": "Prof. of O&G, Ain Shams University, Egypt"
-                },
-                {
-                  "name": "Mohamed Samy",
-                  "aff": ""
                 },
                 {
                   "name": "Mortada Elsayed",
@@ -913,7 +945,7 @@
           "talks": [
             {
               "title": "History of Medicine",
-              "speaker": "Osama Elshazly, Ahmed Hamdy",
+              "speaker": "Osama Elshazly (EGY) – Ahmed Hamdy (EGY)",
               "aff": "Prof. of Orthopedic Surgery, Ain Shams University, Egypt"
             }
           ],
@@ -930,45 +962,50 @@
           "title": "GYNOlympics: Excellence of Minds, Knowledge, and Skills",
           "chairpersons": [
             {
-              "name": "Abeer Bahaa (SC)",
-              "aff": "Prof. of O&G, Suez Canal University, Egypt"
+              "name": "Abeer Bahaa",
+              "aff": "Head of O&G Dept., Suez Canal University, Egypt"
             },
             {
-              "name": "Ahmed Youssef (Benha)",
-              "aff": "Prof. of O&G, Benha University, Egypt"
+              "name": "Ahmed Youssef",
+              "aff": "Head of O&G Dept., Benha University, Egypt"
             },
             {
               "name": "Ahmed Zakaria Elsheikha",
               "aff": "Prof. of O&G, Cairo University, Egypt"
             },
             {
-              "name": "Amal Elanwar (zag)",
-              "aff": "Prof. of O&G, Zagazig University, Egypt"
+              "name": "Amal Elanwar",
+              "aff": "Head of O&G Dept., Zagazig University, Egypt"
             },
             {
-              "name": "Hossam Fahem (AzB)",
-              "aff": "Prof. of O&G, Al-Azhar University, Egypt"
+              "name": "Hossam Fahem",
+              "aff": "Head of O&G Dept., Al-Azhar University for Boys, Egypt"
             },
             {
               "name": "Karam Bayoumy",
-              "aff": "Prof. of O&G, Ain Shams University, Egypt"
+              "aff": "Head of O&G Dept., Ain Shams University, Egypt"
             },
             {
-              "name": "Tayseer Maarouf (AzG)",
-              "aff": "Prof. of O&G, Al-Azhar University, Egypt"
+              "name": "Tayseer Maarouf",
+              "aff": "Head of O&G Dept., Al-Azhar University for Girls, Egypt"
             }
           ],
           "moderators": [
-            "Sherif El Mekkawi",
-            "Yasser Elrefaey"
+            {
+              "name": "Sherif El Mekkawi",
+              "aff": "Prof. of O&G, Ain Shams University, Egypt"
+            },
+            {
+              "name": "Yasser Elrefaey",
+              "aff": "Lecturer in O&G, Ain Shams University, Egypt"
+            }
           ],
           "talks": [
             {
-              "title": "GYNOlympics Quiz"
-            },
-            {
-              "title": "Universities challenge",
-              "note": "Universities: Ain Shams · Suez Canal · Azhar Boys · Azhar Girls · Benha · Zagazig · Cairo"
+              "title": "Universities Challenge",
+              "note": "Ain Shams · Azhar Boys · Azhar Girls · Benha · Cairo · Suez Canal · Zagazig",
+              "start": "10:30",
+              "duration": 120
             }
           ],
           "content": [
@@ -1006,7 +1043,7 @@
               "aff": "Prof. of O&G, Ain Shams University, Egypt"
             },
             {
-              "name": "Haitham Badran (fayoum)",
+              "name": "Haitham Badran",
               "aff": "Prof. of O&G, Fayoum University, Egypt"
             },
             {
@@ -1038,7 +1075,7 @@
             {
               "title": "From Imaging to Surgery and Artificial Intelligence: #Enzian — The Future Global Language of Endometriosis",
               "speaker": "Jorg Keckstein (AUT)",
-              "aff": ""
+              "aff": "Prof. of O&G, University of Ulm, Germany; Specialist in Endometriosis & Minimally Invasive Gynecological Surgery"
             },
             {
               "title": "Deescalation of Surgery in Gynecological Cancer",
@@ -1047,11 +1084,13 @@
             },
             {
               "title": "Precise preservation of autonomic nerves in radical hysterectomy: From anatomical experience to precision navigation",
-              "speaker": "Chengyan Luo (CHN)"
+              "speaker": "Chengyan Luo (CHN)",
+              "aff": "Prof. of Gynecologic Oncology, Nanjing Medical University, China"
             },
             {
               "title": "The Hysteroscopy Atlas: From normal to abnormal",
-              "speaker": "Alka Kumar (IND)"
+              "speaker": "Alka Kumar (IND)",
+              "aff": "Consultant Hysteroscopic Surgeon, AAGL Hysteroscopy/Intrauterine Surgery Special Interest Group"
             }
           ],
           "content": [
@@ -1072,9 +1111,18 @@
           "panel": {
             "format": "Panel Discussion",
             "panelists": [
-              "Dr Hamdy Elbarbary عميد كلية أصول الدين",
-              "Ehab Hassanein",
-              "Fr Ermia Makram المركز الثقافي القبطي",
+              {
+                "name": "Dr Hamdy Elbarbary",
+                "aff": "عميد كلية أصول الدين بجامعة الأزهر"
+              },
+              {
+                "name": "Ehab Hassanein",
+                "aff": "Professor of O&G, Al-Azhar University"
+              },
+              {
+                "name": "Fr Ermia Makram",
+                "aff": "القس بالمركز الثقافي القبطي الأرثوذكسي"
+              },
               {
                 "name": "Hassan Tawfik",
                 "aff": "Prof. of O&G, Ain Shams University, Egypt"
@@ -1119,8 +1167,14 @@
           "panel": {
             "format": "Panel Discussion",
             "panelists": [
-              "Abdelmageed Sarhan",
-              "Hassan Maghrabi",
+              {
+                "name": "Abdelmageed Sarhan",
+                "aff": "Prof. of O&G, Zagazig University, Egypt"
+              },
+              {
+                "name": "Hassan Maghrabi",
+                "aff": "Prof. of O&G, Alexandria University, Egypt"
+              },
               {
                 "name": "Hossam Fahem",
                 "aff": "Prof. of O&G, Al-Azhar University, Egypt"
@@ -1134,7 +1188,7 @@
                 "aff": "Prof. of O&G, Ain Shams University, Egypt"
               },
               {
-                "name": "Salah Rasheed (Sohag)",
+                "name": "Salah Rasheed",
                 "aff": "Prof. of O&G, Sohag University, Egypt"
               }
             ],
@@ -1168,15 +1222,24 @@
                 "name": "Ahmed Ramy (EGY)",
                 "aff": "Prof. of O&G, Ain Shams University, Egypt"
               },
-              "Aimen Shaaban (USA)",
+              {
+                "name": "Aimen Shaaban (USA)",
+                "aff": "Prof. of Pediatric Surgery, Northwestern University Feinberg School of Medicine, USA; Director, Chicago Institute for Fetal Health; Pediatric Surgery and Fetal Therapy Specialist"
+              },
               {
                 "name": "Dalia El Haieg (EGY)",
                 "aff": "Prof. of O&G, Zagazig University, Egypt"
               },
-              "Liesbeth Lewi (BEL)",
-              "Mohamed Momtaz (EGY)",
               {
-                "name": "Sherif Akl",
+                "name": "Liesbeth Lewi (BEL)",
+                "aff": "Prof. of O&G, KU Leuven, Belgium; Fetal Medicine and Therapy Specialist"
+              },
+              {
+                "name": "Mohamed Momtaz (EGY)",
+                "aff": "Prof. of O&G, Cairo University, Egypt"
+              },
+              {
+                "name": "Sherif Akl (EGY)",
                 "aff": "Prof. of O&G, Ain Shams University, Egypt"
               }
             ],
@@ -1185,7 +1248,10 @@
                 "name": "Maya Abdelrazek",
                 "aff": "Assoc. Prof. of O&G, Ain Shams University, Egypt"
               },
-              "Rami Barakat"
+              {
+                "name": "Rami Barakat",
+                "aff": "Specialist in Fetal Medicine and Therapy, Egypt"
+              }
             ]
           },
           "content": [
@@ -1211,15 +1277,17 @@
           "rooms": [
             {
               "id": "3A",
-              "title": "The Obstetric Journey: From Prenatal Diagnosis to Delivery",
+              "title": "Advancing Obstetric Practice Beyond the Basics",
               "talks": [
                 {
                   "title": "Prenatal Genomic Testing",
-                  "speaker": "Ezzat Elsobky (EGY)"
+                  "speaker": "Ezzat Elsobky (EGY)",
+                  "aff": "Prof. of Medical Genetics, Ain Shams University, Egypt"
                 },
                 {
                   "title": "Color Doppler for Fetal Anatomy: Is It Useful?",
-                  "speaker": "Alaa Elebrashy (EGY)"
+                  "speaker": "Alaa Elebrashy (EGY)",
+                  "aff": "Professor of O&G, Cairo University"
                 },
                 {
                   "title": "Postpartum Hemorrhage: It’s Never Too Late to Save Lives",
@@ -1228,7 +1296,8 @@
                 },
                 {
                   "title": "Beyond Guidelines: Advancing Quality in Obstetrics",
-                  "speaker": "Abdelrahman Safwat (AUT)"
+                  "speaker": "Abdelrahman Safwat (AUT)",
+                  "aff": "Consultant in Obstetrics, Gynecology & Urogynecology, Feldkirch Academic Teaching Hospital, Austria"
                 },
                 {
                   "title": "Prevention of UTI during Pregnancy",
@@ -1251,8 +1320,8 @@
                   "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
-                  "name": "Mohamed Kandil (Men, Head of AFMC)",
-                  "aff": ""
+                  "name": "Mohamed Kandil",
+                  "aff": "Prof. of O&G, Menofia University, Egypt; Head of Dept, Armed Forces Medical College"
                 },
                 {
                   "name": "Nashwa Elsaied",
@@ -1319,7 +1388,7 @@
                   "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
                 {
-                  "name": "Ismail Abouelfotouh (Cairo)",
+                  "name": "Ismail Aboulfotouh",
                   "aff": "Prof. of O&G, Cairo University, Egypt"
                 },
                 {
@@ -1362,11 +1431,13 @@
                 },
                 {
                   "title": "Fertility Preservation in Endometrial and Cervical Cancer",
-                  "speaker": "Werner-Achim Rody (DEU)"
+                  "speaker": "Werner-Achim Rody (DEU)",
+                  "aff": "Director of Department for Gynecology and Obstetrics, University of Lubeck, Germany; Specialist in Gynecologic Oncology"
                 },
                 {
                   "title": "Challenges and Management of Radical Hysterectomy for Cervical Cancer",
-                  "speaker": "Chengyan Luo (CHN)"
+                  "speaker": "Chengyan Luo (CHN)",
+                  "aff": "Prof. of Gynecologic Oncology, Nanjing Medical University, China"
                 },
                 {
                   "title": "The Keyhole Approach to Gynecologic Cancer: Where Laparoscopy Stands Today",
@@ -1386,7 +1457,7 @@
                 },
                 {
                   "name": "Ahmed Sekotory",
-                  "aff": ""
+                  "aff": "Consultant in Obstetrics & Gynecology"
                 },
                 {
                   "name": "Helmy Motawe",
@@ -1437,27 +1508,27 @@
                     "format": "MDT Discussion",
                     "panelists": [
                       {
-                        "name": "Nireen Okasha (Cardio)",
+                        "name": "Nireen Okasha",
                         "aff": "Prof. of Cardiology, Ain Shams University, Egypt"
                       },
                       {
-                        "name": "Amr Saeed (Neuro)",
-                        "aff": ""
+                        "name": "Amr Saeed",
+                        "aff": "Assoc. Prof. of Neurology, Ain Shams University, Egypt"
                       },
                       {
-                        "name": "Rania Magdy (ICU)",
-                        "aff": ""
+                        "name": "Rania Magdy",
+                        "aff": "Prof. of Anesthesiology & Critical Care, Ain Shams University, Egypt"
                       },
                       {
-                        "name": "Ramy Mahrous (AN)",
-                        "aff": ""
+                        "name": "Ramy Mahrous",
+                        "aff": "Prof. of Anesthesiology & Critical Care, Ain Shams University, Egypt"
                       },
                       {
-                        "name": "Nagy Samy (ONCO)",
+                        "name": "Nagy Samy",
                         "aff": "Assoc. Prof. of Oncology, Ain Shams University, Egypt"
                       },
                       {
-                        "name": "Asaad Gamal (IR)",
+                        "name": "Asaad Gamal",
                         "aff": "Lecturer in Interventional Radiology, Ain Shams University, Egypt"
                       }
                     ]
@@ -1468,19 +1539,22 @@
                   "title": "Two Hearts, One Team: A Cardio-Obstetric MDT",
                   "speaker": "Farida Shaalan",
                   "start": "7:15",
-                  "duration": 20
+                  "duration": 20,
+                  "aff": "Asst Lect. in O&G, Ain Shams University, Egypt"
                 },
                 {
                   "title": "When Every Minute Matters: Acute MCA Stroke at 36 Weeks (A Multidisciplinary Team Rescue)",
                   "speaker": "Mohamed Refaie",
                   "start": "7:35",
-                  "duration": 20
+                  "duration": 20,
+                  "aff": "Asst Lect. in O&G, Ain Shams University, Egypt"
                 },
                 {
                   "title": "Beyond the Uterus: The Metastatic Journey of Choriocarcinoma",
                   "speaker": "Rowan Sakr",
                   "start": "7:55",
-                  "duration": 20
+                  "duration": 20,
+                  "aff": "Asst Lect. in O&G, Ain Shams University, Egypt"
                 }
               ],
               "chairpersons": [
@@ -1521,7 +1595,8 @@
                 {
                   "title": "Myths and Misconceptions in Contraception",
                   "duration": 30,
-                  "speaker": "Nasser El Kholy (EGY)"
+                  "speaker": "Nasser El Kholy (EGY)",
+                  "aff": "Consultant in O&G; WHO Expert; Member of the FIGO Committee on Contraception; UNFPA Maternal Health Adviser"
                 },
                 {
                   "title": "Bleeding Patterns with Contraception",
@@ -1531,7 +1606,10 @@
                 }
               ],
               "chairpersons": [
-                "Nasser Elkholy",
+                {
+                  "name": "Nasser Elkholy",
+                  "aff": "Consultant in O&G; WHO Expert; Member of the FIGO Committee on Contraception; UNFPA Maternal Health Adviser"
+                },
                 {
                   "name": "Amr Nadim",
                   "aff": "Prof. of O&G, Ain Shams University, Egypt"
@@ -1560,12 +1638,14 @@
                 {
                   "title": "The use of Saline Infusion Sonography in Infertility",
                   "speaker": "Sanaa Farghal (EGY)",
-                  "duration": 15
+                  "duration": 15,
+                  "aff": "Consultant in Obstetrics & Gynecology"
                 },
                 {
                   "title": "Uterine Anomalies and their Management",
                   "speaker": "Richard Keedwell (GBR)",
-                  "duration": 15
+                  "duration": 15,
+                  "aff": "Consultant Obstetrician & Gynaecologist, Royal Cornwall Hospitals NHS Trust, UK"
                 },
                 {
                   "title": "Fibroid Care in Current Times: From Keyhole to VR",
@@ -1576,7 +1656,8 @@
                 {
                   "title": "The Minimal Access Management of Endometriosis",
                   "speaker": "Hassan Zeinah (GBR)",
-                  "duration": 15
+                  "duration": 15,
+                  "aff": "Gynaecologist and Minimal Access Surgeon, Endometriosis Specialist, Bristol, UK"
                 }
               ],
               "chairpersons": [
@@ -1596,7 +1677,10 @@
                   "name": "Sabry Elsayed",
                   "aff": "Prof. of O&G, Ain Shams University, Egypt"
                 },
-                "Tarek Shaaban",
+                {
+                  "name": "Tarek Shaaban",
+                  "aff": "Prof. of O&G, Ain Shams University, Egypt"
+                },
                 {
                   "name": "Ali Farid",
                   "aff": "Prof. of O&G, Ain Shams University, Egypt"
