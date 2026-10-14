@@ -817,11 +817,12 @@ function populateSpeakers() {
   const people = collectSpeakers(program);
   const frag = document.createDocumentFragment();
   for (const person of people) {
+    const displayName = person.name.replace(/\s*\([^)]*\)/g, '');
     const opt = document.createElement('option');
-    opt.value = person.name;
+    opt.value = displayName;
     opt.textContent = person.roles.length
-      ? `${person.name} — ${person.roles.join(' · ')}`
-      : person.name;
+      ? `${displayName} — ${person.roles.join(' · ')}`
+      : displayName;
     frag.appendChild(opt);
   }
   speakerSelect.appendChild(frag);
