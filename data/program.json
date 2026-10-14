@@ -84,7 +84,7 @@
             {
               "title": "Reproductive Medicine in the Era of Artificial Intelligence and Automation: Myth or Reality?",
               "speaker": "Ayman Nady (EGY)",
-              "aff": "Prof. of O&G, Minia University"
+              "aff": "Head of O&G Dept, Minia University"
             },
             {
               "title": "AI and Fertility: Both Sides of the Coin",
@@ -191,7 +191,7 @@
               },
               {
                 "name": "Karam Bayoumy (EGY)",
-                "aff": "Prof. of O&G, Ain Shams University"
+                "aff": "Head of O&G Dept, Ain Shams University"
               },
               {
                 "name": "Mohamed Eissa (WHO)",
@@ -291,11 +291,15 @@
               },
               {
                 "name": "Karam Bayoumy (EGY)",
-                "aff": "Prof. of O&G, Ain Shams University"
+                "aff": "Head of O&G Dept, Ain Shams University"
               },
               {
                 "name": "Osama Abdelhai (EGY)",
                 "aff": "Prof. of Anesthesiology & Critical Care, Al-Azhar University; President, Egyptian Medical Syndicate"
+              },
+              {
+                "name": "Salah Sallam (EGY)",
+                "aff": "Consultant in Obstetrics & Gynecology"
               }
             ],
             "moderators": [
@@ -352,10 +356,6 @@
             },
             {
               "name": "Walid Basuony",
-              "aff": "Prof. of O&G, Ain Shams University"
-            },
-            {
-              "name": "Yasser Galal",
               "aff": "Prof. of O&G, Ain Shams University"
             }
           ],
@@ -534,10 +534,6 @@
                 },
                 {
                   "name": "Fekreya Salama",
-                  "aff": "Prof. of O&G, Ain Shams University"
-                },
-                {
-                  "name": "Mohamed Elsherbiny",
                   "aff": "Prof. of O&G, Ain Shams University"
                 },
                 {
@@ -954,27 +950,27 @@
           "chairpersons": [
             {
               "name": "Abeer Bahaa",
-              "aff": "Prof. of O&G, Suez Canal University"
+              "aff": "Head of O&G Dept, Suez Canal University"
             },
             {
               "name": "Ahmed Youssef",
-              "aff": "Prof. of O&G, Benha University"
+              "aff": "Head of O&G Dept, Benha University"
             },
             {
               "name": "Hossam Fahem",
-              "aff": "Prof. of O&G, Al-Azhar University"
+              "aff": "Head of O&G Dept, Al-Azhar University for Boys"
             },
             {
               "name": "Ismail Aboulfotouh",
-              "aff": "Prof. of O&G, Cairo University"
+              "aff": "Head of O&G Dept, Cairo University"
             },
             {
               "name": "Karam Bayoumy",
-              "aff": "Prof. of O&G, Ain Shams University"
+              "aff": "Head of O&G Dept, Ain Shams University"
             },
             {
-              "name": "Tayseer Maarouf",
-              "aff": "Prof. of O&G, Al-Azhar University"
+              "name": "Nahed Ezzat",
+              "aff": "Prof. of O&G, Al-Azhar University for Girls"
             }
           ],
           "moderators": [
@@ -1167,7 +1163,7 @@
               },
               {
                 "name": "Hossam Fahem (EGY)",
-                "aff": "Prof. of O&G, Al-Azhar University"
+                "aff": "Head of O&G Dept, Al-Azhar University for Boys"
               },
               {
                 "name": "Khaled Saied (EGY)",
@@ -1179,7 +1175,7 @@
               },
               {
                 "name": "Salah Rasheed (EGY)",
-                "aff": "Prof. of O&G, Sohag University"
+                "aff": "Head of O&G Dept, Sohag University"
               }
             ],
             "moderators": [
@@ -1374,7 +1370,7 @@
                 },
                 {
                   "name": "Ismail Aboulfotouh",
-                  "aff": "Prof. of O&G, Cairo University"
+                  "aff": "Head of O&G Dept, Cairo University"
                 },
                 {
                   "name": "Karim Wahba",
