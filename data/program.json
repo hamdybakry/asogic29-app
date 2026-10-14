@@ -649,10 +649,6 @@
                   "aff": "Prof. of O&G, Cairo University"
                 },
                 {
-                  "name": "Ashraf Hamdy",
-                  "aff": "Prof. of O&G, Al-Azhar University"
-                },
-                {
                   "name": "Hazem El-Ashmawy",
                   "aff": "Prof. of O&G, Cairo University"
                 },
@@ -712,6 +708,10 @@
                     "format": "Panel Discussion",
                     "panelists": [
                       {
+                        "name": "Enas Sabry (EGY)",
+                        "aff": "Prof. of Endocrinology, Ain Shams University"
+                      },
+                      {
                         "name": "Hatem Elgamal (EGY)",
                         "aff": "Prof. of O&G, Ain Shams University"
                       },
@@ -722,10 +722,6 @@
                       {
                         "name": "Noha Elsharnouby (EGY)",
                         "aff": "Prof. of Anesthesiology & Critical Care, Ain Shams University"
-                      },
-                      {
-                        "name": "Enas Sabry (EGY)",
-                        "aff": "Prof. of Endocrinology, Ain Shams University"
                       }
                     ],
                     "moderators": [
@@ -1030,6 +1026,10 @@
               "aff": "Prof. of O&G, Ain Shams University"
             },
             {
+              "name": "Medhat Essam",
+              "aff": "Prof. of O&G, Menofia University"
+            },
+            {
               "name": "Mohamed Amer",
               "aff": "Prof. of O&G, Ain Shams University"
             },
@@ -1083,9 +1083,7 @@
           "start": "14:45",
           "end": "15:45",
           "title": "Religious and Ethical Perspectives of Care",
-          "content": [
-            "panel discussion"
-          ],
+          "content": [],
           "coordinators": [
             "Mariam"
           ],
@@ -1481,28 +1479,28 @@
                     "format": "MDT Discussion",
                     "panelists": [
                       {
-                        "name": "Nireen Okasha (EGY)",
-                        "aff": "Prof. of Cardiology, Ain Shams University"
-                      },
-                      {
                         "name": "Amr Saeed (EGY)",
                         "aff": "Assoc. Prof. of Neurology, Ain Shams University"
                       },
                       {
-                        "name": "Rania Magdy (EGY)",
-                        "aff": "Prof. of Anesthesiology & Critical Care, Ain Shams University"
-                      },
-                      {
-                        "name": "Ramy Mahrous (EGY)",
-                        "aff": "Prof. of Anesthesiology & Critical Care, Ain Shams University"
+                        "name": "Asaad Gamal (EGY)",
+                        "aff": "Lecturer in Interventional Radiology, Ain Shams University"
                       },
                       {
                         "name": "Nagy Samy (EGY)",
                         "aff": "Assoc. Prof. of Oncology, Ain Shams University"
                       },
                       {
-                        "name": "Asaad Gamal (EGY)",
-                        "aff": "Lecturer in Interventional Radiology, Ain Shams University"
+                        "name": "Nireen Okasha (EGY)",
+                        "aff": "Prof. of Cardiology, Ain Shams University"
+                      },
+                      {
+                        "name": "Ramy Mahrous (EGY)",
+                        "aff": "Prof. of Anesthesiology & Critical Care, Ain Shams University"
+                      },
+                      {
+                        "name": "Rania Magdy (EGY)",
+                        "aff": "Prof. of Anesthesiology & Critical Care, Ain Shams University"
                       }
                     ]
                   },
@@ -1581,12 +1579,12 @@
               ],
               "chairpersons": [
                 {
-                  "name": "Nasser El Kholy",
-                  "aff": "Consultant in O&G; WHO Expert; Member of the FIGO Committee on Contraception; UNFPA Maternal Health Adviser"
-                },
-                {
                   "name": "Amr Nadim",
                   "aff": "Prof. of O&G, Ain Shams University"
+                },
+                {
+                  "name": "Nasser El Kholy",
+                  "aff": "Consultant in O&G; WHO Expert; Member of the FIGO Committee on Contraception; UNFPA Maternal Health Adviser"
                 },
                 {
                   "name": "Nermeen Elgharib",
@@ -1640,6 +1638,10 @@
                   "aff": "Prof. of O&G, Ain Shams University"
                 },
                 {
+                  "name": "Ali Farid",
+                  "aff": "Prof. of O&G, Ain Shams University"
+                },
+                {
                   "name": "Amr Riad",
                   "aff": "Prof. of O&G, Ain Shams University"
                 },
@@ -1649,10 +1651,6 @@
                 },
                 {
                   "name": "Tarek Shaaban",
-                  "aff": "Prof. of O&G, Ain Shams University"
-                },
-                {
-                  "name": "Ali Farid",
                   "aff": "Prof. of O&G, Ain Shams University"
                 }
               ],
