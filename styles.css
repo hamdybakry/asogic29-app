@@ -397,6 +397,7 @@ body {
   .brand-mark { padding: 8px 10px; }
   .brand-mark img { width: clamp(84px, 24vw, 120px); }
   .brand-text p:not(.theme) { white-space: normal; }
+  .chair-list-cols { grid-template-columns: 1fr; }
 }
 
 .schedule {
@@ -732,6 +733,24 @@ html.show-coords .coord-pill { visibility: visible; }
 .chip-row { display: flex; flex-wrap: wrap; gap: 6px; }
 
 .chair-list { display: flex; flex-direction: column; gap: 7px; }
+
+.chair-list-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 12px;
+  row-gap: 3px;
+  align-items: start;
+}
+
+.chair-list-cols .chair-line { line-height: 1.3; }
+
+.chair-list-cols .chip {
+  font-size: 11px;
+  padding: 1px 7px;
+  line-height: 1.35;
+}
+
+.chair-list-cols .chair-aff { font-size: 11px; }
 
 .chair-line {
   line-height: 1.5;

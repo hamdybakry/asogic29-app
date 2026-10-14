@@ -432,7 +432,7 @@ function chairpersonsHtml(list, affiliation) {
   if (!list?.length) return '';
   return `
     <p class="section-label">Chairpersons <span class="label-note">(arranged alphabetically)</span></p>
-    <div class="chair-list">${list.map(c => `
+    <div class="chair-list chair-list-cols">${list.map(c => `
       <div class="chair-line">${personChip(personName(c), 'Chairperson')}<span class="chair-aff">${esc((c && c.aff) || '')}</span></div>`).join('')}</div>
     ${affiliation ? `<p class="chair-affil">${esc(affiliation)}</p>` : ''}`;
 }
