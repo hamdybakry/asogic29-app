@@ -410,7 +410,7 @@ function talksHtml(talks, sessionStart) {
     <div class="talk${hit ? ' speaker-hit' : ''}${hide ? ' hidden' : ''}${t.noTime ? ' talk-notime' : ''}" data-search="${esc(hay.toLowerCase())}">
       <div class="talk-time-col">${tr ? `${timeHtml(tr.start)}<br><span class="end">${timeHtml(tr.end)}</span>` : ''}</div>
       <div class="talk-main">
-        <p class="talk-title">${esc(t.title)}${isPanelTalk ? ' <span class="badge format">panel discussion</span>' : ''}${talkRoles.length ? ` <span class="inline-role">${talkRoles.map(esc).join(' · ')}</span>` : ''}</p>
+        <p class="talk-title">${esc(t.title)}${(isPanelTalk && !t.hidePanelBadge) ? ' <span class="badge format">panel discussion</span>' : ''}${talkRoles.length ? ` <span class="inline-role">${talkRoles.map(esc).join(' · ')}</span>` : ''}</p>
         ${t.speakers?.length
           ? t.speakers.map(s => `<p class="talk-speaker">${s.role ? `<span class="talk-role-label">${esc(s.role)}:</span> ` : ''}${withFlags(esc(s.name))}<span class="talk-aff">${esc(s.aff || '')}</span></p>`).join('')
           : t.speaker ? `<p class="talk-speaker">${withFlags(esc(t.speaker))}<span class="talk-aff">${esc(t.aff || '')}</span></p>` : ''}
