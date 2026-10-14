@@ -758,6 +758,19 @@ function bindSessionEvents() {
   });
 }
 
+function activateMatchHall(card, q) {
+  const cells = [...card.querySelectorAll('.hall-cell')];
+  if (!cells.length) return;
+  const ql = String(q || '').toLowerCase();
+  if (ql) {
+    const hit = [...card.querySelectorAll('.room-panel')].find(p =>
+      (p.textContent || '').toLowerCase().includes(ql));
+    const cell = hit && cells.find(c => c.dataset.room === hit.dataset.roomPanel);
+    if (cell) { activateHall(cell); return; }
+  }
+  ensureHallActive(card);
+}
+
 function applyFilter() {
   const q = query.trim().toLowerCase();
   let visible = 0;
@@ -779,7 +792,8 @@ function applyFilter() {
     card.style.display = match ? '' : 'none';
     if (match) {
       visible++;
-      if (talkHit) setCardOpen(card, true);
+      setCardOpen(card, true);
+      activateMatchHall(card, q);
     }
   });
   noResults.hidden = visible > 0;

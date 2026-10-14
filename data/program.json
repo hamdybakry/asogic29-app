@@ -182,8 +182,16 @@
                 "aff": "Deputy Minister of Health and Population for Population and Family Development Affairs"
               },
               {
+                "name": "Hanan Ayman El-Badry (EGY)",
+                "aff": "Obstetrician-Gynecologist, MOH"
+              },
+              {
                 "name": "Hesham Zaki (EGY)",
                 "aff": "Head of the Central Administration for Non-Governmental Treatment Institutions and Licensing at the Ministry of Health and Population"
+              },
+              {
+                "name": "Karam Bayoumy (EGY)",
+                "aff": "Prof. of O&G, Ain Shams University"
               },
               {
                 "name": "Mohamed Eissa (WHO)",
@@ -191,7 +199,11 @@
               },
               {
                 "name": "Mostafa Abbas (EGY)",
-                "aff": "Lecturer in O&G, Ain Shams University"
+                "aff": "Lecturer in O&G, Ain Shams University; UNFPA Consultant"
+              },
+              {
+                "name": "Nadine Alaa Sherif (EGY)",
+                "aff": "Prof. of O&G, Cairo University"
               },
               {
                 "name": "Omaima Edris (EGY)",
@@ -568,7 +580,7 @@
                 {
                   "title": "Hirsutism: Decoding the Hairy Dilemma",
                   "speaker": "Mostafa Abbas (EGY)",
-                  "aff": "Lecturer in O&G, Ain Shams University"
+                  "aff": "Lecturer in O&G, Ain Shams University; UNFPA Consultant"
                 },
                 {
                   "title": "Underdeveloped Secondary Sexual Characters",
