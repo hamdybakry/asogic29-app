@@ -1079,45 +1079,6 @@
           "start": "14:45",
           "end": "15:45",
           "title": "Religious and Ethical Perspectives of Care",
-          "panel": {
-            "format": "Panel Discussion",
-            "panelists": [
-              {
-                "name": "Dr Hamdy Elbarbary (EGY)",
-                "aff": "عميد كلية أصول الدين"
-              },
-              {
-                "name": "Ehab Hassanein (EGY)",
-                "aff": "Professor of O&G, Al-Azhar University"
-              },
-              {
-                "name": "Fr Ermia Makram (EGY)",
-                "aff": "الأستاذ بأكاديمية أرسطو، المركز الثقافي القبطي الأرثوذكسي"
-              },
-              {
-                "name": "Hassan Tawfik (EGY)",
-                "aff": "Prof. of O&G, Ain Shams University"
-              },
-              {
-                "name": "Maher Omran (EGY)",
-                "aff": "Prof. of O&G, Ain Shams University"
-              },
-              {
-                "name": "Mohamed Salama Gad (EGY)",
-                "aff": "Prof. of O&G, Menofia University"
-              },
-              {
-                "name": "Sherif El-Ghetany (EGY)",
-                "aff": "Prof. of O&G, Ain Shams University"
-              }
-            ],
-            "moderators": [
-              {
-                "name": "Mohammad AbdElHameed",
-                "aff": "Prof. of O&G, Ain Shams University"
-              }
-            ]
-          },
           "content": [
             "panel discussion"
           ],
@@ -1125,6 +1086,50 @@
             "Mariam"
           ],
           "talks": [
+            {
+              "title": "Religious and Ethical Perspectives of Care",
+              "panel": {
+                "format": "Panel Discussion",
+                "panelists": [
+                  {
+                    "name": "Dr Hamdy Elbarbary (EGY)",
+                    "aff": "عميد كلية أصول الدين"
+                  },
+                  {
+                    "name": "Ehab Hassanein (EGY)",
+                    "aff": "Professor of O&G, Al-Azhar University"
+                  },
+                  {
+                    "name": "Fr Ermia Makram (EGY)",
+                    "aff": "الأستاذ بأكاديمية أرسطو، المركز الثقافي القبطي الأرثوذكسي"
+                  },
+                  {
+                    "name": "Hassan Tawfik (EGY)",
+                    "aff": "Prof. of O&G, Ain Shams University"
+                  },
+                  {
+                    "name": "Maher Omran (EGY)",
+                    "aff": "Prof. of O&G, Ain Shams University"
+                  },
+                  {
+                    "name": "Mohamed Salama Gad (EGY)",
+                    "aff": "Prof. of O&G, Menofia University"
+                  },
+                  {
+                    "name": "Sherif El-Ghetany (EGY)",
+                    "aff": "Prof. of O&G, Ain Shams University"
+                  }
+                ],
+                "moderators": [
+                  {
+                    "name": "Mohammad AbdElHameed",
+                    "aff": "Prof. of O&G, Ain Shams University"
+                  }
+                ]
+              },
+              "start": "14:45",
+              "duration": 45
+            },
             {
               "title": "Myoinositol in PMOS",
               "badge": "Sponsored: Infiniti",
