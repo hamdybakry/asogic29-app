@@ -285,18 +285,14 @@ function coordPill(list) {
 
 function applyShowCoords(on) {
   document.documentElement.classList.toggle('show-coords', !!on || !!coordFilter);
-  try { localStorage.setItem('asogic29.showCoords', on ? '1' : '0'); } catch (e) {}
+  try { localStorage.setItem('asogic29.hideCoordsUi', on ? '0' : '1'); } catch (e) {}
 }
 
 function initShowCoords() {
-  let on = false;
-  try {
-    on = localStorage.getItem('asogic29.showCoords') === '1';
-    if (localStorage.getItem('asogic29.showCoords') === null &&
-        localStorage.getItem('asogic29.hideCoords') === '0') on = true;
-  } catch (e) {}
-  showCoordChk.checked = on;
-  document.documentElement.classList.toggle('show-coords', on);
+  let hide = false;
+  try { hide = localStorage.getItem('asogic29.hideCoordsUi') === '1'; } catch (e) {}
+  showCoordChk.checked = hide;
+  document.documentElement.classList.toggle('show-coords', !hide);
 }
 
 function collectCoordinators(prog) {
@@ -874,7 +870,7 @@ coordSelect.addEventListener('change', () => {
   coordFilter = coordSelect.value;
   coordSelect.classList.toggle('active', !!coordFilter);
   clearCoordBtn.hidden = !coordFilter;
-  applyShowCoords(showCoordChk.checked);
+  applyShowCoords(!showCoordChk.checked);
   query = '';
   searchInput.value = '';
   render();
@@ -885,11 +881,11 @@ clearCoordBtn.addEventListener('click', () => {
   coordSelect.value = '';
   coordSelect.classList.remove('active');
   clearCoordBtn.hidden = true;
-  applyShowCoords(showCoordChk.checked);
+  applyShowCoords(!showCoordChk.checked);
   render();
 });
 
-showCoordChk.addEventListener('change', () => applyShowCoords(showCoordChk.checked));
+showCoordChk.addEventListener('change', () => applyShowCoords(!showCoordChk.checked));
 
 async function init() {
   initShowCoords();
