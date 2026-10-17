@@ -50,6 +50,14 @@ body {
   background: linear-gradient(90deg, var(--gold-500), var(--gold-300), var(--gold-500));
 }
 
+@media (max-width: 768px) {
+  .app-header { transition: transform 0.22s ease; }
+  .app-header.top-hidden { transform: translateY(-100%); }
+}
+@media (max-width: 768px) and (prefers-reduced-motion: reduce) {
+  .app-header { transition: none; }
+}
+
 .header-inner {
   display: flex;
   align-items: center;
@@ -889,6 +897,17 @@ html.show-coords .coord-pill { visibility: visible; }
   margin: 4px 0;
 }
 .app-footer .footer-credit strong { color: inherit; font-weight: 700; font-style: italic; }
+.app-footer .footer-theme {
+  color: var(--gold-300);
+  font-weight: 600;
+  font-size: 14px;
+  margin: 0 0 2px;
+}
+.app-footer .footer-meta {
+  color: rgba(255,255,255,0.75);
+  font-size: 12.5px;
+  margin: 0 0 6px;
+}
 
 .session.hidden, .talk.hidden { display: none; }
 

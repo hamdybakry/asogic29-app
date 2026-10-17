@@ -1,4 +1,4 @@
-const CACHE = 'asogic29-v276';
+const CACHE = 'asogic29-v282';
 
 const PRECACHE = [
   'index.html',

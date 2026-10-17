@@ -953,4 +953,25 @@ async function loadProgram() {
   throw lastErr;
 }
 
+(function autoHideHeader() {
+  const header = document.querySelector('.app-header');
+  if (!header) return;
+  const mq = window.matchMedia('(max-width: 768px)');
+  let lastY = Math.max(0, window.scrollY);
+  const show = () => { if (header.classList.contains('top-hidden')) header.classList.remove('top-hidden'); };
+  const hide = () => { if (!header.classList.contains('top-hidden')) header.classList.add('top-hidden'); };
+  window.addEventListener('scroll', () => {
+    const y = Math.max(0, window.scrollY || document.documentElement.scrollTop || 0);
+    const dy = y - lastY;
+    lastY = y;
+    if (!mq.matches) { show(); return; }
+    const h = header.offsetHeight || 0;
+    if (y <= h + 4) {
+      show();
+    } else if (dy > 3) {
+      hide();
+    }
+  }, { passive: true });
+})();
+
 init();
